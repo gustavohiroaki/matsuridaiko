@@ -4,7 +4,6 @@ require 'app/core/Core.php';
 require 'config/const.php';
 require 'app/functions/helpers.php';
 
-....
 $core = new Core;
 $core->execFunc();
 // echo "<br>";

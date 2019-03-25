@@ -14,4 +14,3 @@ create table members_rkmd (
 
 insert into members_rkmd values ('1','gustavo.hiroaki','gus2019@');
 
-....
