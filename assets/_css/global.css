@@ -1,0 +1,53 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 1.8em;
+}
+h2{
+    font-size: 1.6em;
+}
+h3{
+    font-size: 1.4em;
+}
+h4{
+    font-size: 1.2em;
+}
+h5{
+
+}
+h6{
+
+}
+/* /Fonts */
+
+
+/* Media query */
+
+/* /Media query */
+
+/* Debug */
+.debug-bg{
+    background-color: red;
+}
+/* /Debug */
+
+/* Classes */
+.logo{
+    height: 58px;
+}
+
+.content{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.img-radius{
+    border-radius: 20px;
+}
+
+/* /Classes */
+

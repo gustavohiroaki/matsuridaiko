@@ -1,0 +1,41 @@
+/* Do not forget to check the next resolutions: 1366x768,1400x900,1920x1080x1280x800 */
+@media only screen and (min-width: 1367px)  {
+  .parallax-bg{
+      height: 700px;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+}
+@media only screen and (max-width: 1366px)  {
+  .parallax-bg{
+      height: 400px;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+}
+
+
+/* nav */
+nav#home{
+    background-color: rgba(255,255,255,1);
+}
+.nav-wrapper a,.nav-wrapper i{
+    color: black;
+}
+/* /nav */
+
+/* footer */
+footer a {
+    color: black;
+  }
+  footer h5 {
+    color: black;
+  }
+footer{
+  border-top: 1px solid rgba(0,0,0,.2);
+}
+/* /footer */

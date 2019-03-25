@@ -1,0 +1,15 @@
+CREATE DATABASE homologacao;
+
+ALTER DATABASE homologacao CHARSET = utf8 COLLATE = utf8_general_ci;
+
+use homologacao;
+
+select * from users;
+
+create table members_rkmd (
+	id_member int(11) auto_increment primary key,
+    username_member varchar(50),
+    pass_member varchar(50)
+);
+
+insert into members_rkmd values ('1','gustavo.hiroaki','gus2019@');
