@@ -145,7 +145,7 @@
 <nav class="white">
     <div class="nav-wrapper">
         <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
-        <a href="dashboard.html" class="brand-logo"><img class="logo" src="<?php echo BASE_URL_ASSETS ?>_img/logo.png" alt="Logo Matsuridaiko"></a>
+        <a href="<?php echo BASE_URL ?>dashboard" class="brand-logo"><img class="logo" src="<?php echo BASE_URL_ASSETS ?>_img/logo.png" alt="Logo Matsuridaiko"></a>
         
         
         <ul class="right">

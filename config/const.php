@@ -9,5 +9,5 @@ define("DEFAULT_CONTROLLER","index");
 define("DEFAULT_METHOD","index");
 define("CONTROLLER_NAMESPACE","app\\controllers\\");
 
-define("BASE_URL","http://localhost/");
-define("BASE_URL_ASSETS","http://localhost/assets/");
+define("BASE_URL","http://localhost/matsuridaiko/");
+define("BASE_URL_ASSETS","http://localhost/matsuridaiko/assets/");

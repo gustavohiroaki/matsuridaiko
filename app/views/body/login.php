@@ -8,7 +8,7 @@
     <div id="login" class="container row">
 
         
-    <form action="/login/login" method="POST">
+    <form action="<?php echo BASE_URL ?>login/login" method="POST">
             <h1>Login</h1>
         <input type="text" value="" id="login_user" name="login_user" placeholder="User">
 

@@ -8,22 +8,22 @@
 <nav id="home">
 <div class="nav-wrapper container">
     
-        <a href="index.html" class="brand-logo"><img class="logo" src="<?php echo BASE_URL ?>assets/_img/logo.png" alt="Matsuridaiko Logo"></a>
+        <a href="<?php echo BASE_URL ?>" class="brand-logo"><img class="logo" src="<?php echo BASE_URL ?>assets/_img/logo.png" alt="Matsuridaiko Logo"></a>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">Sobre</a></li>
-            <li><a href="/contact">Contato</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="<?php echo BASE_URL ?>">Home</a></li>
+            <li><a href="<?php echo BASE_URL ?>about">Sobre</a></li>
+            <li><a href="<?php echo BASE_URL ?>contact">Contato</a></li>
+            <li><a href="<?php echo BASE_URL ?>login">Login</a></li>
         </ul>
 </nav>
 
     <ul id="nav-mobile" class="sidenav">
-        <li><a href="/index">Home</a></li>
-        <li><a href="/about">Sobre</a></li>
-        <li><a href="/contact">Contato</a></li>
-        <li><a href="/login">Login</a></li>
+        <li><a href="<?php echo BASE_URL ?>index">Home</a></li>
+        <li><a href="<?php echo BASE_URL ?>about">Sobre</a></li>
+        <li><a href="<?php echo BASE_URL ?>contact">Contato</a></li>
+        <li><a href="<?php echo BASE_URL ?>login">Login</a></li>
     </ul>
 </div>
 

@@ -23,10 +23,10 @@ class LoginController extends Controller{
             if($postUser == $correct[0]->username_member && $postPass == $correct[0]->pass_member){
                 session_start();
                 $_SESSION["id"] = $correct[0]->id_member;
-                header("location: /dashboard");
+                header("location:".BASE_URL."dashboard");
             }
             else{
-                header('location: /login');
+                header("location:".BASE_URL."login");
             };
         }
     }
