@@ -17,7 +17,7 @@
     <li><a class="waves-effect collapsible-header">Integrantes</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="#" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>register/member" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
                 <li><a href="#">Membros</a></li>
                 <li><a href="#">Juniors</a></li>
                 <li><a href="#">Shinjins</a></li>

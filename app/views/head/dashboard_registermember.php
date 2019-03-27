@@ -1,0 +1,61 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/materialize.css">
+        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
+        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/dashboard.css">
+
+        <!-- Scripts -->
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery-ui.min.js"></script>
+<script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.mask.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $("#in_shinjin").hide();
+        $("#in_membro").hide();
+        $("#in_junior").hide();
+
+        $("#shinjin_btn").on("click",function(){
+            $("#in_shinjin").slideToggle(500);
+            $("#in_membro").slideUp(500);
+            $("#in_junior").slideUp(500);
+        })
+        $("#membro_btn").on("click",function(){
+            $("#in_membro").slideToggle(500);
+            $("#in_shinjin").slideUp(500);
+            $("#in_junior").slideUp(500);
+        })
+        $("#junior_btn").on("click",function(){
+            $("#in_junior").slideToggle(500);
+            $("#in_membro").slideUp(500);
+            $("#in_shinjin").slideUp(500);
+        })
+
+        //Materialize
+        $('.sidenav').sidenav();
+        $('.collapsible').collapsible({
+            draggable: true
+        });
+        $('.dropdown-trigger').dropdown();
+        // Materialize
+
+        // mask
+        $("#zip").mask('00000-000');
+
+        // /mask
+
+    });
+
+</script>
+
+    <title>Matsuridaiko Management</title>
+
+    
+</head>

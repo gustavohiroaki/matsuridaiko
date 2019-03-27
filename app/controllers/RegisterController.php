@@ -3,10 +3,13 @@
 namespace app\controllers;
 
 use app\core\Controller;
-use app\models\Basics;
 
-class DashboardController extends Controller{
+class RegisterController extends Controller{
+
     public function index(){
+        
+    }
+    public function member(){
         session_start();
         
         if(!$_SESSION["id"]){
@@ -14,13 +17,8 @@ class DashboardController extends Controller{
             header("location: /login");
         }
 
-        $this->add_view("dashboard_main");
+        $this->add_view("dashboard_registermember");
         $this->master_interface("dashboard");
-
-        $test = new Basics;
-        $retu = $test->select("members_rkmd");
-        dd($retu);
     }
 
-    
 }
