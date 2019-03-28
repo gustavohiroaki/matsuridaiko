@@ -18,26 +18,6 @@
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.mask.min.js"></script>
 <script>
       $(document).ready(function(){
-        $("#in_shinjin").hide();
-        $("#in_membro").hide();
-        $("#in_junior").hide();
-
-        $("#shinjin_btn").on("click",function(){
-            $("#in_shinjin").slideToggle(500);
-            $("#in_membro").slideUp(500);
-            $("#in_junior").slideUp(500);
-        })
-        $("#membro_btn").on("click",function(){
-            $("#in_membro").slideToggle(500);
-            $("#in_shinjin").slideUp(500);
-            $("#in_junior").slideUp(500);
-        })
-        $("#junior_btn").on("click",function(){
-            $("#in_junior").slideToggle(500);
-            $("#in_membro").slideUp(500);
-            $("#in_shinjin").slideUp(500);
-        })
-
         //Materialize
         $('.sidenav').sidenav();
         $('.collapsible').collapsible({

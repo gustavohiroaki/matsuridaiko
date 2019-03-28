@@ -1,259 +1,92 @@
 <main class="dash-container">
+<h2>Cadastro de Integrantes</h2>
 
-    <h2>Cadastro de Integrantes</h2>
-
+<form id="input-member">
     <div class="row">
-        <a id="shinjin_btn" class="btn-large col l4 m12 s12 black waves-effect">Shinjin</a>
+        <div class="input-field col l12 m12 s12">
+            <label for="name_member">Nome do Integrante</label>
+            <input type="text" id="name_member" name="name_member">
+        </div>
+        <div class="input-field col l12 m12 s12">
+            <label for="username_member">Nome de usuário do Integrante</label>
+            <input type="text" id="username_member" name="username_member">
+        </div>
 
-        <a id="membro_btn" class="btn-large col l4 m12 s12 red lighten-1 waves-effect">Membro</a>
+        <div class="input-field col l6 m6 s6">
+            <label for="pass_member">Senha</label>
+            <input type="password" id="pass_member" name="pass_member">
+        </div>
 
-        <a id="junior_btn" class="btn-large  col l4 m12 s12 pink lighten-2 waves-effect">Junior</a>
+        <div class="input-field col l6 m6 s6">
+            <label for="passconfirm_member">Confirmação de Senha</label>
+            <input type="password" id="passconfirm_member" name="passconfirm_member">
+        </div>
 
-            <div style="" class="col l4 m12 s12">
+        <div class="input-field col l3 m4 s6">
+            <label for="permission_member">Permissão do Integrante</label>
+            <input type="text" id="permission_member" name="permission_member">
+        </div>
 
-                <form action="#" name="in_shinjin" id="in_shinjin">
-                    <h4>Cadastro de Shinjin</h4>             
-                    <div class="input-field">
-                        <label for="shinjin_name">Nome</label>
-                        <input type="text" name="shinjin_name" id="shinjin_name">
-                    </div>
+        <div class="input-field col l3 m4 s6">
+            <label for="id_branch">Filial</label>
+            <input type="text" id="id_branch" name="id_branch">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_user">Nome de Usuário</label>
-                        <input type="text" name="shinjin_user" id="shinjin_user">
-                    </div>
+        <div class="input-field col l3 m4 s6">
+            <label for="entrydate_member">Data de Ingresso</label>
+            <input type="text" id="entrydate_member" name="entrydate_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_pass">Senha do Usuário</label>
-                        <input type="password" name="shinjin_pass" id="shinjin_pass">
-                    </div>
+        <div class="input-field col l3 m6 s6">
+            <label for="birth_member">Data de Nascimento</label>
+            <input type="text" id="birth_member" name="birth_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_passconfirm">Repita a Senha do Usuário</label>
-                        <input type="password" name="shinjin_passconfirm" id="shinjin_passconfirm">
-                    </div>
+        <div class="input-field col l6 m6 s12">
+            <label for="tel_member">Telefone do Integrante</label>
+            <input type="text" id="tel_member" name="tel_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_permission">Permissão</label>
-                        <input type="text" name="shinjin_permission" id="shinjin_user">
-                    </div>
+        <div class="input-field col l6 m12 s12">
+            <label for="rg_member">RG do Integrante</label>
+            <input type="text" id="rg_member" name="rg_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_birth"></label>
-                        <input type="date" name="shinjin_birth" id="shinjin_birth">
-                    </div>
+        <div class="input-field col l4 m12 s12">
+            <label for="zip_member">CEP</label>
+            <input type="text" id="zip_member" name="zip_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_tel">Telefone</label>
-                        <input type="text" name="shinjin_tel" id="shinjin_tel">
-                    </div>
+        <div class="input-field col l4 m6 s12">
+            <label for="state_member">Estado</label>
+            <input type="text" id="state_member" name="state_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_rg">RG</label>
-                        <input type="text" name="shinjin_rg" id="shinjin_rg">
-                    </div>
+        <div class="input-field col l4 m6 s12">
+            <label for="city_member">Cidade</label>
+            <input type="text" id="city_member" name="city_member">
+        </div>
+        
+        <div class="input-field col l4 m6 s12">
+            <label for="neighboorhood_member">Bairro</label>
+            <input type="text" id="neighboorhood_member" name="neighboorhood_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_zip">CEP</label>
-                        <input type="text" name="shinjin_zip" id="shinjin_zip">
-                    </div>
+        <div class="input-field col l8 m6 s12">
+            <label for="complement_member">Complemento</label>
+            <input type="text" id="complement_member" name="complement_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_state">Estado</label>
-                        <input type="text" name="shinjin_state" id="shinjin_state">
-                    </div>
+        <div class="input-field col l1 m2 s4">
+            <label for="status_member">Status</label>
+            <input type="text" id="status_member" name="status_member">
+        </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_city">Cidade</label>
-                        <input type="text" name="shinjin_city" id="shinjin_city">
-                    </div>
 
-                    <div class="input-field">
-                        <label for="shinjin_neighborhood">Bairro</label>
-                        <input type="text" name="shinjin_neighborhood" id="shinjin_neighborhood">
-                    </div>
+    
+        <input type="submit" class="btn" value="Enviar">
 
-                    <div class="input-field">
-                        <label for="shinjin_street">Rua</label>
-                        <input type="text" name="shinjin_street" id="shinjin_street">
-                    </div>
-
-                    <div class="input-field">
-                        <label for="shinjin_complement">Complemento</label>
-                        <input type="text" name="shinjin_complement" id="shinjin_complement">
-                    </div>
-
-                    <div class="input-field">
-                        <input type="submit" class="btn" value="Enviar">
-                    </div>
-
-                </form>
-            </div>
-
-            <div style="" class="col l4 m12 s12">
-                    
-                    <form action="#" name="in_membro" id="in_membro">
-                        <h4>Cadastro de Membro</h4>
-                        <div class="input-field">
-                            <label for="membro_name">Nome</label>
-                            <input type="text" name="membro_name" id="membro_name">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_user">Nome de Usuário</label>
-                            <input type="text" name="membro_user" id="membro_user">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_pass">Senha do Usuário</label>
-                            <input type="password" name="membro_pass" id="membro_pass">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_passconfirm">Repita a Senha do Usuário</label>
-                            <input type="password" name="membro_passconfirm" id="membro_passconfirm">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_permission">Permissão</label>
-                            <input type="text" name="membro_permission" id="membro_user">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_birth"></label>
-                            <input type="date" name="membro_birth" id="membro_birth">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_tel">Telefone</label>
-                            <input type="text" name="membro_tel" id="membro_tel">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_rg">RG</label>
-                            <input type="text" name="membro_rg" id="membro_rg">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_zip">CEP</label>
-                            <input type="text" name="membro_zip" id="membro_zip">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_state">Estado</label>
-                            <input type="text" name="membro_state" id="membro_state">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_city">Cidade</label>
-                            <input type="text" name="membro_city" id="membro_city">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_neighborhood">Bairro</label>
-                            <input type="text" name="membro_neighborhood" id="membro_neighborhood">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_street">Rua</label>
-                            <input type="text" name="membro_street" id="membro_street">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="membro_complement">Complemento</label>
-                            <input type="text" name="membro_complement" id="membro_complement">
-                        </div>
-    
-                        <div class="input-field">
-                            <input type="submit" class="btn" value="Enviar">
-                        </div>
-    
-                    </form>
-            </div>
-
-            <div style="" class="col l4 m12 s12">
-                    
-                    <form action="#" name="in_junior" id="in_junior">
-                        <h4>Cadastro de Juniors</h4>
-                        <div class="input-field">
-                            <label for="junior_name">Nome</label>
-                            <input type="text" name="junior_name" id="junior_name">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_user">Nome de Usuário</label>
-                            <input type="text" name="junior_user" id="junior_user">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_pass">Senha do Usuário</label>
-                            <input type="password" name="junior_pass" id="junior_pass">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_passconfirm">Repita a Senha do Usuário</label>
-                            <input type="password" name="junior_passconfirm" id="junior_passconfirm">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_permission">Permissão</label>
-                            <input type="text" name="junior_permission" id="junior_user">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_birth"></label>
-                            <input type="date" name="junior_birth" id="junior_birth">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_tel">Telefone</label>
-                            <input type="text" name="junior_tel" id="junior_tel">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_rg">RG</label>
-                            <input type="text" name="junior_rg" id="junior_rg">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_zip">CEP</label>
-                            <input type="text" name="junior_zip" id="junior_zip">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_state">Estado</label>
-                            <input type="text" name="junior_state" id="junior_state">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_city">Cidade</label>
-                            <input type="text" name="junior_city" id="junior_city">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_neighborhood">Bairro</label>
-                            <input type="text" name="junior_neighborhood" id="junior_neighborhood">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_street">Rua</label>
-                            <input type="text" name="junior_street" id="junior_street">
-                        </div>
-    
-                        <div class="input-field">
-                            <label for="junior_complement">Complemento</label>
-                            <input type="text" name="junior_complement" id="junior_complement">
-                        </div>
-    
-                        <div class="input-field">
-                            <input type="submit" class="btn" value="Enviar">
-                        </div>
-    
-                    </form>
-            </div>
-    
-    
     </div>
+</form>
 
 </main>
-

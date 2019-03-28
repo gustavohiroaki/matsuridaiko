@@ -6,6 +6,16 @@ abstract class Controller{
 
     protected $viewName;
 
+    protected function security(){
+        session_start();
+
+        if(!$_SESSION["id"]){
+            session_destroy();
+            header("location: /login");
+        }
+
+    }
+
     public function add_view($viewName){
         $this->viewName = $viewName;
     }
