@@ -1,7 +1,7 @@
 <main class="dash-container">
 <h2>Cadastro de Integrantes</h2>
 
-<form id="input-member" name="input-member" method="POST" action="<?php echo BASE_URL ?>register/sendMember">
+<form id="input-member" name="input-member">
     <div class="row">
         <div class="input-field col l12 m12 s12">
             <label for="name_member">Nome do Integrante</label>
