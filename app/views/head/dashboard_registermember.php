@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/materialize.css">
+        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/jquery-ui.min.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/dashboard.css">
 
@@ -24,8 +25,19 @@
             draggable: true
         });
         $('.dropdown-trigger').dropdown();
+        $(document).ready(function(){
+            $('.datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
+        });
+         
         // Materialize
 
+
+        $( function() {
+            $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+            });
+        } );
         // mask
         $("#zip").mask('00000-000');
 

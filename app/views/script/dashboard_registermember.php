@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     $("#input-member").submit(function(e){
         e.preventDefault();
         var form = $(this);
@@ -21,4 +21,4 @@
             console.log(data);
         }
     }
-</script>
+</script> -->

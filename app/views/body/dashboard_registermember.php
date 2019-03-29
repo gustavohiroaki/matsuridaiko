@@ -1,45 +1,48 @@
 <main class="dash-container">
 <h2>Cadastro de Integrantes</h2>
 
-<form id="input-member">
+<form id="input-member" name="input-member" method="POST" action="<?php echo BASE_URL ?>register/sendMember">
     <div class="row">
         <div class="input-field col l12 m12 s12">
             <label for="name_member">Nome do Integrante</label>
             <input type="text" id="name_member" name="name_member">
         </div>
-        <div class="input-field col l12 m12 s12">
+        <div class="input-field col l8 m12 s12">
             <label for="username_member">Nome de usuário do Integrante</label>
             <input type="text" id="username_member" name="username_member">
         </div>
-
+        <div class="input-field col l4 m12 s12">
+            <label for="type_member">Tipo membro</label>
+            <input type="text" id="type_member" name="type_member">
+        </div>
         <div class="input-field col l6 m6 s6">
             <label for="pass_member">Senha</label>
             <input type="password" id="pass_member" name="pass_member">
         </div>
 
         <div class="input-field col l6 m6 s6">
-            <label for="passconfirm_member">Confirmação de Senha</label>
-            <input type="password" id="passconfirm_member" name="passconfirm_member">
+            <label for="pass2_member">Confirmação de Senha</label>
+            <input type="password" id="pass2_member">
         </div>
 
         <div class="input-field col l3 m4 s6">
             <label for="permission_member">Permissão do Integrante</label>
-            <input type="text" id="permission_member" name="permission_member">
+            <input type="number" id="permission_member" name="permission_member">
         </div>
 
         <div class="input-field col l3 m4 s6">
             <label for="id_branch">Filial</label>
-            <input type="text" id="id_branch" name="id_branch">
+            <input type="number" id="id_branch" name="id_branch">
         </div>
 
         <div class="input-field col l3 m4 s6">
             <label for="entrydate_member">Data de Ingresso</label>
-            <input type="text" id="entrydate_member" name="entrydate_member">
+            <input type="text" class="datepicker" id="entrydate_member" name="entrydate_member">
         </div>
 
         <div class="input-field col l3 m6 s6">
             <label for="birth_member">Data de Nascimento</label>
-            <input type="text" id="birth_member" name="birth_member">
+            <input type="text" class="datepicker" id="birth_member" name="birth_member">
         </div>
 
         <div class="input-field col l6 m6 s12">

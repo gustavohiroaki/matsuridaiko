@@ -19,8 +19,9 @@ class RegisterController extends Controller{
 
     public function sendMember(){
         $this->security();
-
-        var_dump($_POST);
+        // var_dump($_POST);
+        $insert = new RegisterModel;
+        $insert->registerMember($_POST);
     }
 
 }

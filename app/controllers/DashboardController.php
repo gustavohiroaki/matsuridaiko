@@ -17,9 +17,9 @@ class DashboardController extends Controller{
         $this->add_view("dashboard_main");
         $this->master_interface("dashboard");
 
-        $test = new Basics;
-        $retu = $test->select("members_rkmd");
-        dd($retu);
+        // $test = new Basics;
+        // $retu = $test->select("members_rkmd");
+        // dd($retu);
     }
 
     
