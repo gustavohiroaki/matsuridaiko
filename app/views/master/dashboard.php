@@ -28,7 +28,7 @@
     <li><a class="waves-effect collapsible-header">Eventos</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="#" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
                 <li><a href="#">Eventos Anteriores</a></li>
                 <li><a href="#">Próximos Eventos</a></li>
             </ul>

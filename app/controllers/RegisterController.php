@@ -62,4 +62,11 @@ class RegisterController extends Controller{
         $insert->registerMember($allDatas);
     }
 
+    public function event(){
+        $this->security();
+
+        $this->add_view("dashboard_registerevent");
+        $this->master_interface("dashboard");
+    }
+
 }
