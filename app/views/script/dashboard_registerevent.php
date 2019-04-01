@@ -9,7 +9,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/register/sendMember",
+            url: "http://localhost/matsuridaiko/register/sendEvent",
 
         }).then(success,fail)
 

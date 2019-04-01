@@ -69,4 +69,36 @@ class RegisterController extends Controller{
         $this->master_interface("dashboard");
     }
 
+    public function sendEvent(){
+        cat($_POST);
+
+        $name_event=isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
+        $dateinit_event=isset($_POST["dateinit_event"])? strip_tags(filter_input(INPUT_POST,"dateinit_event")):NULL;
+        $datefin_event=isset($_POST["datefin_event"])? strip_tags(filter_input(INPUT_POST,"datefin_event")):NULL;
+        $zip_event=isset($_POST["zip_event"])? strip_tags(filter_input(INPUT_POST,"zip_event")):NULL;
+        $state_event=isset($_POST["state_event"])? strip_tags(filter_input(INPUT_POST,"state_event")):NULL;
+        $city_event=isset($_POST["city_event"])? strip_tags(filter_input(INPUT_POST,"city_event")):NULL;
+        $neighboorhood_event=isset($_POST["neighboorhood_event"])? strip_tags(filter_input(INPUT_POST,"neighboorhood_event")):NULL;
+        $street_event=isset($_POST["street_event"])? strip_tags(filter_input(INPUT_POST,"street_event")):NULL;
+        $complement_event=isset($_POST["complement_event"])? strip_tags(filter_input(INPUT_POST,"complement_event")):NULL;
+        $annotation_event=isset($_POST["annotation_event"])? strip_tags(filter_input(INPUT_POST,"annotation_event")):NULL;
+        $responsible_event=isset($_POST["responsible_event"])? strip_tags(filter_input(INPUT_POST,"responsible_event")):NULL;
+        $status_event=isset($_POST["status_event"])? strip_tags(filter_input(INPUT_POST,"status_event")):NULL;
+
+        $allDatas = array(
+            "name_event"=>$name_event,
+            "dateinit_event"=>$dateinit_event,
+            "datefin_event"=>$datefin_event,
+            "zip_event"=>$zip_event,
+            "state_event"=>$state_event,
+            "city_event"=>$city_event,
+            "neighboorhood_event"=>$neighboorhood_event,
+            "street_event"=>$street_event,
+            "complement_event"=>$complement_event,
+            "annotation_event"=>$annotation_event,
+            "responsible_event"=>$responsible_event,
+            "status_event"=>$status_event
+        );
+    }
+
 }
