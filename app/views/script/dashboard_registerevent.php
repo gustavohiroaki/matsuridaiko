@@ -15,10 +15,11 @@
 
         function success(data){
             console.log(data);
-
+            alert("Incluido com sucesso!");
         }
         function fail(data){
             console.log(data);
+            alert("Falha na inclusão");
         }
     }
 </script>

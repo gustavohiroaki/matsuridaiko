@@ -70,7 +70,6 @@ class RegisterController extends Controller{
     }
 
     public function sendEvent(){
-        cat($_POST);
 
         $name_event=isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
         $dateinit_event=isset($_POST["dateinit_event"])? strip_tags(filter_input(INPUT_POST,"dateinit_event")):NULL;
@@ -84,7 +83,6 @@ class RegisterController extends Controller{
         $annotation_event=isset($_POST["annotation_event"])? strip_tags(filter_input(INPUT_POST,"annotation_event")):NULL;
         $responsible_event=isset($_POST["responsible_event"])? strip_tags(filter_input(INPUT_POST,"responsible_event")):NULL;
         $status_event=isset($_POST["status_event"])? strip_tags(filter_input(INPUT_POST,"status_event")):NULL;
-
         $allDatas = array(
             "name_event"=>$name_event,
             "dateinit_event"=>$dateinit_event,
@@ -99,6 +97,10 @@ class RegisterController extends Controller{
             "responsible_event"=>$responsible_event,
             "status_event"=>$status_event
         );
+
+        $insert = new RegisterModel;
+        $insert->registerEvent($allDatas);
+
     }
 
 }
