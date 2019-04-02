@@ -5,6 +5,7 @@ namespace app\core;
 abstract class Controller{
 
     protected $viewName;
+    protected $params;
 
     protected function security(){
         session_start();
@@ -20,11 +21,18 @@ abstract class Controller{
         $this->viewName = $viewName;
     }
 
+    public function add_params($params=array()){
+        $this->params = $params;
+    }
+
     public function load_head(){
         require 'app/views/head/'.$this->viewName.'.php';
     }
 
     public function load_body(){
+        if($this->params !== null){
+            extract($this->params);
+        }
         require 'app/views/body/'.$this->viewName.'.php';
     }
 

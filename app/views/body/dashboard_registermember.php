@@ -1,6 +1,6 @@
 <main class="dash-container">
 <h2>Cadastro de Integrantes</h2>
-
+<?php echo $strin; ?>
 <form id="input-member" name="input-member">
     <div class="row">
         <div class="input-field col l12 m12 s12">
