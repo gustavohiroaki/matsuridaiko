@@ -1,6 +1,11 @@
+<?php 
+// dd($datas["member_type"]);
+$data = $this->params;
+?>
+
 <main class="dash-container">
 <h2>Cadastro de Integrantes</h2>
-<?php echo $strin; ?>
+
 <form id="input-member" name="input-member">
     <div class="row">
         <div class="input-field col l12 m12 s12">
@@ -12,8 +17,15 @@
             <input type="text" id="username_member" name="username_member">
         </div>
         <div class="input-field col l4 m12 s12">
-            <label for="type_member">Tipo membro</label>
-            <input type="text" id="type_member" name="type_member">
+            
+            <select id="type_member" name="type_member">
+                <?php 
+                foreach($data["member_type"] as $count){?>
+                    <option value="<?php echo $count->id_type; ?>"><?php echo $count->name_type; ?></option>
+
+                <?php }?> 
+            <label>Tipo membro</label>
+            </select>
         </div>
         <div class="input-field col l6 m6 s6">
             <label for="pass_member">Senha</label>

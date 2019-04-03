@@ -28,6 +28,10 @@
         $(document).ready(function(){
             $('.datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
         });
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+        
          
         // Materialize
 
@@ -38,6 +42,7 @@
             changeYear: true
             });
         } );
+        
         // mask
         $("#zip").mask('00000-000');
 

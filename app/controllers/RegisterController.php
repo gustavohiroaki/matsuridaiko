@@ -16,9 +16,9 @@ class RegisterController extends Controller{
 
         $member_type = new Basics;
         $data["member_type"] = $member_type->select("member_type");
-        // dd($member_type->select("member_type"));
-        $data["strin"] = "Teste";
-        $this->add_params($data);
+
+
+        $this->add_params($data,0);
         $this->add_view("dashboard_registermember");
         $this->master_interface("dashboard");
     }
