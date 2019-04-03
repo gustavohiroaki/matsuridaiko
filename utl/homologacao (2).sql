@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Abr-2019 às 22:48
+-- Generation Time: 03-Abr-2019 às 22:43
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 5.6.40
 
@@ -192,6 +192,17 @@ CREATE TABLE `permission_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Extraindo dados da tabela `permission_user`
+--
+
+INSERT INTO `permission_user` (`id_permission`, `permission_level`, `role_member`, `description_permission`) VALUES
+(1, 100, 'Comum', 'Permissão comum, sem nenhuma autorização de alteração ou inclusão'),
+(2, 200, 'Pais', 'Pai de Juniors ou Membros para ter acesso ao Dashboard, e visualizar informações.'),
+(3, 500, 'Treinador(a)', 'Funções habilitadas para membros que passam treinos.'),
+(4, 1000, 'Vice-Líder de Filial', 'Possui funções habilitadas para administração da filial'),
+(5, 1500, 'Líder de Filial', 'Possui todas as funções habilitadas para administração de Filial.');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -311,7 +322,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT for table `permission_user`
 --
 ALTER TABLE `permission_user`
-  MODIFY `id_permission` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_permission` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

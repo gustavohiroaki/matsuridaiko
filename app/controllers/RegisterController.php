@@ -14,8 +14,9 @@ class RegisterController extends Controller{
     public function member(){
         $this->security();
 
-        $member_type = new Basics;
-        $data["member_type"] = $member_type->select("member_type");
+        $query = new Basics;
+        $data["member_type"] = $query->select("member_type");
+        $data["member_permission"] = $query->select("permission_user");
 
 
         $this->add_params($data,0);

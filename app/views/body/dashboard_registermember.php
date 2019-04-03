@@ -38,8 +38,14 @@ $data = $this->params;
         </div>
 
         <div class="input-field col l3 m4 s6">
-            <label for="permission_member">Permissão do Integrante</label>
-            <input type="number" id="permission_member" name="permission_member">
+            <select id="permission_member" name="permission_member">
+                <?php
+                foreach($data["member_permission"] as $count){?>
+                    <option value="<?php echo $count->permission_level; ?>"><?php echo $count->role_member; ?></option>
+
+                <?php }?> 
+            </select>
+            <label>Permissão membro</label>
         </div>
 
         <div class="input-field col l3 m4 s6">
@@ -48,13 +54,13 @@ $data = $this->params;
         </div>
 
         <div class="input-field col l3 m4 s6">
-            <label for="entrydate_member">Data de Ingresso</label>
             <input type="text" class="datepicker" id="entrydate_member" name="entrydate_member">
+            <label for="entrydate_member">Data de Ingresso</label>
         </div>
 
         <div class="input-field col l3 m6 s6">
-            <label for="birth_member">Data de Nascimento</label>
             <input type="text" class="datepicker" id="birth_member" name="birth_member">
+            <label for="birth_member">Data de Nascimento</label>
         </div>
 
         <div class="input-field col l6 m6 s12">
