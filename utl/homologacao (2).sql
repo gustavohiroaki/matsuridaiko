@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Abr-2019 às 22:43
+-- Generation Time: 04-Abr-2019 às 22:42
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 5.6.40
 
@@ -35,6 +35,13 @@ CREATE TABLE `branch` (
   `state_branch` varchar(15) DEFAULT NULL,
   `city_branch` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `branch`
+--
+
+INSERT INTO `branch` (`id_branch`, `name_branch`, `country_branch`, `state_branch`, `city_branch`) VALUES
+(1, 'Guarulhos', 'Brazil', 'São Paulo', 'Guarulhos');
 
 -- --------------------------------------------------------
 
@@ -101,7 +108,7 @@ CREATE TABLE `members_rkmd` (
   `id_member` int(11) NOT NULL,
   `name_member` varchar(50) DEFAULT NULL,
   `username_member` varchar(50) DEFAULT NULL,
-  `type_member` varchar(2) DEFAULT NULL,
+  `id_type` varchar(2) DEFAULT NULL,
   `pass_member` varchar(50) DEFAULT NULL,
   `permission_member` int(10) DEFAULT NULL,
   `id_branch` int(10) DEFAULT NULL,
@@ -123,12 +130,13 @@ CREATE TABLE `members_rkmd` (
 -- Extraindo dados da tabela `members_rkmd`
 --
 
-INSERT INTO `members_rkmd` (`id_member`, `name_member`, `username_member`, `type_member`, `pass_member`, `permission_member`, `id_branch`, `entrydate_member`, `birth_member`, `tel_member`, `rg_member`, `zip_member`, `state_member`, `city_member`, `neighboorhood_member`, `street_member`, `complement_member`, `status_member`, `log_member`) VALUES
-(1, NULL, 'gustavo.hiroaki', NULL, 'gus2019@', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-26 14:30:11'),
+INSERT INTO `members_rkmd` (`id_member`, `name_member`, `username_member`, `id_type`, `pass_member`, `permission_member`, `id_branch`, `entrydate_member`, `birth_member`, `tel_member`, `rg_member`, `zip_member`, `state_member`, `city_member`, `neighboorhood_member`, `street_member`, `complement_member`, `status_member`, `log_member`) VALUES
+(1, 'Gustavo Hiroaki Imafuku', 'gustavo.hiroaki', '3', 'gus2019@', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-26 14:30:11'),
 (2, NULL, 'hideki.katahira', NULL, 'hide2019', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-27 17:31:13'),
-(4, 'Angelica Nishiharo Kono', 'angelica.kono', '1', 'asgduag', 1, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-03-29 13:36:02'),
+(4, 'Angelica Nishiharo Kono', 'angelica.kono', '3', 'asgduag', 1, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-03-29 13:36:02'),
 (5, 'Test1', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 11:45:46'),
-(6, '', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 12:58:04');
+(6, '', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 12:58:04'),
+(7, 'Bruna Sueko Higa', 'bruna.sueko', '3', 'brubru', 1000, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-04 18:50:57');
 
 -- --------------------------------------------------------
 
@@ -274,7 +282,7 @@ ALTER TABLE `permission_user`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `id_branch` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_branch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -298,7 +306,7 @@ ALTER TABLE `members_music`
 -- AUTO_INCREMENT for table `members_rkmd`
 --
 ALTER TABLE `members_rkmd`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `member_type`

@@ -14,7 +14,7 @@ class Login extends Model{
         $qry = $this->db->prepare($sql);
         $qry->bindValue(1,$user);
         $qry->execute();
-        // dd($qry->fetchAll());
+
         return $qry->fetchAll();
     }
 }

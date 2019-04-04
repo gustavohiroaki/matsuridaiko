@@ -9,6 +9,7 @@ function cat($a){
 
 //Die Dump
 function dd($e){
+
     var_dump($e);
 
     die();

@@ -18,9 +18,9 @@
         <div class="collapsible-body">
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/member" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
-                <li><a href="#">Membros</a></li>
-                <li><a href="#">Juniors</a></li>
-                <li><a href="#">Shinjins</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/member">Membros</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/junior">Juniors</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/shinjin">Shinjins</a></li>
             </ul>
         </div>
     </li>
@@ -84,9 +84,9 @@
         <div class="collapsible-body">
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/member" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
-                <li><a href="#">Membros</a></li>
-                <li><a href="#">Juniors</a></li>
-                <li><a href="#">Shinjins</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/member">Membros</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/junior">Juniors</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/shinjin">Shinjins</a></li>
             </ul>
         </div>
     </li>

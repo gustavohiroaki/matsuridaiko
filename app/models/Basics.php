@@ -9,16 +9,16 @@ class Basics extends Model{
         parent::__construct();
     }
 
-    public function select($table,$where="",$value=""){
+    public function select($table,$where="",$condition="",$value=""){
         $sql = "SELECT * FROM {$table}";
             if($where!==""){
-                $sql .= " WHERE {$where} = :{$where}";
+                $sql .= " WHERE {$where} {$condition} :{$where}";
 
                 $select = $this->db->prepare($sql);
                 $select->bindValue($where, $value);
                 $select->execute();
 
-                return $select->fetch();
+                return $select->fetchAll();
                 exit();
             }
         $select = $this->db->query($sql);

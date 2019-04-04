@@ -17,6 +17,7 @@ class RegisterController extends Controller{
         $query = new Basics;
         $data["member_type"] = $query->select("member_type");
         $data["member_permission"] = $query->select("permission_user");
+        $data["member_branch"] = $query->select("branch");
 
 
         $this->add_params($data,0);
@@ -29,7 +30,7 @@ class RegisterController extends Controller{
 
         $name_member            = isset($_POST["name_member"])? strip_tags(filter_input(INPUT_POST,"name_member")):NULL;
         $username_member        = isset($_POST["username_member"])? strip_tags(filter_input(INPUT_POST,"username_member")):NULL;
-        $type_member            = isset($_POST["type_member"])? strip_tags(filter_input(INPUT_POST,"type_member")):NULL;
+        $id_type            = isset($_POST["id_type"])? strip_tags(filter_input(INPUT_POST,"id_type")):NULL;
         $pass_member            = isset($_POST["pass_member"])? strip_tags(filter_input(INPUT_POST,"pass_member")):NULL;
         $permission_member      = isset($_POST["permission_member"])? strip_tags(filter_input(INPUT_POST,"permission_member")):NULL;
         $id_branch              = isset($_POST["id_branch"])? strip_tags(filter_input(INPUT_POST,"id_branch")):NULL;
@@ -48,7 +49,7 @@ class RegisterController extends Controller{
         $allDatas = array(
             "name_member"           =>      $name_member,
             "username_member"       =>      $username_member,
-            "type_member"           =>      $type_member,
+            "id_type"           =>      $id_type,
             "pass_member"           =>      $pass_member,
             "permission_member"     =>      $permission_member,
             "id_branch"             =>      $id_branch,
@@ -63,7 +64,7 @@ class RegisterController extends Controller{
             "complement_member"     =>      $complement_member,
             "status_member"         =>      $status_member
         );
-        // dd($allDatas);
+
 
         $insert = new RegisterModel;
         $insert->registerMember($allDatas);

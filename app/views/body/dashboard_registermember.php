@@ -1,6 +1,7 @@
 <?php 
-// dd($datas["member_type"]);
+
 $data = $this->params;
+
 ?>
 
 <main class="dash-container">
@@ -18,7 +19,7 @@ $data = $this->params;
         </div>
         <div class="input-field col l4 m12 s12">
             
-            <select id="type_member" name="type_member">
+            <select id="id_type" name="id_type">
                 <?php 
                 foreach($data["member_type"] as $count){?>
                     <option value="<?php echo $count->id_type; ?>"><?php echo $count->name_type; ?></option>
@@ -49,8 +50,14 @@ $data = $this->params;
         </div>
 
         <div class="input-field col l3 m4 s6">
-            <label for="id_branch">Filial</label>
-            <input type="number" id="id_branch" name="id_branch">
+            <select name="member_branch" id="member_branch">
+                <?php 
+                foreach($data["member_branch"] as $count){?>
+                    <option value="<?php echo $count->id_branch;?>"><?php echo $count->name_branch; ?></option>
+
+                <?php }?> 
+            </select>
+            <label>Filial</label>
         </div>
 
         <div class="input-field col l3 m4 s6">
