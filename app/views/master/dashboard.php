@@ -141,7 +141,7 @@
 
 
 <!-- Nav -->
-
+<div class="navbar-fixed">
 <nav class="white">
     <div class="nav-wrapper">
         <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
@@ -163,7 +163,7 @@
 
     </div>
 </nav>
-
+</div>
 <!-- /Nav -->
 
 <?php $this->load_body(); ?>

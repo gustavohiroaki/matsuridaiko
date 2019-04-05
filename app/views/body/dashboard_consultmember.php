@@ -6,6 +6,7 @@
             <th>Nome</th>
             <th>Tipo</th>
             <th>Filial</th>
+            <th>Alterar</th>
         </tr>
     </thead>
 
@@ -15,6 +16,7 @@
                 <td><?php echo $count->name_member; ?></td>
                 <td><?php echo $count->name_type; ?></td>
                 <td><?php echo $count->name_branch; ?></td>
+                <td><a href=""><i class="material-icons">create</i></a></td>
             </tr>
         <?php } ?>
     </tbody>

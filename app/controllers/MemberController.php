@@ -9,12 +9,12 @@ class MemberController extends Controller{
     function index(){
         echo "Index Member";
     }
-    
-    function listMember(){
-        $datas = new Test;
-        $data["member"] = $datas->list();
-
-        $this->view("template",$data);
+    function test($a="",$b="",$c="",$d=""){
+        echo $a;
+        echo $b;
+        echo $c;
+        echo $d;
     }
+    
     
 }

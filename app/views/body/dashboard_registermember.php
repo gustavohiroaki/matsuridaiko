@@ -5,10 +5,12 @@ $data = $this->params;
 ?>
 
 <main class="dash-container">
-<h2>Cadastro de Integrantes</h2>
+<h2 class="center">Cadastro de Integrantes</h2>
 
 <form id="input-member" name="input-member">
+<h3 class="center">Dados Pessoais</h3>
     <div class="row">
+        
         <div class="input-field col l12 m12 s12">
             <label for="name_member">Nome do Integrante</label>
             <input type="text" id="name_member" name="name_member">
@@ -37,6 +39,9 @@ $data = $this->params;
             <label for="pass2_member">Confirmação de Senha</label>
             <input type="password" id="pass2_member">
         </div>
+    </div>
+    <h3 class="center">Dados Membros</h3>
+    <div class="row">
 
         <div class="input-field col l3 m4 s6">
             <select id="permission_member" name="permission_member">
@@ -79,6 +84,9 @@ $data = $this->params;
             <label for="rg_member">RG do Integrante</label>
             <input type="text" id="rg_member" name="rg_member">
         </div>
+    </div>
+    <h3 class="center">Endereço</h3>
+    <div class="row">
 
         <div class="input-field col l4 m12 s12">
             <label for="zip_member">CEP</label>
