@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Abr-2019 às 22:42
+-- Generation Time: 08-Abr-2019 às 22:36
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 5.6.40
 
@@ -131,12 +131,26 @@ CREATE TABLE `members_rkmd` (
 --
 
 INSERT INTO `members_rkmd` (`id_member`, `name_member`, `username_member`, `id_type`, `pass_member`, `permission_member`, `id_branch`, `entrydate_member`, `birth_member`, `tel_member`, `rg_member`, `zip_member`, `state_member`, `city_member`, `neighboorhood_member`, `street_member`, `complement_member`, `status_member`, `log_member`) VALUES
-(1, 'Gustavo Hiroaki Imafuku', 'gustavo.hiroaki', '3', 'gus2019@', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-26 14:30:11'),
+(1, 'Gustavo Hiroaki Imafuku', 'gustavo.hiroaki', '3', 'gus2019@', 100, 1, '2016-03-16', '1998-12-21', '(11)94836-8977', '37.396.789-5', '07190-023', 'São Paulo', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi 119', 'Bloco 6 Apt A 12', '1', '2019-03-26 14:30:11'),
 (2, NULL, 'hideki.katahira', NULL, 'hide2019', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-27 17:31:13'),
 (4, 'Angelica Nishiharo Kono', 'angelica.kono', '3', 'asgduag', 1, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-03-29 13:36:02'),
 (5, 'Test1', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 11:45:46'),
 (6, '', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 12:58:04'),
-(7, 'Bruna Sueko Higa', 'bruna.sueko', '3', 'brubru', 1000, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-04 18:50:57');
+(7, 'Bruna Sueko Higa', 'bruna.sueko', '3', 'brubru', 1000, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-04 18:50:57'),
+(8, 'Mario Kenzo Kasai', 'mario.kasai', '3', 'mar2019@', 100, 1, '0000-00-00', '0000-00-00', '123123123', '123123123', '123123', 'São Paulo', 'Guarulhos', 'Nao sei', NULL, 'Nao sei landia', '1', '2019-04-08 13:21:27'),
+(9, 'Sara Kiyoko Kiyan', 'sara.kiyan', '3', 'sar2019@', 100, NULL, '1970-01-01', '2019-10-04', '123123', '123123', '123123', '123123', 'Guarulhos', 'Nao sei', NULL, 'Nao sei landia', '1', '2019-04-08 14:14:28'),
+(10, '', '', '1', '', 100, NULL, '1970-01-01', '1970-01-01', '', '', '07190-023', '', '', '', NULL, '', '', '2019-04-08 15:04:51'),
+(11, 'Diego Hideki', 'diego.hideki', '3', 'die2019@', 100, NULL, '2019-10-04', '1970-01-01', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'Nao sei landia', '1', '2019-04-08 18:56:00'),
+(12, 'Giovanna Franco', 'giovanna.frango', '3', '123123', 100, NULL, '2019-10-04', '2019-10-04', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, '123123', '1', '2019-04-08 18:58:59'),
+(13, 'Luciana Lu', 'luciana.lu', '3', 'lu2019@', 100, NULL, '2019-10-04', '1970-01-01', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'teste', '1', '2019-04-08 19:06:41'),
+(14, 'Teste', 'tete', '3', 'teste', 100, NULL, '1970-01-01', '1970-01-01', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'Nao sei landia', '1', '2019-04-08 19:24:04'),
+(15, 'Teste', 'tete', '3', 'teste', 100, NULL, '1970-01-01', '1970-01-01', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'Nao sei landia', '1', '2019-04-08 19:26:50'),
+(16, 'Teste', 'tete', '3', 'teste', 100, NULL, '1970-01-01', '1970-01-01', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'Nao sei landia', '1', '2019-04-08 19:33:12'),
+(17, 'Teste', 'teste', '3', '123123', 100, NULL, '2019-03-04', '1970-01-01', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'Nao sei landia', '1', '2019-04-08 19:33:53'),
+(18, 'Teste', 'teste', '3', '123123', 100, NULL, '2019-04-17', '2019-04-16', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'Nao sei landia', '1', '2019-04-08 19:45:03'),
+(19, 'Test', 'test', '3', '123123', 100, NULL, '2019-04-10', '2019-04-17', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, '123123', '1', '2019-04-08 19:49:47'),
+(20, 'teste', 'teste', '3', '123123', 100, NULL, '2019-04-12', '2019-04-26', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, '123123', '1', '2019-04-08 19:51:09'),
+(21, 'Teste', 'Teste', '3', '123123', 100, NULL, '2019-04-03', '2019-04-18', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', NULL, 'teste', '1', '2019-04-08 19:57:48');
 
 -- --------------------------------------------------------
 
@@ -282,7 +296,7 @@ ALTER TABLE `permission_user`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `id_branch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_branch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -306,7 +320,7 @@ ALTER TABLE `members_music`
 -- AUTO_INCREMENT for table `members_rkmd`
 --
 ALTER TABLE `members_rkmd`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `member_type`

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php $this->load_head(); ?>
+<?php $this->load_head();?>
 <body>
 
 <!-- Sidenav -->
@@ -133,7 +133,7 @@
     </li>
 
     
-    <li id="sidenav-logout"><a class="waves-effect"><i class="material-icons left">vpn_key</i>Logout</a></li>
+    <li id="sidenav-logout"><a href="<?php echo BASE_URL.'login/logout'; ?>" class="waves-effect"><i class="material-icons left">vpn_key</i>Logout</a></li>
 </ul>
 
 <!-- /Sidenav -->
@@ -157,7 +157,7 @@
                 </ul>
 
 
-            <li class="hide-on-med-and-down"><a><i class="material-icons left">vpn_key</i>Logout</a></li>
+            <li class="hide-on-med-and-down"><a href="<?php echo BASE_URL.'login/logout'; ?>"><i class="material-icons left">vpn_key</i>Logout</a></li>
         </ul>
 
 

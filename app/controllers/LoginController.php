@@ -22,12 +22,21 @@ class LoginController extends Controller{
         if($correct){
             if($postUser == $correct[0]->username_member && $postPass == $correct[0]->pass_member){
                 session_start();
+
                 $_SESSION["id"] = $correct[0]->id_member;
+                $_SESSION["branch"] = $correct[0]->id_branch;
+                $_SESSION["permission"] = $correct[0]->permission_member;
                 header("location:".BASE_URL."dashboard");
             }
             else{
                 header("location:".BASE_URL."login");
             };
         }
+    }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+        header("location:".BASE_URL."login");
     }
 }

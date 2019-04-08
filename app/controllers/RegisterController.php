@@ -19,9 +19,9 @@ class RegisterController extends Controller{
         $data["member_permission"] = $query->select("permission_user");
         $data["member_branch"] = $query->select("branch");
 
-
+        $this->add_viewTitle("Registro de novo membro");
         $this->add_params($data,0);
-        $this->add_view("dashboard_registermember");
+        $this->add_view("dashboard_form_member");
         $this->master_interface("dashboard");
     }
 
@@ -30,7 +30,7 @@ class RegisterController extends Controller{
 
         $name_member            = isset($_POST["name_member"])? strip_tags(filter_input(INPUT_POST,"name_member")):NULL;
         $username_member        = isset($_POST["username_member"])? strip_tags(filter_input(INPUT_POST,"username_member")):NULL;
-        $id_type            = isset($_POST["id_type"])? strip_tags(filter_input(INPUT_POST,"id_type")):NULL;
+        $id_type                = isset($_POST["id_type"])? strip_tags(filter_input(INPUT_POST,"id_type")):NULL;
         $pass_member            = isset($_POST["pass_member"])? strip_tags(filter_input(INPUT_POST,"pass_member")):NULL;
         $permission_member      = isset($_POST["permission_member"])? strip_tags(filter_input(INPUT_POST,"permission_member")):NULL;
         $id_branch              = isset($_POST["id_branch"])? strip_tags(filter_input(INPUT_POST,"id_branch")):NULL;
@@ -49,12 +49,12 @@ class RegisterController extends Controller{
         $allDatas = array(
             "name_member"           =>      $name_member,
             "username_member"       =>      $username_member,
-            "id_type"           =>      $id_type,
+            "id_type"               =>      $id_type,
             "pass_member"           =>      $pass_member,
             "permission_member"     =>      $permission_member,
             "id_branch"             =>      $id_branch,
-            "entrydate_member"      =>      $entrydate_member,
-            "birth_member"          =>      $birth_member,
+            "entrydate_member"      =>      formatDate($entrydate_member,"USA"),
+            "birth_member"          =>      formatDate($birth_member,"USA"),
             "tel_member"            =>      $tel_member,
             "rg_member"             =>      $rg_member,
             "zip_member"            =>      $zip_member,
@@ -73,7 +73,7 @@ class RegisterController extends Controller{
     public function event(){
         $this->security();
 
-        $this->add_view("dashboard_registerevent");
+        $this->add_view("dashboard_form_member");
         $this->master_interface("dashboard");
     }
 

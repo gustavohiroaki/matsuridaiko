@@ -7,13 +7,14 @@ abstract class Controller{
     protected $viewName;
     protected $params;
     protected $needParam;
+    protected $viewTitle;
 
     protected function security(){
         session_start();
 
         if(!$_SESSION["id"]){
             session_destroy();
-            header("location: /login");
+            header("location:".BASE_URL."login");
         }
 
     }
@@ -25,6 +26,10 @@ abstract class Controller{
     public function add_params($params,$needParam){
         $this->params = $params;
         $this->needParam = $needParam;
+    }
+
+    public function add_viewTitle($viewTitle){
+        $this->viewTitle = $viewTitle;
     }
 
 

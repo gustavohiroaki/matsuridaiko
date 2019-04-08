@@ -10,7 +10,7 @@ class Login extends Model{
     }
 
     public function login($user){
-        $sql = "SELECT id_member,username_member,pass_member FROM members_rkmd WHERE username_member = ?";
+        $sql = "SELECT id_member,permission_member,id_branch,username_member,pass_member FROM members_rkmd WHERE username_member = ?";
         $qry = $this->db->prepare($sql);
         $qry->bindValue(1,$user);
         $qry->execute();

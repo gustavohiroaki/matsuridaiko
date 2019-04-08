@@ -63,6 +63,13 @@ nav *,nav ul a{
 
 /* /Sidenav */
 
+/* Cancel Materialize Params */
+label .cancelLabel{
+    -webkit-transform: translateY(-14px) scale(0.8);
+    transform: translateY(-14px) scale(0.8);
+}
+/* Cancel Materialize Params */
+
 
 ::-webkit-scrollbar-track
 {

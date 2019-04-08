@@ -26,27 +26,26 @@
 <script>
       $(document).ready(function(){
         //Materialize
+        
         $('.sidenav').sidenav();
         $('.collapsible').collapsible({
             draggable: true
         });
         $('.dropdown-trigger').dropdown();
         $(document).ready(function(){
-            $('.datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
+            $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
         });
         $(document).ready(function(){
             $('select').formSelect();
         });
+        
         
          
         // Materialize
 
 
         $( function() {
-            $( ".datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true
-            });
+            $( ".datepicker" ).datepicker("option", "dateFormat", "dd-mm-yy");
         } );
         
         // mask
