@@ -33,7 +33,7 @@ class RegisterController extends Controller{
         $id_type                = isset($_POST["id_type"])? strip_tags(filter_input(INPUT_POST,"id_type")):NULL;
         $pass_member            = isset($_POST["pass_member"])? strip_tags(filter_input(INPUT_POST,"pass_member")):NULL;
         $permission_member      = isset($_POST["permission_member"])? strip_tags(filter_input(INPUT_POST,"permission_member")):NULL;
-        $id_branch              = isset($_POST["id_branch"])? strip_tags(filter_input(INPUT_POST,"id_branch")):NULL;
+        $member_branch          = isset($_POST["member_branch"])? strip_tags(filter_input(INPUT_POST,"member_branch")):NULL;
         $entrydate_member       = isset($_POST["entrydate_member"])? strip_tags(filter_input(INPUT_POST,"entrydate_member")):NULL;
         $birth_member           = isset($_POST["birth_member"])? strip_tags(filter_input(INPUT_POST,"birth_member")):NULL;
         $tel_member             = isset($_POST["tel_member"])? strip_tags(filter_input(INPUT_POST,"tel_member")):NULL;
@@ -52,7 +52,7 @@ class RegisterController extends Controller{
             "id_type"               =>      $id_type,
             "pass_member"           =>      $pass_member,
             "permission_member"     =>      $permission_member,
-            "id_branch"             =>      $id_branch,
+            "id_branch"             =>      $member_branch,
             "entrydate_member"      =>      formatDate($entrydate_member,"USA"),
             "birth_member"          =>      formatDate($birth_member,"USA"),
             "tel_member"            =>      $tel_member,

@@ -30,18 +30,26 @@
 
     $("#input-member").submit(function(e){
         e.preventDefault();
+
         var form = $(this);
         var uri = (window.location.pathname).split("/");
-        switch(uri[2]){
-            case "register":
+
+        uri.find(checkType);
+
+        function checkType(type){
+
+            if(type=="register"){
+                console.log("register");
                 insertForm(form);
-                // console.log(form);
-                break;
+            }
+            if(type=="update"){
+                console.log("update");
+                updateForm(form);
+            }
             
         }
             
 
-        // insertForm(form);
     })
 
     function insertForm(d){
@@ -58,7 +66,24 @@
         }
         function fail(data){
             console.log(data);
-            alert("Houve uma falha de inserção de dados, contato o administrador do sistema.");
+            alert("Houve uma falha de inserção de dados, contate o administrador do sistema.");
+        }
+    }
+
+    function updateForm(d){
+        $.ajax({
+            type:"POST",
+            data:d.serialize(),
+            url: "http://localhost/matsuridaiko/update/updateMember"
+        }).then(success,fail)
+
+        function success(data){
+            console.log(data);
+            alert("Dados Atualizados com Sucesso");
+        }
+        function fail(data){
+            console.log(data);
+            alert("Houve uma falha de atualização de dados, contate o administrador do sistema.");
         }
     }
 

@@ -1,8 +1,7 @@
 <?php 
 
 $data = $this->params;
-// dd($data["member_info"]);
-// dd($data["member_info"]);
+
 ?>
 
 <main class="dash-container">

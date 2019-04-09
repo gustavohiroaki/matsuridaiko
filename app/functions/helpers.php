@@ -3,7 +3,7 @@
 //console array test
 function cat($a){
     echo "<script>";
-    var_dump($a);
+    echo "console.log(".var_dump($a).")";
     echo "</script>";
 }
 
