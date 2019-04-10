@@ -32,12 +32,12 @@ $data = $this->params;
         </div>
         <div class="input-field col l6 m6 s6">
             <label for="pass_member">Senha</label>
-            <input type="password" id="pass_member" name="pass_member">
+            <input type="password" id="pass_member" name="pass_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->pass_member;} ?>">
         </div>
 
         <div class="input-field col l6 m6 s6">
             <label for="pass2_member">Confirmação de Senha</label>
-            <input type="password" id="pass2_member">
+            <input type="password" id="pass2_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->pass_member;} ?>">
         </div>
     </div>
     <h3 class="center">Dados Membros</h3>
@@ -109,6 +109,11 @@ $data = $this->params;
         </div>
 
         <div class="input-field col l8 m6 s12">
+            <label for="street_member">Rua</label>
+            <input type="text" id="street_member" name="street_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->street_member;} ?>">
+        </div>
+
+        <div class="input-field col l12 m12 s12">
             <label for="complement_member">Complemento</label>
             <input type="text" id="complement_member" name="complement_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->complement_member;} ?>">
         </div>

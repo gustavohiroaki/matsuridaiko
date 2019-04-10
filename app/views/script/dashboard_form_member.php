@@ -22,6 +22,7 @@
                 $("#state_member").val(data.uf);
                 $("#city_member").val(data.localidade);
                 $("#neighboorhood_member").val(data.bairro);
+                $("#street_member").val(data.logradouro);
                 M.updateTextFields();
             });
 
