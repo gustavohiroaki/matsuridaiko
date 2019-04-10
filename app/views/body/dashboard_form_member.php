@@ -10,6 +10,7 @@ $data = $this->params;
 <form id="input-member" name="input-member">
 <h3 class="center">Dados Pessoais</h3>
     <div class="row">
+        <input type="hidden" id="id_member" name="id_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->id_member;} ?>">
         
         <div class="input-field col l12 m12 s12">
             <label for="name_member">Nome do Integrante</label>

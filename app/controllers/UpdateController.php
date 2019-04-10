@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\Basics;
 use app\models\ConsultModel;
+use app\models\UpdateModel;
 
 class UpdateController extends Controller{
     public function index(){
@@ -28,8 +29,9 @@ class UpdateController extends Controller{
     }
 
     public function updateMember(){
-                $this->security();
+        $this->security();
 
+        $id_member              = isset($_POST["id_member"])? strip_tags(filter_input(INPUT_POST,"id_member")):NULL;
         $name_member            = isset($_POST["name_member"])? strip_tags(filter_input(INPUT_POST,"name_member")):NULL;
         $username_member        = isset($_POST["username_member"])? strip_tags(filter_input(INPUT_POST,"username_member")):NULL;
         $id_type                = isset($_POST["id_type"])? strip_tags(filter_input(INPUT_POST,"id_type")):NULL;
@@ -44,11 +46,13 @@ class UpdateController extends Controller{
         $state_member           = isset($_POST["state_member"])? strip_tags(filter_input(INPUT_POST,"state_member")):NULL;
         $city_member            = isset($_POST["city_member"])? strip_tags(filter_input(INPUT_POST,"city_member")):NULL;
         $neighboorhood_member   = isset($_POST["neighboorhood_member"])? strip_tags(filter_input(INPUT_POST,"neighboorhood_member")):NULL;
+        $street_member          = isset($_POST["street_member"])? strip_tags(filter_input(INPUT_POST,"street_member")):NULL;
         $complement_member      = isset($_POST["complement_member"])? strip_tags(filter_input(INPUT_POST,"complement_member")):NULL;
         $status_member          = isset($_POST["status_member"])? strip_tags(filter_input(INPUT_POST,"status_member")):NULL;
         
         
         $allDatas = array(
+            "id_member"             =>      $id_member,
             "name_member"           =>      $name_member,
             "username_member"       =>      $username_member,
             "id_type"               =>      $id_type,
@@ -63,11 +67,13 @@ class UpdateController extends Controller{
             "state_member"          =>      $state_member,
             "city_member"           =>      $city_member,
             "neighboorhood_member"  =>      $neighboorhood_member,
+            "street_member"         =>      $street_member,
             "complement_member"     =>      $complement_member,
             "status_member"         =>      $status_member
         );
 
-        cat($allDatas);
+        $update = new UpdateModel;
+        $update->updateMember($allDatas);
     }
 
 }

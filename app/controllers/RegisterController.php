@@ -42,6 +42,7 @@ class RegisterController extends Controller{
         $state_member           = isset($_POST["state_member"])? strip_tags(filter_input(INPUT_POST,"state_member")):NULL;
         $city_member            = isset($_POST["city_member"])? strip_tags(filter_input(INPUT_POST,"city_member")):NULL;
         $neighboorhood_member   = isset($_POST["neighboorhood_member"])? strip_tags(filter_input(INPUT_POST,"neighboorhood_member")):NULL;
+        $street_member          = isset($_POST["street_member"])? strip_tags(filter_input(INPUT_POST,"street_member")):NULL;
         $complement_member      = isset($_POST["complement_member"])? strip_tags(filter_input(INPUT_POST,"complement_member")):NULL;
         $status_member          = isset($_POST["status_member"])? strip_tags(filter_input(INPUT_POST,"status_member")):NULL;
         
@@ -61,6 +62,7 @@ class RegisterController extends Controller{
             "state_member"          =>      $state_member,
             "city_member"           =>      $city_member,
             "neighboorhood_member"  =>      $neighboorhood_member,
+            "street_member"         =>      $street_member,
             "complement_member"     =>      $complement_member,
             "status_member"         =>      $status_member
         );
