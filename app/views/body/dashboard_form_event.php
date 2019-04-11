@@ -9,18 +9,31 @@
         </div>
 
         <div class="input-field col l12 m12 s12">
-            <label for="dateinit_event">Data do Início do evento</label>
-            <input type="text" id="dateinit_event" name="dateinit_event">
+            <label for="date_init">Data do Início do evento</label>
+            <input class="datepicker" type="text" id="date_init" name="date_init">
         </div>
 
         <div class="input-field col l12 m12 s12">
-            <label for="datefin_event">Data do Final do evento</label>
-            <input type="text" id="	datefin_event" name="datefin_event">
+            <label for="hour_init">Horário do Início do evento</label>
+            <input class="timepicker" type="text" id="hour_init" name="hour_init">
         </div>
+
+        <div class="input-field col l12 m12 s12">
+            <label for="date_fin">Data do Final do evento</label>
+            <input class="datepicker" type="text" id="	date_fin" name="date_fin">
+        </div>
+
+        <div class="input-field col l12 m12 s12">
+            <label for="hour_fin">Horário do Final do evento</label>
+            <input class="timepicker" type="text" id=" hour_fin" name="hour_fin">
+        </div>
+
+        <input type="hidden" name="dateinit_event">
+        <input type="hidden" name="datefin_event">
 
         <div class="input-field col l12 m12 s12">
             <label for="zip_event">CEP</label>
-            <input type="text" id="	zip_event" name="zip_event">
+            <input type="text" id="zip_event" name="zip_event">
         </div>
 
         <div class="input-field col l12 m12 s12">

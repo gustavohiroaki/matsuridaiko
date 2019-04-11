@@ -7,7 +7,7 @@ $data = $this->params;
 <main class="dash-container">
 <h2 class="center"><?php echo $this->viewTitle; ?></h2>
 
-<form id="input-member" name="input-member">
+<form id="input-member" name="input-member" autocomplete="off">
 <h3 class="center">Dados Pessoais</h3>
     <div class="row">
         <input type="hidden" id="id_member" name="id_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->id_member;} ?>">

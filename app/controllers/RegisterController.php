@@ -75,7 +75,7 @@ class RegisterController extends Controller{
     public function event(){
         $this->security();
 
-        $this->add_view("dashboard_form_member");
+        $this->add_view("dashboard_form_event");
         $this->master_interface("dashboard");
     }
 
