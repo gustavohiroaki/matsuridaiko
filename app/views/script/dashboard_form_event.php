@@ -6,6 +6,15 @@
     })
 
 
+
+    $("#date_init,#hour_init,#date_fin,#hour_fin").blur(function(e){
+        setTimeout(() => {
+            M.updateTextFields();
+        }, 160);
+    })
+
+
+
     function cepComplement(cep){
         $.ajax({
                 type:"GET",

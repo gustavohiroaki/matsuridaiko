@@ -8,9 +8,8 @@
     $("#entrydate_member,#birth_member").blur(function(e){
         setTimeout(() => {
             M.updateTextFields();
-        }, 120);
+        }, 160);
     })
-
 
     function cepComplement(cep){
         $.ajax({

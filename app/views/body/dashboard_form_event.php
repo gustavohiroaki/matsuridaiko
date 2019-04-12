@@ -1,7 +1,7 @@
 <main class="dash-container">
 <h2>Cadastro de Eventos</h2>
 
-<form id="input-member" name="input-member">
+<form id="input-member" name="input-member" autocomplete="off">
     <div class="row">
         <div class="input-field col l12 m12 s12">
             <label for="name_event">Nome do Eventos</label>
@@ -15,21 +15,18 @@
 
         <div class="input-field col l12 m12 s12">
             <label for="hour_init">Horário do Início do evento</label>
-            <input class="timepicker" type="text" id="hour_init" name="hour_init">
+            <input type="time" id="hour_init" name="hour_init">
         </div>
 
         <div class="input-field col l12 m12 s12">
             <label for="date_fin">Data do Final do evento</label>
-            <input class="datepicker" type="text" id="	date_fin" name="date_fin">
+            <input class="datepicker" type="text" id="date_fin" name="date_fin">
         </div>
 
         <div class="input-field col l12 m12 s12">
             <label for="hour_fin">Horário do Final do evento</label>
-            <input class="timepicker" type="text" id=" hour_fin" name="hour_fin">
+            <input type="time" id="hour_fin" name="hour_fin">
         </div>
-
-        <input type="hidden" name="dateinit_event">
-        <input type="hidden" name="datefin_event">
 
         <div class="input-field col l12 m12 s12">
             <label for="zip_event">CEP</label>

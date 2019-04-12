@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/jquery-ui.min.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/dashboard.css">
-        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/wickedpicker.min.css">
+        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/jquery.clockinput.min.css">
 
         <!-- Scripts -->
 <!-- Compiled and minified JavaScript -->
@@ -18,7 +18,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery-ui.min.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.mask.min.js"></script>
-<script src="<?php echo BASE_URL_ASSETS ?>_js/_include/wickedpicker.js"></script>
+<script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.clockinput.min.js"></script>
 <script>
       $(document).ready(function(){
         //Materialize
@@ -28,8 +28,7 @@
         });
         $('.dropdown-trigger').dropdown();
 
-        $('.datepicker').datepicker({ dateFormat: 'dd/mm/yy' });
-        $('.timepicker').wickedpicker();
+        $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
 
          
         // Materialize
