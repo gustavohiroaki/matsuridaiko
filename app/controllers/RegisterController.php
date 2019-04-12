@@ -117,9 +117,9 @@ class RegisterController extends Controller{
             "responsible_event"=>$responsible_event,
             "status_event"=>$status_event
         );
-        cat($allDatas);
+
         $insert = new RegisterModel;
-        // $insert->registerEvent($allDatas);
+        $insert->registerEvent($allDatas);
 
     }
 
