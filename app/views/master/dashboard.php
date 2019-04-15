@@ -31,7 +31,7 @@
                     <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
                     <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Alteração de dados de Eventos</a></li><!-- Only for admin -->
                 <li><a href="<?php echo BASE_URL ?>consult/pastEvents">Eventos Anteriores</a></li>
-                <li><a href="#">Próximos Eventos</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/nextEvents">Próximos Eventos</a></li>
             </ul>
         </div>
     </li>
@@ -97,7 +97,7 @@
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
                     <li><a href="<?php echo BASE_URL ?>consult/pastEvents">Eventos Anteriores</a></li>
-                <li><a href="#">Próximos Eventos</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/nextEvents">Próximos Eventos</a></li>
             </ul>
         </div>
     </li>
