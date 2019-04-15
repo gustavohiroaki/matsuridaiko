@@ -28,6 +28,7 @@ class RegisterController extends Controller{
     public function sendMember(){
         $this->security();
 
+        $id_member              = isset($_POST["id_member"])? strip_tags(filter_input(INPUT_POST,"id_member")):NULL;
         $name_member            = isset($_POST["name_member"])? strip_tags(filter_input(INPUT_POST,"name_member")):NULL;
         $username_member        = isset($_POST["username_member"])? strip_tags(filter_input(INPUT_POST,"username_member")):NULL;
         $id_type                = isset($_POST["id_type"])? strip_tags(filter_input(INPUT_POST,"id_type")):NULL;
@@ -48,6 +49,7 @@ class RegisterController extends Controller{
         
         
         $allDatas = array(
+            "id_member"             =>      $id_member,
             "name_member"           =>      $name_member,
             "username_member"       =>      $username_member,
             "id_type"               =>      $id_type,
@@ -66,7 +68,7 @@ class RegisterController extends Controller{
             "complement_member"     =>      $complement_member,
             "status_member"         =>      $status_member
         );
-
+        cat($allDatas);
 
         $insert = new RegisterModel;
         $insert->registerMember($allDatas);
@@ -117,9 +119,9 @@ class RegisterController extends Controller{
             "responsible_event"=>$responsible_event,
             "status_event"=>$status_event
         );
-        cat($allDatas);
+
         $insert = new RegisterModel;
-        // $insert->registerEvent($allDatas);
+        $insert->registerEvent($allDatas);
 
     }
 

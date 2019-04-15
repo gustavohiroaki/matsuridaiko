@@ -27,4 +27,13 @@ class ConsultController extends Controller{
     public function shinjin(){
 
     }
+
+    public function pastEvents(){
+        $query = new ConsultModel();
+        $data["pastEvents"] = $query->pastEvents();
+
+        $this->add_params($data,0);
+        $this->add_view("dashboard_consultPastEvents");
+        $this->master_interface("dashboard");
+    }
 }

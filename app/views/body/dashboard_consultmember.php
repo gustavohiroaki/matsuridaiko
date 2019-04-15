@@ -1,4 +1,4 @@
-<main class="dash-container">
+
 <?php $data = $this->params;?>
 <table>
     <thead>
@@ -21,4 +21,3 @@
         <?php } ?>
     </tbody>
 </table>
-</main>

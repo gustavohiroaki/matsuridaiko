@@ -4,7 +4,7 @@ $data = $this->params;
 
 ?>
 
-<main class="dash-container">
+
 <h2 class="center"><?php echo $this->viewTitle; ?></h2>
 
 <form id="input-member" name="input-member" autocomplete="off">
@@ -131,4 +131,3 @@ $data = $this->params;
     </div>
 </form>
 
-</main>

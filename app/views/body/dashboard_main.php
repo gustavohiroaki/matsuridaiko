@@ -1,4 +1,4 @@
-<main class="dash-container">
+
 
 <div class="row">
 
@@ -82,6 +82,3 @@
       </table>
 
 <!-- /Table -->
-
-</main>
-

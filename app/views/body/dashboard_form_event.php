@@ -1,4 +1,4 @@
-<main class="dash-container">
+
 <h2>Cadastro de Eventos</h2>
 
 <form id="input-member" name="input-member" autocomplete="off">
@@ -79,4 +79,3 @@
     </div>
 </form>
 
-</main>
