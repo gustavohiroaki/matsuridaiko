@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<?php 
+    require '../../config/const.php';
+    $apiConnect = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+    $sql = "SELECT * FROM events";
+    $qry = $apiConnect->query($sql);
+?>
 <head>
 <meta charset='utf-8' />
 <link href='packages/core/main.css' rel='stylesheet' />
@@ -18,60 +24,15 @@
       editable: true,
       eventLimit: true, // allow "more" link when too many events
       events: [
+        
+        <?php while($data = $qry->fetch_assoc()){ ?>
         {
-          title: 'All Day Event',
-          start: '2019-04-01'
+          title: '<?php echo $data["name_event"]; ?>',
+          start: '<?php echo $data["dateinit_event"]; ?>',
+          end:   '<?php echo $data["datefin_event"]; ?>',
+          url:   'http://www.google.com.br/'
         },
-        {
-          title: 'Long Event',
-          start: '2019-04-07',
-          end: '2019-04-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2019-04-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2019-04-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2019-04-11',
-          end: '2019-04-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2019-04-12T10:30:00',
-          end: '2019-04-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2019-04-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2019-04-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2019-04-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2019-04-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2019-04-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2019-04-28'
-        }
+        <?php } ?>
       ]
     });
 

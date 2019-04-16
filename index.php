@@ -14,3 +14,5 @@ $core->execFunc();
 // echo "<br>";
 // echo "<pre>";
 // print_r($core->getParameters());
+?>
+

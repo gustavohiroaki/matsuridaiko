@@ -8,32 +8,43 @@
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/materialize.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/dashboard.css">
-        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>fullCalendar/core/main.css">
-        <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>fullCalendar/daygrid/main.css">
+        <style>
+        .iframe-container {
+
+
+        position: relative;
+        }
+        
+        .iframe-container iframe {
+            padding: 15px;
+        border: 0;
+        height: 1000px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        }
+        
+        /* 4x3 Aspect Ratio */
+        .iframe-container-4x3 {
+        padding-top: 75%;
+        }
+        </style>
+
 
         <!-- Scripts -->
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="<?php echo BASE_URL_ASSETS ?>fullCalendar/daygrid/main.js"></script>
-        <script src="<?php echo BASE_URL_ASSETS ?>fullCalendar/interaction/main.js"></script>
-        <script src="<?php echo BASE_URL_ASSETS ?>fullCalendar/core/main.js"></script>
         <script>
-
-
-
-            // FullCalendar v4
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: [ 'dayGrid' ]
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+                $('.collapsible').collapsible({
+                    draggable: true
+                });
+                $('.dropdown-trigger').dropdown();
             });
-
-            calendar.render();
-        });
-
+            document.getElementById('calendar-frame').location.reload();
         </script>
 
 

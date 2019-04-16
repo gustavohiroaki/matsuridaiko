@@ -21,7 +21,7 @@
                 });
                 $('.dropdown-trigger').dropdown();
             });
-
+            
         </script>
 
 
