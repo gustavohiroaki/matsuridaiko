@@ -12,6 +12,19 @@ function formatDate($date,$to){
     return $newDate;
 };
 
+function returnUpdate($d){
+    switch ($d) {
+        case 1:
+            return 'update/shinjin/';
+        
+        case 2:
+            return 'update/junior/';
+
+       case 3:
+           return 'update/member/';
+    }
+}
+
 // $dataUSA = "1998-12-21";
 // $dataBR = "21-12-1998";
 // $formatada = formatDate($dataBR,"USA");

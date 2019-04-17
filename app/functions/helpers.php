@@ -2,9 +2,9 @@
 
 //console array test
 function cat($a){
-    echo "<script>";
-    echo "console.log(".var_dump($a).")";
-    echo "</script>";
+    echo '<script>';
+    echo 'console.log('. json_encode( $a ) .')';
+    echo '</script>';
 }
 
 //Die Dump
