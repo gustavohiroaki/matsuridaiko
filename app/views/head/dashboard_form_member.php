@@ -38,7 +38,7 @@
             $('select').formSelect();
         });
 
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
         // Materialize
 
 

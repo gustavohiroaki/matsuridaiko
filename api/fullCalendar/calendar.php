@@ -3,6 +3,7 @@
 <?php 
     require '../../config/const.php';
     $apiConnect = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+    $apiConnect->set_charset("utf8");
     $sql = "SELECT * FROM events";
     $qry = $apiConnect->query($sql);
 ?>
