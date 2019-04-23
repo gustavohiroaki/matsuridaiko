@@ -16,8 +16,8 @@ class ConsultController extends Controller{
     }
 
     public function member(){
-        $query = new ConsultModel;
-        $data["members"] = $query->selectMembers();
+        $member = new ConsultModel;
+        $data["members"] = $member->selectMembers();
 
 
         $this->add_params($data,0);
@@ -26,11 +26,23 @@ class ConsultController extends Controller{
     }
     
     public function junior(){
+        $junior = new ConsultModel;
+        $data["members"] = $junior->selectJuniors();
 
+
+        $this->add_params($data,0);
+        $this->add_view("dashboard_consultmember");
+        $this->master_interface("dashboard");
     }
 
     public function shinjin(){
+        $shinjin = new ConsultModel;
+        $data["members"] = $shinjin->selectShinjins();
 
+
+        $this->add_params($data,0);
+        $this->add_view("dashboard_consultmember");
+        $this->master_interface("dashboard");
     }
 
     public function pastEvents(){

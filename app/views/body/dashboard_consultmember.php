@@ -1,5 +1,8 @@
 
-<?php $data = $this->params;?>
+<?php $data = $this->params;
+
+cat($data);
+?>
 <table>
     <thead>
         <tr>
@@ -16,7 +19,7 @@
                 <td><?php echo $count->name_member; ?></td>
                 <td><?php echo $count->name_type; ?></td>
                 <td><?php echo $count->name_branch; ?></td>
-                <td><a href="<?php echo BASE_URL.'update/member/'.$count->id_member; ?>"><i class="material-icons">create</i></a></td>
+                <td><a href="<?php echo BASE_URL.returnUpdate($count->id_type).$count->id_member; ?>"><i class="material-icons">create</i></a></td>
             </tr>
         <?php } ?>
     </tbody>
