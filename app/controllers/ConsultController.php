@@ -10,6 +10,11 @@ class ConsultController extends Controller{
 
     }
 
+    public function allMembers(){
+        $this->add_view("dashboard_consultAllMembers");
+        $this->master_interface("dashboard");
+    }
+
     public function member(){
         $query = new ConsultModel;
         $data["members"] = $query->selectMembers();
