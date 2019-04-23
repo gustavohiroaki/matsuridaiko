@@ -1,10 +1,14 @@
 <?php
 
 //console array test
-function cat($a){
+function catjson($a){
     echo '<script>';
     echo 'console.log('. json_encode( $a ) .')';
     echo '</script>';
+}
+
+function cat( $data ) {
+    echo "'<script>console.log(\"$data\")</script>'";
 }
 
 //Die Dump

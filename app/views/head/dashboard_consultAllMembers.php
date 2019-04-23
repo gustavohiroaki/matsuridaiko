@@ -20,6 +20,7 @@
                     draggable: true
                 });
                 $('.dropdown-trigger').dropdown();
+                $('select').formSelect();
             });
 
         </script>

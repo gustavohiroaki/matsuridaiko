@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\core\Controller;
+use app\models\Basics;
 use app\models\ConsultModel;
 
 class ConsultController extends Controller{
@@ -11,8 +12,21 @@ class ConsultController extends Controller{
     }
 
     public function allMembers(){
+        $filter = new Basics;
+        $select = new ConsultModel;
+        $data["filter_branch"] = $filter->select("branch");
+        $data["all_members"] =$select->selectAllMembers();
+
+        $this->add_params($data,0);
         $this->add_view("dashboard_consultAllMembers");
         $this->master_interface("dashboard");
+    }
+
+    public function filterAllMembers(){
+        $name = isset($_POST["name"])? strip_tags(filter_input(INPUT_POST,"name")):NULL;
+        $filter_branch = isset($_POST["filter_branch"])? strip_tags(filter_input(INPUT_POST,"filter_branch")):NULL;
+    
+        
     }
 
     public function member(){

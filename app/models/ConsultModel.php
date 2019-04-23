@@ -9,6 +9,19 @@ class ConsultModel extends Model{
         parent::__construct();
     }
 
+    public function selectAllMembers(){
+        $sql  = "SELECT * FROM members_rkmd ";
+        $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
+        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
+
+        $select = $this->db->query($sql);
+        return $select->fetchAll();
+    }
+
+    public function filterAllMembers(){
+        
+    }
+
     public function selectMembers($where=""){
         $sql  = "SELECT * FROM members_rkmd ";
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";

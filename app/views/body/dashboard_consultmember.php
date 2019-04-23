@@ -1,7 +1,6 @@
 
 <?php $data = $this->params;
 
-cat($data);
 ?>
 <table>
     <thead>
