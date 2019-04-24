@@ -8,7 +8,9 @@ function catjson($a){
 }
 
 function cat( $data ) {
-    echo "'<script>console.log(\"$data\")</script>'";
+    echo '<script>';
+    echo 'console.log('. var_dump($data).')';
+    echo '</script>';
 }
 
 //Die Dump

@@ -19,12 +19,15 @@ class ConsultModel extends Model{
     }
 
     public function filterAllMembers($name, $id_branch){
-        $sql = "SELECT * FROM members_rkmd WHERE id_member > 0 ";
+        $sql = "SELECT * FROM members_rkmd ";
+        $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
+        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
+        $sql .= "WHERE members_rkmd.id_member > 0 ";
         if($name!==""){
-            $sql.= "AND name_member LIKE '%{$name}%' ";
+            $sql.= "AND members_rkmd.name_member LIKE '%{$name}%' ";
         }
         if($id_branch!==""){
-            $sql.= "AND id_branch = {$id_branch} ";
+            $sql.= "AND members_rkmd.id_branch = {$id_branch} ";
         }
         $select = $this->db->query($sql);
         return json_encode($select->fetchAll());

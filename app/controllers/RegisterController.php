@@ -88,6 +88,7 @@ class RegisterController extends Controller{
         $hour_init              =       isset($_POST["hour_init"])? strip_tags(filter_input(INPUT_POST,"hour_init")):NULL;
         $date_fin               =       isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
         $hour_fin               =       isset($_POST["hour_fin"])? strip_tags(filter_input(INPUT_POST,"hour_fin")):NULL;
+        $numbermember_event     =       isset($_POST["numbermember_event"])? strip_tags(filter_input(INPUT_POST,"numbermember_event")):NULL;
         $zip_event              =       isset($_POST["zip_event"])? strip_tags(filter_input(INPUT_POST,"zip_event")):NULL;
         $state_event            =       isset($_POST["state_event"])? strip_tags(filter_input(INPUT_POST,"state_event")):NULL;
         $city_event             =       isset($_POST["city_event"])? strip_tags(filter_input(INPUT_POST,"city_event")):NULL;
@@ -109,6 +110,7 @@ class RegisterController extends Controller{
             "hour_fin"=>$hour_fin,
             "dateinit_event"=>$date_init." ".$hour_init,
             "datefin_event"=>$date_fin." ".$hour_fin,
+            "numbermember_event"=>$numbermember_event,
             "zip_event"=>$zip_event,
             "state_event"=>$state_event,
             "city_event"=>$city_event,

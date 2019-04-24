@@ -1,5 +1,18 @@
 <script>
 
+    function returnUpdate(number){
+        switch(number){
+            case '1':
+                return 'update/shinjin/';
+                break;
+            case '2':
+                return 'update/junior/';
+                break;
+            case '3':
+                return 'update/member/';
+                break;
+        }
+    }
 
 
     $("#filter_member").submit(function(e){
@@ -27,9 +40,9 @@
             obj.forEach(function(e){
                 $("tbody").append('<tr>');
                 $("tbody").append('<td>'+e["name_member"]+'</td>');
-                $("tbody").append('<td>'+e["name_member"]+'</td>');
-                $("tbody").append('<td>'+e["name_member"]+'</td>');
-                $("tbody").append('<td>'+e["name_member"]+'</td>');
+                $("tbody").append('<td>'+e["name_type"]+'</td>');
+                $("tbody").append('<td>'+e["name_branch"]+'</td>');
+                $("tbody").append('<td><a href="http://localhost/matsuridaiko/'+returnUpdate(e["id_type"])+e["id_member"]+'"><i class="material-icons">create</i></a></td>');
                 $("tbody").append('</tr>');
             })
         }

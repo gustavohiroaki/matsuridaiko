@@ -29,6 +29,11 @@
         </div>
 
         <div class="input-field col l12 m12 s12">
+            <label for="numbermember_event">Número de Memberos Necessários</label>
+            <input type="number" id="numbermember_event" name="numbermember_event">
+        </div>
+
+        <div class="input-field col l12 m12 s12">
             <label for="zip_event">CEP</label>
             <input type="text" id="zip_event" name="zip_event">
         </div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Abr-2019 às 04:43
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.10
+-- Generation Time: 24-Abr-2019 às 22:26
+-- Versão do servidor: 10.1.38-MariaDB
+-- versão do PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,8 @@ CREATE TABLE `branch` (
 --
 
 INSERT INTO `branch` (`id_branch`, `name_branch`, `country_branch`, `state_branch`, `city_branch`) VALUES
-(1, 'Guarulhos', 'Brazil', 'São Paulo', 'Guarulhos');
+(1, 'Guarulhos', 'Brazil', 'São Paulo', 'Guarulhos'),
+(2, 'Carrão', 'Brazil', 'São Paulo', 'Vila Carrão');
 
 -- --------------------------------------------------------
 
@@ -58,6 +59,7 @@ CREATE TABLE `events` (
   `hour_fin` time NOT NULL,
   `dateinit_event` datetime DEFAULT NULL,
   `datefin_event` datetime DEFAULT NULL,
+  `numbermember_event` int(11) NOT NULL,
   `zip_event` varchar(9) CHARACTER SET utf8 DEFAULT NULL,
   `state_event` varchar(15) CHARACTER SET utf8 DEFAULT NULL,
   `city_event` varchar(60) CHARACTER SET utf8 DEFAULT NULL,
@@ -74,13 +76,15 @@ CREATE TABLE `events` (
 -- Extraindo dados da tabela `events`
 --
 
-INSERT INTO `events` (`id_event`, `name_event`, `date_init`, `hour_init`, `date_fin`, `hour_fin`, `dateinit_event`, `datefin_event`, `zip_event`, `state_event`, `city_event`, `neighboorhood_event`, `street_event`, `complement_event`, `annotation_event`, `responsible_event`, `status_event`, `log_event`) VALUES
-(20, 'Test1', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '1', '', '2019-04-01 13:29:59'),
-(21, 'Teste111', '2019-04-12', '12:00:00', '2019-04-13', '12:15:00', '2019-04-12 12:00:00', '2019-04-13 12:15:00', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacao', '1', '1', '2019-04-13 01:39:18'),
-(22, 'Evento passado', '2019-02-01', '12:00:00', '2019-02-21', '14:00:00', '2019-02-01 12:00:00', '2019-02-21 14:00:00', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Test', 'Batata', '1', '2019-04-14 01:06:07'),
-(23, 'Evento Futuro', '2019-08-09', '12:00:00', '2019-08-16', '14:00:00', '2019-08-09 12:00:00', '2019-08-16 14:00:00', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Test', 'Batata', '1', '2019-04-14 01:06:29'),
-(24, 'Tesde de evento após git commit', '2019-04-01', '12:13:00', '2019-04-17', '14:14:00', '2019-04-01 12:13:00', '2019-04-17 14:14:00', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'anotacoes', 'Katahira', '1', '2019-04-15 03:38:49'),
-(25, 'Aniversário Argentina', '2019-04-19', '08:00:00', '2019-04-20', '20:00:00', '2019-04-19 08:00:00', '2019-04-20 20:00:00', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Batata', 'N sei', 'Filial Argentina', '1', '2019-04-16 23:11:53');
+INSERT INTO `events` (`id_event`, `name_event`, `date_init`, `hour_init`, `date_fin`, `hour_fin`, `dateinit_event`, `datefin_event`, `numbermember_event`, `zip_event`, `state_event`, `city_event`, `neighboorhood_event`, `street_event`, `complement_event`, `annotation_event`, `responsible_event`, `status_event`, `log_event`) VALUES
+(20, 'Test1', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '', '', '', '', '', '', '', '1', '', '2019-04-01 13:29:59'),
+(21, 'Teste111', '2019-04-12', '12:00:00', '2019-04-13', '12:15:00', '2019-04-12 12:00:00', '2019-04-13 12:15:00', 0, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacao', '1', '1', '2019-04-13 01:39:18'),
+(22, 'Evento passado', '2019-02-01', '12:00:00', '2019-02-21', '14:00:00', '2019-02-01 12:00:00', '2019-02-21 14:00:00', 0, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Test', 'Batata', '1', '2019-04-14 01:06:07'),
+(23, 'Evento Futuro', '2019-08-09', '12:00:00', '2019-08-16', '14:00:00', '2019-08-09 12:00:00', '2019-08-16 14:00:00', 0, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Test', 'Batata', '1', '2019-04-14 01:06:29'),
+(24, 'Tesde de evento após git commit', '2019-04-01', '12:13:00', '2019-04-17', '14:14:00', '2019-04-01 12:13:00', '2019-04-17 14:14:00', 0, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'anotacoes', 'Katahira', '1', '2019-04-15 03:38:49'),
+(25, 'Aniversário Argentina', '2019-04-19', '08:00:00', '2019-04-20', '20:00:00', '2019-04-19 08:00:00', '2019-04-20 20:00:00', 0, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Batata', 'N sei', 'Filial Argentina', '1', '2019-04-16 23:11:53'),
+(26, 'Los Angeles', '2019-04-24', '12:00:00', '2019-04-25', '14:00:00', '2019-04-24 12:00:00', '2019-04-25 14:00:00', 0, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Teste', 'N sei', '1', '2019-04-23 12:20:42'),
+(27, 'Evento teste numero membros', '2019-04-26', '14:44:00', '2019-04-27', '14:44:00', '2019-04-26 14:44:00', '2019-04-27 14:44:00', 1, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', '', '', '1', '2019-04-24 18:58:11');
 
 -- --------------------------------------------------------
 
@@ -140,13 +144,14 @@ CREATE TABLE `members_rkmd` (
 --
 
 INSERT INTO `members_rkmd` (`id_member`, `name_member`, `username_member`, `id_type`, `pass_member`, `permission_member`, `id_branch`, `entrydate_member`, `birth_member`, `tel_member`, `rg_member`, `zip_member`, `state_member`, `city_member`, `neighboorhood_member`, `street_member`, `complement_member`, `status_member`, `log_member`) VALUES
-(1, 'Gustavo Hiroaki Imafuku', 'gustavo.hiroaki', '3', 'gus2019@', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-26 14:30:11'),
+(1, 'Gustavo Hiroaki', 'gustavo.hiroaki', '3', 'gus2019@', 100, 1, '1970-01-01', '1970-01-01', '', '', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', '1', '2019-03-26 14:30:11'),
 (2, NULL, 'hideki.katahira', NULL, 'hide2019', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-03-27 17:31:13'),
 (5, 'Test1', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 11:45:46'),
 (6, '', '', '', '', 0, 0, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-01 12:58:04'),
 (7, 'Bruna Sueko Higa', 'bruna.sueko', '3', 'brubru', 1000, 1, '0000-00-00', '0000-00-00', '', '', '', '', '', '', NULL, '', '', '2019-04-04 18:50:57'),
 (8, 'Teste Cadastro', 'teste.cadastro', '3', '123456', 100, 1, '2019-04-03', '2019-04-03', '123456', '123456', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', '1', '2019-04-14 03:54:18'),
-(9, 'Angélica Nishiharo Kono', 'angelica.kono', '3', 'haichan00', 100, 1, '2017-10-25', '2000-08-13', '(11)97171-8424', '53.348.541-1', '07095-070', 'SP', 'Guarulhos', 'Jardim Zaira', 'Rua Doutor Miguel Vieira Ferreira 119', 'Apartamento', '1', '2019-04-16 23:10:33');
+(9, 'Angélica Nishiharo Kono', 'angelica.kono', '3', 'haichan00', 100, 1, '2017-10-25', '2000-08-13', '(11)97171-8424', '53.348.541-1', '07095-070', 'SP', 'Guarulhos', 'Jardim Zaira', 'Rua Doutor Miguel Vieira Ferreira 119', 'Apartamento', '1', '2019-04-16 23:10:33'),
+(10, 'Mario Kenzo A', 'mario.kassai', '1', '123123', 100, 1, '2019-04-02', '2019-04-02', '123123', '123123', '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', '1', '2019-04-17 19:09:18');
 
 -- --------------------------------------------------------
 
@@ -291,13 +296,13 @@ ALTER TABLE `permission_user`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `id_branch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_branch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `event_music`
@@ -315,7 +320,7 @@ ALTER TABLE `members_music`
 -- AUTO_INCREMENT for table `members_rkmd`
 --
 ALTER TABLE `members_rkmd`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `member_type`

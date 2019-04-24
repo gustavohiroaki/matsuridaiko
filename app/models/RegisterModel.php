@@ -19,7 +19,7 @@ class RegisterModel extends Model{
     }
 
     public function registerEvent($allDatas=array()){
-        $sql = "INSERT INTO events (name_event,date_init,hour_init,date_fin,hour_fin,dateinit_event,datefin_event,zip_event,state_event,city_event,neighboorhood_event,street_event,complement_event,annotation_event,responsible_event,status_event) VALUES (:name_event,:date_init,:hour_init,:date_fin,:hour_fin,:dateinit_event,:datefin_event,:zip_event,:state_event,:city_event,:neighboorhood_event,:street_event,:complement_event,:annotation_event,:responsible_event,:status_event)";
+        $sql = "INSERT INTO events (name_event,date_init,hour_init,date_fin,hour_fin,dateinit_event,datefin_event,numbermember_event,zip_event,state_event,city_event,neighboorhood_event,street_event,complement_event,annotation_event,responsible_event,status_event) VALUES (:name_event,:date_init,:hour_init,:date_fin,:hour_fin,:dateinit_event,:datefin_event,:numbermember_event,:zip_event,:state_event,:city_event,:neighboorhood_event,:street_event,:complement_event,:annotation_event,:responsible_event,:status_event)";
 
         cat($insert = $this->db->prepare($sql));
 

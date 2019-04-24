@@ -16,12 +16,13 @@ function returnUpdate($d){
     switch ($d) {
         case 1:
             return 'update/shinjin/';
-        
+            break;
         case 2:
             return 'update/junior/';
-
+            break;
        case 3:
            return 'update/member/';
+           break;
     }
 }
 
