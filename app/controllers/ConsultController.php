@@ -26,7 +26,8 @@ class ConsultController extends Controller{
         $name = isset($_POST["name"])? strip_tags(filter_input(INPUT_POST,"name")):NULL;
         $filter_branch = isset($_POST["filter_branch"])? strip_tags(filter_input(INPUT_POST,"filter_branch")):NULL;
     
-        
+        $filter = new ConsultModel;
+        echo($filter->filterAllMembers($name,$filter_branch));
     }
 
     public function member(){

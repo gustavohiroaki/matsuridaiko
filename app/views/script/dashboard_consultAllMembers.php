@@ -19,7 +19,19 @@
 
         function success(data){
             console.log(data);
-            alert("Incluido com sucesso!");
+            var obj = jQuery.parseJSON(data);
+
+            // console.log(obj[0]["name_member"]);
+            $("tbody").empty();
+
+            obj.forEach(function(e){
+                $("tbody").append('<tr>');
+                $("tbody").append('<td>'+e["name_member"]+'</td>');
+                $("tbody").append('<td>'+e["name_member"]+'</td>');
+                $("tbody").append('<td>'+e["name_member"]+'</td>');
+                $("tbody").append('<td>'+e["name_member"]+'</td>');
+                $("tbody").append('</tr>');
+            })
         }
         function fail(data){
             console.log(data);

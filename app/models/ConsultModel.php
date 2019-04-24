@@ -18,8 +18,16 @@ class ConsultModel extends Model{
         return $select->fetchAll();
     }
 
-    public function filterAllMembers(){
-        
+    public function filterAllMembers($name, $id_branch){
+        $sql = "SELECT * FROM members_rkmd WHERE id_member > 0 ";
+        if($name!==""){
+            $sql.= "AND name_member LIKE '%{$name}%' ";
+        }
+        if($id_branch!==""){
+            $sql.= "AND id_branch = {$id_branch} ";
+        }
+        $select = $this->db->query($sql);
+        return json_encode($select->fetchAll());
     }
 
     public function selectMembers($where=""){
