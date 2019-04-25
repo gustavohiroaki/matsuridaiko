@@ -30,7 +30,7 @@
         <div class="collapsible-body">
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
-                    <li><a href="<?php echo BASE_URL ?>update/event" class="red lighten-5">Alteração de dados de Eventos</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>consult/allEvents" class="red lighten-5">Consultar Todos os Eventos</a></li><!-- Only for admin -->
                 <li><a href="<?php echo BASE_URL ?>consult/pastEvents">Eventos Anteriores</a></li>
                 <li><a href="<?php echo BASE_URL ?>consult/nextEvents">Próximos Eventos</a></li>
             </ul>
@@ -98,7 +98,7 @@
         <div class="collapsible-body">
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
-                    <li><a href="<?php echo BASE_URL ?>update/event" class="red lighten-5">Alteração de dados de Eventos</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>consult/allEvents" class="red lighten-5">Consultar Todos os Eventos</a></li><!-- Only for admin -->
                 <li><a href="<?php echo BASE_URL ?>consult/pastEvents">Eventos Anteriores</a></li>
                 <li><a href="<?php echo BASE_URL ?>consult/nextEvents">Próximos Eventos</a></li>
             </ul>
