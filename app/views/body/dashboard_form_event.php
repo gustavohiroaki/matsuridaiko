@@ -1,5 +1,5 @@
 
-<h2>Cadastro de Eventos</h2>
+<h2><?php echo $this->viewTitle; ?></h2>
 
 <form id="input-member" name="input-member" autocomplete="off">
     <div class="row">

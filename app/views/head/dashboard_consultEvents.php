@@ -20,6 +20,8 @@
                     draggable: true
                 });
                 $('.dropdown-trigger').dropdown();
+
+                $('.datepicker').datepicker({format: 'dd-mm-yyyy'  });
             });
             
         </script>

@@ -72,6 +72,14 @@ class ConsultModel extends Model{
         return $select->fetchAll();
     }
 
+    public function selectAllEvents(){
+        $sql = "SELECT * FROM events ";
+
+        $select = $this->db->query($sql);
+
+        return $select->fetchAll();
+    }
+
     public function pastEvents($where=""){
         $sql = "SELECT * FROM events WHERE date_fin < now() ";
         if($where!==""){

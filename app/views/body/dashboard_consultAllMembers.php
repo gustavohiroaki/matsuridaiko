@@ -3,14 +3,16 @@
     
 ?>
 <h3>Pesquisa de Membros</h3>
-<div style="
+
+ <div class="row">
+
+ <div style="
     width: 100%;
-    height: 150px;
+    overflow: hidden;
     border: 1px solid rgba(0,0,0,.5);
     padding: 10px;
     border-radius: 5px;
 ">
- <div class="row">
     <form class="col s12" id="filter_member">
       <div class="row">
 
@@ -34,6 +36,7 @@
         
       </div>
     </form>
+</div>
 
     <table>
     <thead>
@@ -58,4 +61,3 @@
 </table>
 
   </div>
-</div>

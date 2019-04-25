@@ -204,4 +204,47 @@ class UpdateController extends Controller{
         $update->updateShinjin($allDatas);
     }
 
+
+
+    public function updateEvent(){
+        $name_event             =       isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
+        $date_init              =       isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
+        $hour_init              =       isset($_POST["hour_init"])? strip_tags(filter_input(INPUT_POST,"hour_init")):NULL;
+        $date_fin               =       isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
+        $hour_fin               =       isset($_POST["hour_fin"])? strip_tags(filter_input(INPUT_POST,"hour_fin")):NULL;
+        $numbermember_event     =       isset($_POST["numbermember_event"])? strip_tags(filter_input(INPUT_POST,"numbermember_event")):NULL;
+        $zip_event              =       isset($_POST["zip_event"])? strip_tags(filter_input(INPUT_POST,"zip_event")):NULL;
+        $state_event            =       isset($_POST["state_event"])? strip_tags(filter_input(INPUT_POST,"state_event")):NULL;
+        $city_event             =       isset($_POST["city_event"])? strip_tags(filter_input(INPUT_POST,"city_event")):NULL;
+        $neighboorhood_event    =       isset($_POST["neighboorhood_event"])? strip_tags(filter_input(INPUT_POST,"neighboorhood_event")):NULL;
+        $street_event           =       isset($_POST["street_event"])? strip_tags(filter_input(INPUT_POST,"street_event")):NULL;
+        $complement_event       =       isset($_POST["complement_event"])? strip_tags(filter_input(INPUT_POST,"complement_event")):NULL;
+        $annotation_event       =       isset($_POST["annotation_event"])? strip_tags(filter_input(INPUT_POST,"annotation_event")):NULL;
+        $responsible_event      =       isset($_POST["responsible_event"])? strip_tags(filter_input(INPUT_POST,"responsible_event")):NULL;
+        $status_event           =       isset($_POST["status_event"])? strip_tags(filter_input(INPUT_POST,"status_event")):NULL;
+        
+        $date_init = formatDate($date_init,"USA");
+        $date_fin  = formatDate($date_fin,"USA");
+
+        $allDatas = array(
+            "name_event"=>$name_event,
+            "date_init"=>$date_init,
+            "hour_init"=>$hour_init,
+            "date_fin"=>$date_fin,
+            "hour_fin"=>$hour_fin,
+            "dateinit_event"=>$date_init." ".$hour_init,
+            "datefin_event"=>$date_fin." ".$hour_fin,
+            "numbermember_event"=>$numbermember_event,
+            "zip_event"=>$zip_event,
+            "state_event"=>$state_event,
+            "city_event"=>$city_event,
+            "neighboorhood_event"=>$neighboorhood_event,
+            "street_event"=>$street_event,
+            "complement_event"=>$complement_event,
+            "annotation_event"=>$annotation_event,
+            "responsible_event"=>$responsible_event,
+            "status_event"=>$status_event
+        );
+    }
+
 }

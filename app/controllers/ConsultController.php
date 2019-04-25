@@ -60,12 +60,22 @@ class ConsultController extends Controller{
         $this->master_interface("dashboard");
     }
 
-    public function pastEvents(){
-        $query = new ConsultModel();
-        $data["pastEvents"] = $query->pastEvents();
+    public function allEvents(){
+        $this->security();
+        $query = new ConsultModel;
+        $data["events"] = $query->selectAllEvents();
 
         $this->add_params($data,0);
-        $this->add_view("dashboard_consultPastEvents");
+        $this->add_view("dashboard_consultEvents");
+        $this->master_interface("dashboard");
+    }
+
+    public function pastEvents(){
+        $query = new ConsultModel();
+        $data["events"] = $query->pastEvents();
+
+        $this->add_params($data,0);
+        $this->add_view("dashboard_consultEvents");
         $this->master_interface("dashboard");
     }
 

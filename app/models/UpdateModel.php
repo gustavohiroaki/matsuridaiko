@@ -32,4 +32,12 @@ class UpdateModel extends Model{
 
 		$update->execute($allData);
 	}
+
+	public function updateEvent($allData=array()){
+		$sql = "";
+
+		$update = $this->db->prepare($sql);
+
+		$update->execute($allData);
+	}
 }
