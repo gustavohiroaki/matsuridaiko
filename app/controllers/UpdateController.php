@@ -204,7 +204,18 @@ class UpdateController extends Controller{
         $update->updateShinjin($allDatas);
     }
 
+    public function event($eventID){
+        $this->security();
+        $query = new ConsultModel;
 
+        $data["event"] = $query->selectEvent($eventID);
+
+        cat($data["event"]);
+        $this->add_viewTitle("Alteração de Evento");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_form_event");
+        $this->master_interface("dashboard");
+    }
 
     public function updateEvent(){
         $name_event             =       isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;

@@ -8,8 +8,9 @@ function catjson($a){
 }
 
 function cat( $data ) {
+    $str = implode("", $data);
     echo '<script>';
-    echo 'console.log('. var_dump($data).')';
+    echo "console.log({$str})";
     echo '</script>';
 }
 

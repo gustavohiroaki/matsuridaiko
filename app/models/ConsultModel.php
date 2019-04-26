@@ -80,17 +80,27 @@ class ConsultModel extends Model{
         return $select->fetchAll();
     }
 
+    public function selectEvent($where=""){
+        $sql = "SELECT * FROM events ";
+
+        if($where!==""){
+            $sql.="WHERE id_event = {$where} ";
+        }
+        $select = $this->db->query($sql);
+        return $select->fetchAll();
+    }
+
     public function filterAllEvents($name="",$date=""){
         $sql = "SELECT * FROM events WHERE id_event > 0 ";
-        // cat($date);
+
         if($name!==""){
             $sql.="AND name_event LIKE '%{$name}%'";
         }
-        cat($sql);
+
         if($date!==""){
             $sql.="AND date_init = '{$date}' ";
         }
-        // cat($sql);
+
         $select = $this->db->query($sql);
 
         return json_encode($select->fetchAll());

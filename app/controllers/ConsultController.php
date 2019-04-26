@@ -75,8 +75,9 @@ class ConsultController extends Controller{
 
         $name = isset($_POST["name"])? strip_tags(filter_input(INPUT_POST,"name")):NULL;
         $date = isset($_POST["date"])? strip_tags(filter_input(INPUT_POST,"date")):NULL;
-        $date = formatDate($date,"USA");
-
+        if($date!==""){
+            $date = formatDate($date,"USA");
+        }
         $filter = new ConsultModel;
         echo($filter->filterAllEvents($name,$date));
     }
