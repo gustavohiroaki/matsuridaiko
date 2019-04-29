@@ -2,15 +2,15 @@
 <html lang="en">
 <?php $this->load_head();?>
 <body>
-
+<?php catjson($_SESSION); ?>
 <!-- Sidenav -->
 
 <ul class="sidenav sidenav-fixed collapsible">
     <div class="sidenav-prop">
         <div id="avatar">
             <img id="avatar-img" src="https://picsum.photos/300/300" alt="">
-            <h4 id="avatar-name">Gustavo Hiroaki Imafuku</h4>
-            <h5 id="avatar-branch">Guarulhos</h5>
+            <h4 id="avatar-name"><?php echo $_SESSION["name"]; ?></h4>
+            <h5 id="avatar-branch"><?php echo $_SESSION["branch"]; ?></h5>
         </div>
     </div>
     

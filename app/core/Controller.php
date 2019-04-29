@@ -19,6 +19,10 @@ abstract class Controller{
 
     }
 
+    public function permission_access($min_access){
+
+    }
+
     public function add_view($viewName){
         $this->viewName = $viewName;
     }

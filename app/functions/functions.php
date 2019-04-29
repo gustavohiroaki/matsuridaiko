@@ -26,6 +26,7 @@ function returnUpdate($d){
     }
 }
 
+
 // $dataUSA = "1998-12-21";
 // $dataBR = "21-12-1998";
 // $formatada = formatDate($dataBR,"USA");
