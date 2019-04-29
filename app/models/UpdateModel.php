@@ -34,7 +34,7 @@ class UpdateModel extends Model{
 	}
 
 	public function updateEvent($allData=array()){
-		$sql = "";
+		$sql = "UPDATE";
 
 		$update = $this->db->prepare($sql);
 

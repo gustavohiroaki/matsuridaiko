@@ -14,6 +14,6 @@ class DeleteModel extends Model{
         $sql = "DELETE FROM members_rkmd WHERE id_member = :id_member";
         $delete = $this->db->prepare($sql);
         $delete->bindValue("id_member",$where);
-        cat($delete->execute());
+        $delete->execute();
     }
 }
