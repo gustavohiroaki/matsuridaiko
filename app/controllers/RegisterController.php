@@ -68,7 +68,7 @@ class RegisterController extends Controller{
             "complement_member"     =>      $complement_member,
             "status_member"         =>      $status_member
         );
-        cat($allDatas);
+
 
         $insert = new RegisterModel;
         $insert->registerMember($allDatas);
@@ -126,6 +126,14 @@ class RegisterController extends Controller{
         $insert = new RegisterModel;
         $insert->registerEvent($allDatas);
 
+    }
+
+    public function music(){
+        $this->security();
+
+        $this->add_viewTitle("Cadastro de Música");
+        $this->add_view("dashboard_form_music");
+        $this->master_interface("dashboard");
     }
 
 }

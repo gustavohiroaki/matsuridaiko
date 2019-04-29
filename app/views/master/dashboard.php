@@ -40,7 +40,7 @@
     <li><a class="waves-effect collapsible-header">Repertório Musical</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="#" class="red lighten-5">Cadastro de Repertório</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>register/music" class="red lighten-5">Cadastro de Repertório</a></li><!-- Only for admin -->
                     <li><a href="#" class="red lighten-5">Cadastro de Downloads</a></li><!-- Only for admin -->
                     <li><a href="#" class="red lighten-5">Cadastro de Repertório Global</a></li><!-- Only for admin -->
                 <li><a href="#">Repertório Atual</a></li>
@@ -108,7 +108,7 @@
     <li><a class="waves-effect collapsible-header">Repertório Musical</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="#" class="red lighten-5">Cadastro de Repertório</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>register/music" class="red lighten-5">Cadastro de Repertório</a></li><!-- Only for admin -->
                     <li><a href="#" class="red lighten-5">Cadastro de Downloads</a></li><!-- Only for admin -->
                     <li><a href="#" class="red lighten-5">Cadastro de Repertório Global</a></li><!-- Only for admin -->
                 <li><a href="#">Repertório Atual</a></li>

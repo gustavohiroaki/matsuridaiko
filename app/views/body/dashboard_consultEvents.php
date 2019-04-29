@@ -1,4 +1,6 @@
-<?php $data=$this->params; ?>
+<?php 
+    $data=$this->params;
+ ?>
 <div class="row">
 <h3>Consulta de Eventos</h3>
 

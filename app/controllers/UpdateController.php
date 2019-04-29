@@ -210,7 +210,7 @@ class UpdateController extends Controller{
 
         $data["event"] = $query->selectEvent($eventID);
 
-        cat($data["event"]);
+        catjson($data["event"]);
         $this->add_viewTitle("Alteração de Evento");
         $this->add_params($data,0);
         $this->add_view("dashboard_form_event");
