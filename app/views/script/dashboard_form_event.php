@@ -46,8 +46,8 @@
 
         }).then(success,fail)
 
-        function success(data){
-            console.log(data);
+        function success(a){
+            console.log(a);
             alert("Incluido com sucesso!");
         }
         function fail(data){

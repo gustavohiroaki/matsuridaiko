@@ -90,6 +90,13 @@ class ConsultModel extends Model{
         return $select->fetchAll();
     }
 
+    public function selectLastEvent(){
+        $sql = ("SELECT id_event FROM events ORDER BY id_event DESC LIMIT 1");
+
+        $select = $this->db->query($sql);
+        return $select->fetch();
+    }
+
     public function filterAllEvents($name="",$date=""){
         $sql = "SELECT * FROM events WHERE id_event > 0 ";
 

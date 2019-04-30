@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\core\Controller;
 use app\models\RegisterModel;
 use app\models\Basics;
+use app\models\ConsultModel;
 
 class RegisterController extends Controller{
 
@@ -90,7 +91,7 @@ class RegisterController extends Controller{
     public function sendEvent(){
         $this->security();
 
-        $event_branch           =       isset($_POST["event_branch"])? strip_tags(filter_input(INPUT_POST,"event_branch")):NULL;
+        $event_branch[]         =       $_POST["event_branch"];
 
         $name_event             =       isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
         $date_init              =       isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
@@ -112,7 +113,6 @@ class RegisterController extends Controller{
         $date_fin  = formatDate($date_fin,"USA");
 
         $allDatas = array(
-            "event_branch"=>$event_branch,
             "name_event"=>$name_event,
             "date_init"=>$date_init,
             "hour_init"=>$hour_init,
@@ -131,11 +131,23 @@ class RegisterController extends Controller{
             "responsible_event"=>$responsible_event,
             "status_event"=>$status_event
         );
-        catjson($allDatas);
-        die();
+
+
         $insert = new RegisterModel;
         $insert->registerEvent($allDatas);
+        //15
 
+        $query = new ConsultModel;
+        $lastID = $query->selectLastEvent();
+        //15
+
+        if($event_branch[0]!==""){
+            foreach($event_branch[0] as $count){
+                //15
+                $query = new RegisterModel;
+                $query->registerBranchEvent((int)$lastID->id_event,(int)$count);
+            }
+        }
     }
 
     public function music(){

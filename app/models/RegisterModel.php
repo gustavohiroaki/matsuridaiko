@@ -23,7 +23,22 @@ class RegisterModel extends Model{
 
         $insert = $this->db->prepare($sql);
 
-        $insert->execute($allDatas);
+        if(!$insert->execute($allDatas)){
+            echo "Falha no cadastro dos eventos";
+            die();
+        }
+    }
+
+    public function registerBranchEvent($id_event,$id_branch){
+        $sql = "INSERT INTO event_branch (id_event,id_branch) VALUES (:id_event,:id_branch) ";
+
+
+        $insert = $this->db->prepare($sql);
+        $insert->bindValue(":id_event",$id_event);
+        $insert->bindValue(":id_branch",$id_branch);
+        if(!$insert->execute()){
+            echo "Falha no Cadastro de paritipantes!";
+        }
     }
     
 }
