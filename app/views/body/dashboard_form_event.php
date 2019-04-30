@@ -3,6 +3,9 @@
     if(isset($data["event"])){
         $data["event"] = $data["event"][0];
     }
+    // if(isset($data["event_branch"])){
+    //     $data["event_branch"] = $data["event_branch"][0];
+    // }
 ?>
 <h2><?php echo $this->viewTitle; ?></h2>
 
@@ -77,6 +80,18 @@
         <div class="input-field col l12 m12 s12">
             <label for="responsible_event">Responsável</label>
             <input type="text" id="responsible_event" name="responsible_event" value="<?php if(isset($data["event"])){echo $data["event"]->responsible_event;} ?>">
+        </div>
+
+        <div class="input-field col s12">
+            <select name="event_branch[]" id="event_branch" multiple>
+            <option value="" disabled selected>Choose your option</option>
+            <?php 
+                foreach($data["event_branch"] as $count){?>
+                    <option value="<?php echo $count->id_branch;?>" <?php if(isset($data["event_branch"])) ?>><?php echo $count->name_branch; ?></option>
+
+                <?php }?> 
+            </select>
+            <label>Filiais que participarão</label>
         </div>
 
         <div class="input-field col l12 m12 s12">

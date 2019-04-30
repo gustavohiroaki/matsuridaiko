@@ -9,6 +9,7 @@ use app\models\UpdateModel;
 
 class UpdateController extends Controller{
     public function index(){
+        $this->security();
         echo "Index de Controller de Update";
     }
 
@@ -218,6 +219,7 @@ class UpdateController extends Controller{
     }
 
     public function updateEvent(){
+        $this->security();
         $name_event             =       isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
         $date_init              =       isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
         $hour_init              =       isset($_POST["hour_init"])? strip_tags(filter_input(INPUT_POST,"hour_init")):NULL;

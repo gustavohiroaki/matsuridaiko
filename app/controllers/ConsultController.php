@@ -8,10 +8,11 @@ use app\models\ConsultModel;
 
 class ConsultController extends Controller{
     public function index(){
-
+        $this->security();
     }
 
     public function allMembers(){
+        $this->security();
         $filter = new Basics;
         $select = new ConsultModel;
         $data["filter_branch"] = $filter->select("branch");
@@ -23,6 +24,7 @@ class ConsultController extends Controller{
     }
 
     public function filterAllMembers(){
+        $this->security();
         $name = isset($_POST["name"])? strip_tags(filter_input(INPUT_POST,"name")):NULL;
         $filter_branch = isset($_POST["filter_branch"])? strip_tags(filter_input(INPUT_POST,"filter_branch")):NULL;
     
@@ -31,6 +33,7 @@ class ConsultController extends Controller{
     }
 
     public function member(){
+        $this->security();
         $member = new ConsultModel;
         $data["members"] = $member->selectMembers();
 
@@ -41,6 +44,7 @@ class ConsultController extends Controller{
     }
     
     public function junior(){
+        $this->security();
         $junior = new ConsultModel;
         $data["members"] = $junior->selectJuniors();
 
@@ -51,6 +55,7 @@ class ConsultController extends Controller{
     }
 
     public function shinjin(){
+        $this->security();
         $shinjin = new ConsultModel;
         $data["members"] = $shinjin->selectShinjins();
 
@@ -83,6 +88,7 @@ class ConsultController extends Controller{
     }
 
     public function pastEvents(){
+        $this->security();
         $query = new ConsultModel();
         $data["events"] = $query->pastEvents();
 
@@ -92,6 +98,7 @@ class ConsultController extends Controller{
     }
 
     public function nextEvents(){
+        $this->security();
         $this->add_view("dashboard_consultNextEvents");
         $this->master_interface("dashboard");
     }

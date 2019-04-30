@@ -6,8 +6,15 @@
         <div class="card teal darken-2">
             <div class="card-content white-text">
                 <span class="card-title">Próximos Eventos</span>
-                <div  style="overflow-y: scroll;height: 80px">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</div>
+                <div style="overflow-y: scroll;height: 80px">
+                
+                    <ul>
+                        <li>Teste1</li>
+                        <li>Teste2</li>
+                        <li>Teste3</li>
+                    </ul>
+                
+                </div>
             </div>
 
             <div class="card-action">

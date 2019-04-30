@@ -11,7 +11,7 @@ class LoginController extends Controller{
         $this->master_interface("login");
     }
     public function login(){
-
+        
         $postUser = $_POST["login_user"];
         $postPass = $_POST["login_pass"];
         $loginObj = new Login;

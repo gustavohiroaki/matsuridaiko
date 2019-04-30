@@ -9,7 +9,7 @@ use app\models\Basics;
 class RegisterController extends Controller{
 
     public function index(){
-        
+        $this->security();
     }
     public function member(){
         $this->security();
@@ -77,12 +77,20 @@ class RegisterController extends Controller{
     public function event(){
         $this->security();
 
+        
+        $query = new Basics;
+        $data["event_branch"] = $query->select("branch");
+
         $this->add_viewTitle("Cadastro de Eventos");
+        $this->add_params($data,0);
         $this->add_view("dashboard_form_event");
         $this->master_interface("dashboard");
     }
 
     public function sendEvent(){
+        $this->security();
+
+        $event_branch           =       isset($_POST["event_branch"])? strip_tags(filter_input(INPUT_POST,"event_branch")):NULL;
 
         $name_event             =       isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
         $date_init              =       isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
@@ -99,11 +107,12 @@ class RegisterController extends Controller{
         $annotation_event       =       isset($_POST["annotation_event"])? strip_tags(filter_input(INPUT_POST,"annotation_event")):NULL;
         $responsible_event      =       isset($_POST["responsible_event"])? strip_tags(filter_input(INPUT_POST,"responsible_event")):NULL;
         $status_event           =       isset($_POST["status_event"])? strip_tags(filter_input(INPUT_POST,"status_event")):NULL;
-        
+
         $date_init = formatDate($date_init,"USA");
         $date_fin  = formatDate($date_fin,"USA");
 
         $allDatas = array(
+            "event_branch"=>$event_branch,
             "name_event"=>$name_event,
             "date_init"=>$date_init,
             "hour_init"=>$hour_init,
@@ -122,7 +131,8 @@ class RegisterController extends Controller{
             "responsible_event"=>$responsible_event,
             "status_event"=>$status_event
         );
-
+        catjson($allDatas);
+        die();
         $insert = new RegisterModel;
         $insert->registerEvent($allDatas);
 

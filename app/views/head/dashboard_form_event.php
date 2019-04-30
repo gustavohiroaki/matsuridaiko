@@ -27,6 +27,7 @@
             draggable: true
         });
         $('.dropdown-trigger').dropdown();
+        $('select').formSelect();
 
         $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
 
