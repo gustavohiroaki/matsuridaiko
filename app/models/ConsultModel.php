@@ -121,6 +121,13 @@ class ConsultModel extends Model{
         $select = $this->db->query($sql);
         return $select->fetchAll();
     }
+
+    public function selectLastMessage(){
+        $sql = ("SELECT id_message FROM messages ORDER BY id_message DESC LIMIT 1");
+
+        $select = $this->db->query($sql);
+        return $select->fetch();
+    }
     
 }
 

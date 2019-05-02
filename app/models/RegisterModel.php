@@ -29,24 +29,35 @@ class RegisterModel extends Model{
         }
     }
 
-    public function registerBranchEvent($id_event,$id_branch){
+    public function registerBranchEvent($id_branch,$id_event){
         $sql = "INSERT INTO event_branch (id_event,id_branch) VALUES (:id_event,:id_branch) ";
 
         $insert = $this->db->prepare($sql);
         $insert->bindValue(":id_event",$id_event);
         $insert->bindValue(":id_branch",$id_branch);
         if(!$insert->execute()){
-            echo "Falha no Cadastro de paritipantes!";
+            echo "Falha no Cadastro de participantes!";
         }
     }
 
     public function registerMessage($allDatas=array()){
-        $sql = "";
+        $sql = "INSERT INTO messages (date_init,date_fin,message,message_by) ";
+        $sql.= "VALUES (:date_init,:date_fin,:message,:message_by) ";
         
         $insert = $this->db->prepare($sql);
         if(!$insert->execute($allDatas)){
             echo "Falha no Cadastro da mensagem!";
         };
+    }
+
+    public function registerBranchMessage($id_message,$id_branch){
+        $sql = "INSERT INTO message_branch (id_branch,id_message) VALUES (:id_branch,:id_message) ";
+        $insert = $this->db->prepare($sql);
+        $insert->bindValue(':id_branch',$id_branch);
+        $insert->bindValue(':id_message',$id_message);
+        if(!$insert->execute()){
+            echo "Falha no Cadastro de participantes!";
+        }
     }
     
 }

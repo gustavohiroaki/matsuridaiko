@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Abr-2019 às 22:18
+-- Generation Time: 02-Maio-2019 às 22:24
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 5.6.40
 
@@ -98,7 +98,19 @@ INSERT INTO `events` (`id_event`, `name_event`, `date_init`, `hour_init`, `date_
 (66, 'Teste Definitivo', '2019-05-08', '11:11:00', '2019-05-08', '12:22:00', '2019-05-08 11:11:00', '2019-05-08 12:22:00', 12, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacoes', 'Responsavel', '1', '2019-04-30 17:19:08'),
 (67, 'Teste Definitivo', '2019-05-08', '11:11:00', '2019-05-08', '12:22:00', '2019-05-08 11:11:00', '2019-05-08 12:22:00', 12, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacoes', 'Responsavel', '1', '2019-04-30 17:36:12'),
 (68, 'Teste Definitivo', '2019-05-08', '11:11:00', '2019-05-08', '12:22:00', '2019-05-08 11:11:00', '2019-05-08 12:22:00', 12, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacoes', 'Responsavel', '1', '2019-04-30 17:37:45'),
-(69, 'Teste Definitivo', '2019-05-08', '11:11:00', '2019-05-08', '12:22:00', '2019-05-08 11:11:00', '2019-05-08 12:22:00', 12, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacoes', 'Responsavel', '1', '2019-04-30 17:38:48');
+(69, 'Teste Definitivo', '2019-05-08', '11:11:00', '2019-05-08', '12:22:00', '2019-05-08 11:11:00', '2019-05-08 12:22:00', 12, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'Complemento', 'Anotacoes', 'Responsavel', '1', '2019-04-30 17:38:48'),
+(70, 'Cadastro de Evento Teste', '2019-05-03', '12:22:00', '2019-05-04', '12:22:00', '2019-05-03 12:22:00', '2019-05-04 12:22:00', 22, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'iyfiufuifuifuifuifuifuif', 'guigigiuguigiug', 'Resoibsave', '1', '2019-05-02 16:59:35'),
+(71, 'Cadastro de Evento Teste', '2019-05-03', '12:22:00', '2019-05-04', '12:22:00', '2019-05-03 12:22:00', '2019-05-04 12:22:00', 22, '07190-023', 'SP', 'Guarulhos', 'Parque Cecap', 'Rua Rubens Henrique Picchi', 'iyfiufuifuifuifuifuifuif', 'guigigiuguigiug', 'Resoibsave', '1', '2019-05-02 17:01:38'),
+(72, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:03:06'),
+(73, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:06:14'),
+(74, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:06:30'),
+(75, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:07:18'),
+(76, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:24:03'),
+(77, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:24:22'),
+(78, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:25:06'),
+(79, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:29:12'),
+(80, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:38:39'),
+(81, 'teste', '1970-01-01', '00:00:00', '1970-01-01', '00:00:00', '1970-01-01 00:00:00', '1970-01-01 00:00:00', 0, '', '', '', '', '', '', '', '', '', '2019-05-02 17:39:11');
 
 -- --------------------------------------------------------
 
@@ -141,7 +153,41 @@ INSERT INTO `event_branch` (`id_eventbranch`, `id_event`, `id_branch`) VALUES
 (24, 68, 1),
 (25, 68, 2),
 (26, 69, 1),
-(27, 69, 2);
+(27, 69, 2),
+(28, 69, 1),
+(29, 69, 2),
+(30, 69, 1),
+(31, 69, 2),
+(32, 69, 1),
+(33, 69, 2),
+(34, 69, 1),
+(35, 69, 2),
+(36, 69, 1),
+(37, 69, 2),
+(38, 1, 70),
+(39, 2, 70),
+(40, 71, 1),
+(41, 71, 2),
+(42, 72, 1),
+(43, 72, 2),
+(44, 73, 1),
+(45, 73, 2),
+(46, 74, 1),
+(47, 74, 2),
+(48, 75, 1),
+(49, 75, 2),
+(50, 77, 1),
+(51, 77, 2),
+(52, 78, 1),
+(53, 78, 2),
+(54, 100, 100),
+(55, 100, 100),
+(56, 100, 100),
+(57, 100, 100),
+(58, 81, 1),
+(59, 81, 2),
+(60, 81, 1),
+(61, 81, 2);
 
 -- --------------------------------------------------------
 
@@ -245,6 +291,43 @@ CREATE TABLE `messages` (
   `log_message` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `messages`
+--
+
+INSERT INTO `messages` (`id_message`, `date_init`, `date_fin`, `message`, `message_by`, `log_message`) VALUES
+(1, '0000-00-00', '0000-00-00', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 12:56:15'),
+(2, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:04:06'),
+(3, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:27:38'),
+(4, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:27:55'),
+(5, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:28:21'),
+(6, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:29:56'),
+(7, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:30:53'),
+(8, '2019-05-03', '2019-05-06', 'asdadasd', 'Gustavo Hiroaki', '2019-05-02 13:31:06'),
+(9, '2019-05-03', '2019-05-06', 'asdasdas', 'Gustavo Hiroaki', '2019-05-02 19:27:50'),
+(10, '2019-05-03', '2019-05-06', 'asdasdas', 'Gustavo Hiroaki', '2019-05-02 19:30:46'),
+(11, '2019-05-03', '2019-05-06', 'asdasdas', 'Gustavo Hiroaki', '2019-05-02 19:31:42');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `message_branch`
+--
+
+CREATE TABLE `message_branch` (
+  `id_messagebranch` int(11) NOT NULL,
+  `id_branch` int(11) NOT NULL,
+  `id_message` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `message_branch`
+--
+
+INSERT INTO `message_branch` (`id_messagebranch`, `id_branch`, `id_message`) VALUES
+(1, 11, 1),
+(2, 11, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -279,7 +362,7 @@ CREATE TABLE `next_training` (
   `date_training` date NOT NULL,
   `place_training` varchar(255) NOT NULL,
   `annotation_training` text NOT NULL,
-  `message_by` varchar(255) NOT NULL,
+  `organizer_training` varchar(255) NOT NULL,
   `log_message` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -320,6 +403,18 @@ INSERT INTO `permission_user` (`id_permission`, `permission_level`, `role_member
 (3, 500, 'Treinador(a)', 'Funções habilitadas para membros que passam treinos.'),
 (4, 1000, 'Vice-Líder de Filial', 'Possui funções habilitadas para administração da filial'),
 (5, 1500, 'Líder de Filial', 'Possui todas as funções habilitadas para administração de Filial.');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `training_branch`
+--
+
+CREATE TABLE `training_branch` (
+  `id_trainingbranch` int(11) NOT NULL,
+  `id_branch` int(11) NOT NULL,
+  `id_training` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -378,6 +473,12 @@ ALTER TABLE `messages`
   ADD PRIMARY KEY (`id_message`);
 
 --
+-- Indexes for table `message_branch`
+--
+ALTER TABLE `message_branch`
+  ADD PRIMARY KEY (`id_messagebranch`);
+
+--
 -- Indexes for table `music`
 --
 ALTER TABLE `music`
@@ -403,6 +504,12 @@ ALTER TABLE `permission_user`
   ADD PRIMARY KEY (`id_permission`);
 
 --
+-- Indexes for table `training_branch`
+--
+ALTER TABLE `training_branch`
+  ADD PRIMARY KEY (`id_trainingbranch`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -416,13 +523,13 @@ ALTER TABLE `branch`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `event_branch`
 --
 ALTER TABLE `event_branch`
-  MODIFY `id_eventbranch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_eventbranch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `event_music`
@@ -440,7 +547,7 @@ ALTER TABLE `members_music`
 -- AUTO_INCREMENT for table `members_rkmd`
 --
 ALTER TABLE `members_rkmd`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `member_type`
@@ -452,7 +559,13 @@ ALTER TABLE `member_type`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `message_branch`
+--
+ALTER TABLE `message_branch`
+  MODIFY `id_messagebranch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `music`
@@ -477,6 +590,12 @@ ALTER TABLE `notification`
 --
 ALTER TABLE `permission_user`
   MODIFY `id_permission` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `training_branch`
+--
+ALTER TABLE `training_branch`
+  MODIFY `id_trainingbranch` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

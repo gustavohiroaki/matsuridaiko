@@ -135,17 +135,14 @@ class RegisterController extends Controller{
 
         $insert = new RegisterModel;
         $insert->registerEvent($allDatas);
-        //15
 
         $query = new ConsultModel;
         $lastID = $query->selectLastEvent();
-        //15
-
+        print_r($event_branch);
         if($event_branch[0]!==""){
             foreach($event_branch[0] as $count){
-                //15
                 $query = new RegisterModel;
-                $query->registerBranchEvent((int)$lastID->id_event,(int)$count);
+                $query->registerBranchEvent((int)$count,(int)$lastID->id_event);
             }
         }
     }
@@ -171,19 +168,38 @@ class RegisterController extends Controller{
     }
 
     public function sendMessage(){
+        $this->security();
+
         $date_init = isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
         $date_fin = isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
         $message = isset($_POST["message"])? strip_tags(filter_input(INPUT_POST,"message")):NULL;
+        $message_branch = $_POST["message_branch"];
+        $message_by = $_SESSION["name"];
+
+        $date_init = formatDate($date_init,"USA");
+        $date_fin = formatDate($date_fin,"USA");
 
         $allDatas = array(
             'date_init'=>$date_init,
             'date_fin'=>$date_fin,
-            'message'=>$message
+            'message'=>$message,
+            'message_by'=>$message_by
         );
 
-        // catjson($allDatas);
+        print_r($message_branch);
+        $query = new RegisterModel;
+        $query->registerMessage($allDatas);
+
         $query = new ConsultModel;
-        
+        $lastID = $query->selectLastMessage();
+
+        if($message_branch!==""){
+            foreach($message_branch as $count){
+
+                $query = new RegisterModel;
+                $query->registerBranchMessage((int)$count,(int)$lastID->id_message);
+            }
+        }
     }
 
     public function training(){
