@@ -32,13 +32,21 @@ class RegisterModel extends Model{
     public function registerBranchEvent($id_event,$id_branch){
         $sql = "INSERT INTO event_branch (id_event,id_branch) VALUES (:id_event,:id_branch) ";
 
-
         $insert = $this->db->prepare($sql);
         $insert->bindValue(":id_event",$id_event);
         $insert->bindValue(":id_branch",$id_branch);
         if(!$insert->execute()){
             echo "Falha no Cadastro de paritipantes!";
         }
+    }
+
+    public function registerMessage($allDatas=array()){
+        $sql = "";
+        
+        $insert = $this->db->prepare($sql);
+        if(!$insert->execute($allDatas)){
+            echo "Falha no Cadastro da mensagem!";
+        };
     }
     
 }

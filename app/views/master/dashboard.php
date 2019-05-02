@@ -26,6 +26,15 @@
         </div>
     </li>
 
+    <li><a class="waves-effect collapsible-header">Informações</a>
+        <div class="collapsible-body">
+            <ul>
+                    <li><a href="<?php echo BASE_URL ?>register/message" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>register/training" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
+            </ul>
+        </div>
+    </li>
+
     <li><a class="waves-effect collapsible-header">Eventos</a>
         <div class="collapsible-body">
             <ul>
@@ -90,6 +99,16 @@
                 <li><a href="<?php echo BASE_URL ?>consult/member">Membros</a></li>
                 <li><a href="<?php echo BASE_URL ?>consult/junior">Juniors</a></li>
                 <li><a href="<?php echo BASE_URL ?>consult/shinjin">Shinjins</a></li>
+            </ul>
+        </div>
+    </li>
+
+    <li><a class="waves-effect collapsible-header">Informações</a>
+        <div class="collapsible-body">
+            <ul>
+                    <li><a href="<?php echo BASE_URL ?>register/message" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>register/training" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
+
             </ul>
         </div>
     </li>

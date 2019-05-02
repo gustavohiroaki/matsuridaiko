@@ -158,4 +158,48 @@ class RegisterController extends Controller{
         $this->master_interface("dashboard");
     }
 
+    public function message(){
+        $this->security();
+
+        $query = new Basics;
+        $data["message_branch"] = $query->select("branch");
+
+        $this->add_viewTitle("Cadastro de Recados");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_form_message");
+        $this->master_interface("dashboard");
+    }
+
+    public function sendMessage(){
+        $date_init = isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
+        $date_fin = isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
+        $message = isset($_POST["message"])? strip_tags(filter_input(INPUT_POST,"message")):NULL;
+
+        $allDatas = array(
+            'date_init'=>$date_init,
+            'date_fin'=>$date_fin,
+            'message'=>$message
+        );
+
+        // catjson($allDatas);
+        $query = new ConsultModel;
+        
+    }
+
+    public function training(){
+        $this->security();
+
+        $query = new Basics;
+        $data["training_branch"] = $query->select("branch");
+
+        $this->add_viewTitle("Cadastro de Treinos");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_form_training");
+        $this->master_interface("dashboard");
+    }
+
+    public function sendTraining(){
+
+    }
+
 }
