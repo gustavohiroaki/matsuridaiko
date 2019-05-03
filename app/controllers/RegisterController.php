@@ -14,6 +14,7 @@ class RegisterController extends Controller{
     }
     public function member(){
         $this->security();
+        $this->securityAccessPage(500);
 
         $query = new Basics;
         $data["member_type"] = $query->select("member_type");
@@ -28,6 +29,7 @@ class RegisterController extends Controller{
 
     public function sendMember(){
         $this->security();
+        $this->securityAccessPage(500);
 
         $id_member              = isset($_POST["id_member"])? strip_tags(filter_input(INPUT_POST,"id_member")):NULL;
         $name_member            = isset($_POST["name_member"])? strip_tags(filter_input(INPUT_POST,"name_member")):NULL;
@@ -77,6 +79,7 @@ class RegisterController extends Controller{
 
     public function event(){
         $this->security();
+        $this->securityAccessPage(500);
 
         
         $query = new Basics;

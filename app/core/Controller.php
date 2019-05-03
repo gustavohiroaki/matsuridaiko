@@ -19,9 +19,18 @@ abstract class Controller{
 
     }
 
-    public function permission_access($min_access){
+    protected function securityAccessPage($min_access){
+        if($_SESSION["id"]){
+            $user_permission = (int)$_SESSION["permission"];
 
+            if($user_permission <= $min_access){
+                echo "Error 401/Access Unauthorized";
+                header("HTTP/1.1 401 Unauthorized");
+                die();
+            }
+        }
     }
+
 
     public function add_view($viewName){
         $this->viewName = $viewName;
