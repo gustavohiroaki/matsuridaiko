@@ -102,4 +102,6 @@ class ConsultController extends Controller{
         $this->add_view("dashboard_consultNextEvents");
         $this->master_interface("dashboard");
     }
+
+
 }

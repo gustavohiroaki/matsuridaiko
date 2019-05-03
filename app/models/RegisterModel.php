@@ -59,5 +59,25 @@ class RegisterModel extends Model{
             echo "Falha no Cadastro de participantes!";
         }
     }
+
+    public function registerTraining($allDatas=array()){
+        $sql = "INSERT INTO next_training (date_training,place_training,annotation_training,organizer_training) ";
+        $sql.= "VALUES (:date_training,:place_training,:annotation_training,:organizer_training) ";
+        
+        $insert = $this->db->prepare($sql);
+        if(!$insert->execute($allDatas)){
+            echo "Falha no Cadastro da mensagem!";
+        };
+    }
+
+    public function registerBranchTraining($id_training,$id_branch){
+        $sql = "INSERT INTO training_branch (id_branch,id_training) VALUES (:id_branch,:id_training) ";
+        $insert = $this->db->prepare($sql);
+        $insert->bindValue(':id_branch',$id_branch);
+        $insert->bindValue(':id_training',$id_training);
+        if(!$insert->execute()){
+            echo "Falha no Cadastro de participantes!";
+        }
+    }
     
 }

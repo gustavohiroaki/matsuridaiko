@@ -186,7 +186,6 @@ class RegisterController extends Controller{
             'message_by'=>$message_by
         );
 
-        print_r($message_branch);
         $query = new RegisterModel;
         $query->registerMessage($allDatas);
 
@@ -215,6 +214,37 @@ class RegisterController extends Controller{
     }
 
     public function sendTraining(){
+        $this->security();
+
+        $place_training = isset($_POST["place_training"])? strip_tags(filter_input(INPUT_POST,"place_training")):NULL;
+        $date_training = isset($_POST["date_training"])? strip_tags(filter_input(INPUT_POST,"date_training")):NULL;
+        $organizer_training = isset($_POST["organizer_training"])? strip_tags(filter_input(INPUT_POST,"organizer_training")):NULL;
+        $annotation_training = isset($_POST["annotation_training"])? strip_tags(filter_input(INPUT_POST,"annotation_training")):NULL;
+        $training_branch = $_POST["training_branch"];
+
+        $date_training = formatDate($date_training,"USA");
+
+        $allDatas = array(
+            'date_training'=>$date_training,
+            'place_training'=>$place_training,
+            'annotation_training'=>$annotation_training,
+            'organizer_training'=>$organizer_training
+        );
+        print_r($allDatas);
+        $query = new RegisterModel;
+        $query->registerTraining($allDatas);
+
+        $query = new ConsultModel;
+        $lastID = $query->selectLastTraining();
+
+        if($training_branch!==""){
+            foreach($training_branch as $count){
+
+                $query = new RegisterModel;
+                $query->registerBranchTraining((int)$count,(int)$lastID->id_training);
+            }
+        }
+
 
     }
 

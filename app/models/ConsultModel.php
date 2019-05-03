@@ -128,6 +128,13 @@ class ConsultModel extends Model{
         $select = $this->db->query($sql);
         return $select->fetch();
     }
+
+    public function selectLastTraining(){
+        $sql = ("SELECT id_training FROM next_training ORDER BY id_training DESC LIMIT 1");
+
+        $select = $this->db->query($sql);
+        return $select->fetch();
+    }
     
 }
 
