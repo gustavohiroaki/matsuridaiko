@@ -135,6 +135,90 @@ class ConsultModel extends Model{
         $select = $this->db->query($sql);
         return $select->fetch();
     }
+
+    public function selectMessages($where=""){
+
+        $sql = 
+        "SELECT 
+                messages.id_message,message as completeMessage,left(message,15) as message,message_by,date_init,date_fin,name_branch,message_branch.id_branch
+        FROM 
+                messages 
+        JOIN 
+                message_branch
+        ON
+                messages.id_message = message_branch.id_message
+        JOIN
+                branch
+        ON
+                branch.id_branch = message_branch.id_branch
+        WHERE
+                (now() BETWEEN date_init AND date_fin)
+        AND
+                message_branch.id_branch = {$_SESSION["branch_id"]}
+         ";
+
+        if($where!==""){
+            $sql.="AND messages.id_message = {$where}";
+        }
+
+        $select = $this->db->query($sql);
+        return $select->fetchAll();
+    }
+
+    public function selectIdMessageBranch($where){
+        $sql="SELECT id_branch FROM message_branch WHERE id_message = ?";
+
+        $select = $this->db->prepare($sql);
+        $select->bindValue(1,$where);
+        $select->execute();
+        return $select->fetchAll();
+    }
+
+    public function selectTraining($where=""){
+        $sql = 
+        "SELECT
+                next_training.id_training,date_training,place_training,annotation_training,left(annotation_training,30) as parcial_annotation,organizer_training,training_branch.id_branch,name_branch
+        FROM
+                next_training
+        INNER JOIN
+                training_branch
+        ON
+                next_training.id_training = training_branch.id_training
+        INNER JOIN
+                branch
+        ON
+                training_branch.id_branch = branch.id_branch
+        WHERE
+                training_branch.id_branch = {$_SESSION["branch_id"]} 
+        ";
+
+        if($where!==""){
+            $sql.=" AND next_training.id_training = $where";
+        }
+
+        $select = $this->db->query($sql);
+        return $select->fetchAll();
+    }
+
+
+    public function selectIdTrainingBranch($where){
+        $sql="SELECT id_branch FROM training_branch WHERE id_training = ?";
+
+        $select = $this->db->prepare($sql);
+        $select->bindValue(1,$where);
+        $select->execute();
+        return $select->fetchAll();
+    }
+
+    public function selectIdEventBranch($where){
+        $sql="SELECT id_branch FROM event_branch WHERE id_event = ?";
+
+        $select = $this->db->prepare($sql);
+        $select->bindValue(1,$where);
+        $select->execute();
+        return $select->fetchAll();
+    }
+
     
 }
 

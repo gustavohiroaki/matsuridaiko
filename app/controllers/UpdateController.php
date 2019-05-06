@@ -6,6 +6,8 @@ use app\core\Controller;
 use app\models\Basics;
 use app\models\ConsultModel;
 use app\models\UpdateModel;
+use app\models\DeleteModel;
+use app\models\RegisterModel;
 
 class UpdateController extends Controller{
     public function index(){
@@ -211,7 +213,15 @@ class UpdateController extends Controller{
 
         $data["event"] = $query->selectEvent($eventID);
 
-        catjson($data["event"]);
+        $basics = new Basics;
+        $data["event_branch"] = $basics->select("branch");
+        $qrydata = $data["event"][0]->id_event;
+        $data["select_branch"] = $query->selectIdEventBranch($qrydata);
+
+        // Convert Object to Normal array
+        $data["select_branch"] = json_decode(json_encode($data["select_branch"]), True);
+
+
         $this->add_viewTitle("Alteração de Evento");
         $this->add_params($data,0);
         $this->add_view("dashboard_form_event");
@@ -220,6 +230,7 @@ class UpdateController extends Controller{
 
     public function updateEvent(){
         $this->security();
+        $id_event               =       isset($_POST["id_event"])? strip_tags(filter_input(INPUT_POST,"id_event")):NULL;
         $name_event             =       isset($_POST["name_event"])? strip_tags(filter_input(INPUT_POST,"name_event")):NULL;
         $date_init              =       isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
         $hour_init              =       isset($_POST["hour_init"])? strip_tags(filter_input(INPUT_POST,"hour_init")):NULL;
@@ -235,7 +246,8 @@ class UpdateController extends Controller{
         $annotation_event       =       isset($_POST["annotation_event"])? strip_tags(filter_input(INPUT_POST,"annotation_event")):NULL;
         $responsible_event      =       isset($_POST["responsible_event"])? strip_tags(filter_input(INPUT_POST,"responsible_event")):NULL;
         $status_event           =       isset($_POST["status_event"])? strip_tags(filter_input(INPUT_POST,"status_event")):NULL;
-        
+        $event_branch           =       $_POST["event_branch"];
+
         $date_init = formatDate($date_init,"USA");
         $date_fin  = formatDate($date_fin,"USA");
 
@@ -256,8 +268,143 @@ class UpdateController extends Controller{
             "complement_event"=>$complement_event,
             "annotation_event"=>$annotation_event,
             "responsible_event"=>$responsible_event,
-            "status_event"=>$status_event
+            "status_event"=>$status_event,
+            "id_event"=>$id_event
         );
+
+        
+        $delete = new DeleteModel;
+        $delete->deleteMessage_branch($id_event);
+
+        $query = new UpdateModel;
+        $query->updateEvent($allDatas);
+
+        $query = new ConsultModel;
+        $lastID = $query->selectLastEvent();
+
+        if($event_branch!==""){
+            foreach($event_branch as $count){
+
+                $query = new RegisterModel;
+                $query->registerBranchEvent((int)$lastID->id_event,(int)$count);
+            }
+        }
+    }
+
+    public function message($id_message){
+        $this->security();
+        $query = new ConsultModel;
+
+        $data["message"] = $query->selectMessages($id_message);
+        
+        $basics = new Basics;
+        $data["message_branch"] = $basics->select("branch");
+        $qrydata = $data["message"][0]->id_message;
+        $data["select_branch"] = $query->selectIdMessageBranch($qrydata);
+
+        // Convert Object to Normal array
+        $data["select_branch"] = json_decode(json_encode($data["select_branch"]), True);
+
+        $this->add_viewTitle("Alteração de Recado");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_form_message");
+        $this->master_interface("dashboard");
+    }
+
+    public function updateMessage(){
+        $this->security();
+
+        $id_message = isset($_POST["id_message"])? strip_tags(filter_input(INPUT_POST,"id_message")):NULL;
+        $date_init = isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
+        $date_fin = isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
+        $message = isset($_POST["message"])? strip_tags(filter_input(INPUT_POST,"message")):NULL;
+        $message_branch = $_POST["message_branch"];
+        $message_by = $_SESSION["name"];
+
+        $date_init = formatDate($date_init,"USA");
+        $date_fin = formatDate($date_fin,"USA");
+
+        $allDatas = array(
+            'date_init'=>$date_init,
+            'date_fin'=>$date_fin,
+            'message'=>$message,
+            'message_by'=>$message_by,
+            'id_message'=>$id_message
+        );
+
+        $delete = new DeleteModel;
+        $delete->deleteMessage_branch($id_message);
+
+        $query = new UpdateModel;
+        $query->updateMessage($allDatas);
+
+        $query = new ConsultModel;
+        $lastID = $query->selectLastMessage();
+
+        if($message_branch!==""){
+            foreach($message_branch as $count){
+
+                $query = new RegisterModel;
+                $query->registerBranchMessage((int)$lastID->id_message,(int)$count);
+            }
+        }
+    }
+
+    public function training($id_training){
+        $this->security();
+        $query = new ConsultModel;
+
+        $data["training"] = $query->selectTraining($id_training);
+
+        $basics = new Basics;
+        $data["training_branch"] = $basics->select("branch");
+        $qrydata = $data["training"][0]->id_training;
+        $data["select_branch"] = $query->selectIdTrainingBranch($qrydata);
+
+        // Convert Object to Normal array
+        $data["select_branch"] = json_decode(json_encode($data["select_branch"]), True);
+
+        $this->add_viewTitle("Alteração de Recado");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_form_training");
+        $this->master_interface("dashboard");
+    }
+
+    public function updateTraining(){
+        $id_training = isset($_POST["id_training"])? strip_tags(filter_input(INPUT_POST,"id_training")):NULL;
+        $date_training = isset($_POST["date_training"])? strip_tags(filter_input(INPUT_POST,"date_training")):NULL;
+        $place_training = isset($_POST["place_training"])? strip_tags(filter_input(INPUT_POST,"place_training")):NULL;
+        $organizer_training = isset($_POST["organizer_training"])? strip_tags(filter_input(INPUT_POST,"organizer_training")):NULL;
+        $annotation_training = isset($_POST["annotation_training"])? strip_tags(filter_input(INPUT_POST,"annotation_training")):NULL;
+        $training_branch = $_POST["training_branch"];
+
+        $date_training = formatDate($date_training,"USA");
+
+        $allDatas = array(
+            'date_training'=>$date_training,
+            'place_training'=>$place_training,
+            'organizer_training'=>$organizer_training,
+            'annotation_training'=>$annotation_training,
+            'id_training'=>$id_training
+        );
+
+        $delete = new DeleteModel;
+        $delete->deleteTraining_branch($id_training);
+
+        $query = new UpdateModel;
+        $query->updateTraining($allDatas);
+
+        $query = new ConsultModel;
+        $lastID = $query->selectLastTraining();
+
+        if($training_branch!==""){
+            foreach($training_branch as $count){
+
+                $query = new RegisterModel;
+                $query->registerBranchTraining((int)$lastID->id_training,(int)$count);
+            }
+        }
+
     }
 
 }

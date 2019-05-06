@@ -79,7 +79,7 @@ class RegisterController extends Controller{
 
     public function event(){
         $this->security();
-        $this->securityAccessPage(500);
+        $this->securityAccessPage(1000);
 
         
         $query = new Basics;
@@ -93,6 +93,7 @@ class RegisterController extends Controller{
 
     public function sendEvent(){
         $this->security();
+        $this->securityAccessPage(1000);
 
         $event_branch[]         =       $_POST["event_branch"];
 
@@ -141,7 +142,7 @@ class RegisterController extends Controller{
 
         $query = new ConsultModel;
         $lastID = $query->selectLastEvent();
-        print_r($event_branch);
+
         if($event_branch[0]!==""){
             foreach($event_branch[0] as $count){
                 $query = new RegisterModel;
@@ -160,6 +161,7 @@ class RegisterController extends Controller{
 
     public function message(){
         $this->security();
+        $this->securityAccessPage(500);
 
         $query = new Basics;
         $data["message_branch"] = $query->select("branch");
@@ -172,6 +174,7 @@ class RegisterController extends Controller{
 
     public function sendMessage(){
         $this->security();
+        $this->securityAccessPage(500);
 
         $date_init = isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
         $date_fin = isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
@@ -199,13 +202,14 @@ class RegisterController extends Controller{
             foreach($message_branch as $count){
 
                 $query = new RegisterModel;
-                $query->registerBranchMessage((int)$count,(int)$lastID->id_message);
+                $query->registerBranchMessage((int)$lastID->id_message,(int)$count);
             }
         }
     }
 
     public function training(){
         $this->security();
+        $this->securityAccessPage(500);
 
         $query = new Basics;
         $data["training_branch"] = $query->select("branch");
@@ -218,6 +222,7 @@ class RegisterController extends Controller{
 
     public function sendTraining(){
         $this->security();
+        $this->securityAccessPage(500);
 
         $place_training = isset($_POST["place_training"])? strip_tags(filter_input(INPUT_POST,"place_training")):NULL;
         $date_training = isset($_POST["date_training"])? strip_tags(filter_input(INPUT_POST,"date_training")):NULL;
@@ -233,7 +238,7 @@ class RegisterController extends Controller{
             'annotation_training'=>$annotation_training,
             'organizer_training'=>$organizer_training
         );
-        print_r($allDatas);
+
         $query = new RegisterModel;
         $query->registerTraining($allDatas);
 
@@ -244,7 +249,7 @@ class RegisterController extends Controller{
             foreach($training_branch as $count){
 
                 $query = new RegisterModel;
-                $query->registerBranchTraining((int)$count,(int)$lastID->id_training);
+                $query->registerBranchTraining((int)$lastID->id_training,(int)$count);
             }
         }
 

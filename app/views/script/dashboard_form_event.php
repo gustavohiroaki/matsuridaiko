@@ -35,7 +35,22 @@
     $("#input-member").submit(function(e){
         e.preventDefault();
         var form = $(this);
-        insertForm(form);
+        var uri = (window.location.pathname).split("/");
+
+        uri.find(checkType);
+
+        function checkType(type){
+
+            if(type=="register"){
+                console.log("register");
+                insertForm(form);
+            }
+            if(type=="update"){
+                console.log("update");
+                updateForm(form);
+            }
+            
+        }
     })
 
     function insertForm(d){
@@ -43,6 +58,24 @@
             type:"POST",
             data:d.serialize(),
             url: "http://localhost/matsuridaiko/register/sendEvent",
+
+        }).then(success,fail)
+
+        function success(a){
+            console.log(a);
+            alert("Incluido com sucesso!");
+        }
+        function fail(data){
+            console.log(data);
+            alert("Falha na inclusão");
+        }
+    }
+
+    function updateForm(d){
+        $.ajax({
+            type:"POST",
+            data:d.serialize(),
+            url: "http://localhost/matsuridaiko/update/updateEvent",
 
         }).then(success,fail)
 

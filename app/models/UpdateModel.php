@@ -4,6 +4,7 @@ namespace app\models;
 
 use app\core\Model;
 
+
 class UpdateModel extends Model{
 	public function __construct(){
 		parent::__construct();
@@ -34,10 +35,26 @@ class UpdateModel extends Model{
 	}
 
 	public function updateEvent($allData=array()){
-		$sql = "UPDATE";
+		$sql = "UPDATE events SET name_event=:name_event,date_init=:date_init,hour_init=:hour_init,date_fin=:date_fin,hour_fin=:hour_fin,dateinit_event=:dateinit_event,datefin_event=:datefin_event,numbermember_event=:numbermember_event,zip_event=:zip_event,state_event=:state_event,city_event=:city_event,neighboorhood_event=:neighboorhood_event,street_event=:street_event,complement_event=:complement_event,annotation_event=:annotation_event,responsible_event=:responsible_event,status_event=:status_event WHERE id_event=:id_event";
 
 		$update = $this->db->prepare($sql);
 
 		$update->execute($allData);
+	}
+
+	public function updateMessage($allData=array()){
+		$sql = "UPDATE messages SET date_init=:date_init,date_fin=:date_fin,message=:message,message_by=:message_by WHERE id_message=:id_message";
+
+		$update = $this->db->prepare($sql);
+
+		$update->execute($allData);
+	}
+
+	public function updateTraining($allDatas=array()){
+		$sql = "UPDATE next_training SET date_training=:date_training,place_training=:place_training,organizer_training=:organizer_training,annotation_training=:annotation_training WHERE id_training=:id_training";
+
+		$update = $this->db->prepare($sql);
+
+		$update->execute($allDatas);
 	}
 }

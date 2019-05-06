@@ -87,8 +87,8 @@
             <option value="" disabled selected>Choose your option</option>
             <?php 
                 foreach($data["event_branch"] as $count){?>
-                    <option value="<?php echo $count->id_branch;?>" <?php if(isset($data["event_branch"])) ?>><?php echo $count->name_branch; ?></option>
-
+                    <option <?php if(isset($data["event"])){if(in_array_r((int)$count->id_branch,$data["select_branch"])){echo 'selected';}} ?> value="<?php echo $count->id_branch;?>" <?php if(isset($data["event_branch"])) ?>><?php echo $count->name_branch; ?></option>
+                    
                 <?php }?> 
             </select>
             <label>Filiais que participarão</label>

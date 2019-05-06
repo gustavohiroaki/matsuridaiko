@@ -99,9 +99,30 @@ class ConsultController extends Controller{
 
     public function nextEvents(){
         $this->security();
+
         $this->add_view("dashboard_consultNextEvents");
         $this->master_interface("dashboard");
     }
 
+    public function message(){
+        $this->security();
+        $query = new ConsultModel;
+        $data["messages"] = $query->selectMessages();
+        
+        $this->add_viewTitle("Consulta de Recados");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_consultMessages");
+        $this->master_interface("dashboard");
+    }
 
+    public function training(){
+        $this->security();
+        $query = new ConsultModel;
+        $data["training"] = $query->selectTraining();
+        
+        $this->add_viewTitle("Consulta de Treinos");
+        $this->add_params($data,0);
+        $this->add_view("dashboard_consultTraining");
+        $this->master_interface("dashboard");
+    }
 }

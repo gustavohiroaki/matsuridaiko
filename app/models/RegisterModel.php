@@ -78,6 +78,8 @@ class RegisterModel extends Model{
         if(!$insert->execute()){
             echo "Falha no Cadastro de participantes!";
         }
+
     }
-    
+
+
 }

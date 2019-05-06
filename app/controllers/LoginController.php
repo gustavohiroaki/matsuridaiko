@@ -26,6 +26,7 @@ class LoginController extends Controller{
                 $_SESSION["id"] = $correct[0]->id_member;
                 $_SESSION["name"] = $correct[0]->name_member;
                 $_SESSION["branch"] = $correct[0]->name_branch;
+                $_SESSION["branch_id"] = $correct[0]->branch_id;
                 $_SESSION["permission"] = $correct[0]->permission_member;
                 header("location:".BASE_URL."dashboard");
             }

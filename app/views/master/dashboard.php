@@ -2,7 +2,7 @@
 <html lang="en">
 <?php $this->load_head();?>
 <body>
-<?php catjson($_SESSION); ?>
+
 <!-- Sidenav -->
 
 <ul class="sidenav sidenav-fixed collapsible">
@@ -31,6 +31,8 @@
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/message" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
                     <li><a href="<?php echo BASE_URL ?>register/training" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>consult/message">Consultar Recados</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/training">Consultar Próximos Treinos</a></li>
             </ul>
         </div>
     </li>
@@ -108,7 +110,8 @@
             <ul>
                     <li><a href="<?php echo BASE_URL ?>register/message" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
                     <li><a href="<?php echo BASE_URL ?>register/training" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
-
+                <li><a href="<?php echo BASE_URL ?>consult/message">Consultar Recados</a></li>
+                <li><a href="<?php echo BASE_URL ?>consult/training">Consultar Próximos Treinos</a></li>
             </ul>
         </div>
     </li>

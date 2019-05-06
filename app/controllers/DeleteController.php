@@ -9,7 +9,5 @@ class DeleteController extends Controller {
 
     }
 
-    public function member($where){
 
-    }
 }

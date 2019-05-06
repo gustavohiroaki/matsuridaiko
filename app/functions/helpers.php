@@ -8,7 +8,6 @@ function catjson($a){
 }
 
 // function cat( $data ) {
-//     $str = implode("", $data);
 //     echo '<script>';
 //     echo "console.log({$str})";
 //     echo '</script>';

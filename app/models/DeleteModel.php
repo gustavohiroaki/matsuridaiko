@@ -16,4 +16,20 @@ class DeleteModel extends Model{
         $delete->bindValue("id_member",$where);
         $delete->execute();
     }
+
+    public function deleteMessage_branch($where){
+        $sql = "DELETE FROM message_branch WHERE id_message = :id_message";
+        $delete = $this->db->prepare($sql);
+        $delete->bindValue(":id_message",$where);
+
+        $delete->execute();
+    }
+
+    public function deleteTraining_branch($where){
+        $sql = "DELETE FROM training_branch WHERE id_training = :id_training";
+        $delete = $this->db->prepare($sql);
+        $delete->bindValue(":id_training",$where);
+
+        $delete->execute();
+    }
 }
