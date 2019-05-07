@@ -272,21 +272,19 @@ class UpdateController extends Controller{
             "id_event"=>$id_event
         );
 
-        
+        //update do id_message 15
         $delete = new DeleteModel;
-        $delete->deleteMessage_branch($id_event);
+        $delete->deleteMessage_branch($id_event);//deletou do message_branch o id 15
 
         $query = new UpdateModel;
-        $query->updateEvent($allDatas);
+        $query->updateEvent($allDatas);//fez o update do messages do id 15
 
-        $query = new ConsultModel;
-        $lastID = $query->selectLastEvent();
 
         if($event_branch!==""){
             foreach($event_branch as $count){
 
                 $query = new RegisterModel;
-                $query->registerBranchEvent((int)$lastID->id_event,(int)$count);
+                $query->registerBranchEvent((int)$id_event,(int)$count);
             }
         }
     }
@@ -338,14 +336,13 @@ class UpdateController extends Controller{
         $query = new UpdateModel;
         $query->updateMessage($allDatas);
 
-        $query = new ConsultModel;
-        $lastID = $query->selectLastMessage();
+
 
         if($message_branch!==""){
             foreach($message_branch as $count){
 
                 $query = new RegisterModel;
-                $query->registerBranchMessage((int)$lastID->id_message,(int)$count);
+                $query->registerBranchMessage((int)$id_message,(int)$count);
             }
         }
     }
@@ -394,14 +391,12 @@ class UpdateController extends Controller{
         $query = new UpdateModel;
         $query->updateTraining($allDatas);
 
-        $query = new ConsultModel;
-        $lastID = $query->selectLastTraining();
 
         if($training_branch!==""){
             foreach($training_branch as $count){
 
                 $query = new RegisterModel;
-                $query->registerBranchTraining((int)$lastID->id_training,(int)$count);
+                $query->registerBranchTraining((int)$id_training,(int)$count);
             }
         }
 

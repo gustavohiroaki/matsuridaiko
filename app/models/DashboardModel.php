@@ -48,4 +48,43 @@ class DashboardModel extends Model{
         $select = $this->db->query($sql);
         return $select->fetchAll();
     }
+
+    public function tableEvents(){
+        $sql = "
+            SELECT * FROM events 
+            JOIN event_branch ON events.id_event = event_branch.id_event
+            WHERE now() BETWEEN date_init AND date_fin
+            AND id_branch = 1
+            LIMIT 5
+        ";
+
+        $select = $this->db->query($sql);
+        echo json_encode($select->fetchAll());
+    }
+
+    public function tableMessages(){
+        $sql = "
+            SELECT * FROM messages
+            JOIN message_branch ON messages.id_message = message_branch.id_message
+            WHERE now() BETWEEN date_init AND date_fin
+            AND id_branch = 1
+            LIMIT 5
+        ";
+
+        $select = $this->db->query($sql);
+        echo json_encode($select->fetchAll());
+    }
+
+    public function tableTraining(){
+        $sql = "
+            SELECT * FROM next_training
+            JOIN training_branch ON next_training.id_training = training_branch.id_training
+            WHERE now() < date_training
+            AND id_branch = 1
+            LIMIT 5
+        ";
+
+        $select = $this->db->query($sql);
+        echo json_encode($select->fetchAll());
+    }
 }

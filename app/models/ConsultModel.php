@@ -189,7 +189,9 @@ class ConsultModel extends Model{
         ON
                 training_branch.id_branch = branch.id_branch
         WHERE
-                training_branch.id_branch = {$_SESSION["branch_id"]} 
+                training_branch.id_branch = {$_SESSION["branch_id"]}
+        AND
+                now() < date_training 
         ";
 
         if($where!==""){
