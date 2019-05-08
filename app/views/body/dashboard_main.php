@@ -24,7 +24,7 @@
             </div>
 
             <div class="card-action center">
-                <a class="center" id="table-events">Tabela de Eventos</a>
+                <a style="cursor: pointer" id="table-events">Tabela de Eventos</a>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="card-action center">
-                <a class="center" id="table-messages">Tabela de Recados</a>
+                <a style="cursor: pointer" id="table-messages">Tabela de Recados</a>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
             </div>
     
             <div class="card-action center">
-                <a class="center" id="table-training">Tabela de Treinos</a>
+                <a style="cursor: pointer" id="table-training">Tabela de Treinos</a>
             </div>
         </div>
     </div>
@@ -87,21 +87,13 @@
         </thead>
 
         <tbody>
+        <?php foreach($data["events"] as $event){ ?>
           <tr>
-            <td>Festival do Japão</td>
-            <td>12/07/2019</td>
-            <td>20</td>
+            <td><?php echo $event->name_event; ?></td>
+            <td><?php echo $event->date_init; ?></td>
+            <td><?php echo $event->numbermember_event; ?></td>
           </tr>
-          <tr>
-            <td>Okinawa Festival</td>
-            <td>15/05/2019</td>
-            <td>30</td>
-          </tr>
-          <tr>
-            <td>Pageant</td>
-            <td>09/12/2019</td>
-            <td>80</td>
-          </tr>
+        <?php } ?>
         </tbody>
       </table>
 
