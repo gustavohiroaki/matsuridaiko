@@ -11,13 +11,13 @@ class LoginController extends Controller{
         $this->master_interface("login");
     }
     public function login(){
-        
+
         $postUser = $_POST["login_user"];
         $postPass = $_POST["login_pass"];
         $loginObj = new Login;
         
         $correct = $loginObj->login($postUser);
-
+        
 
         if($correct){
             if($postUser == $correct[0]->username_member && $postPass == $correct[0]->pass_member){
@@ -28,6 +28,7 @@ class LoginController extends Controller{
                 $_SESSION["branch"] = $correct[0]->name_branch;
                 $_SESSION["branch_id"] = $correct[0]->branch_id;
                 $_SESSION["permission"] = $correct[0]->permission_member;
+
                 header("location:".BASE_URL."dashboard");
             }
             else{
