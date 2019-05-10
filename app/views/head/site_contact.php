@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
 
 
-    <title>Matsuridaiko Management</title>
+    <title>Ryukyukoku Matsuridaiko - Contato</title>
 
     
 </head>

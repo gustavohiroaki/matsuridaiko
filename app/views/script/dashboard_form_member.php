@@ -1,5 +1,6 @@
 <script>
 
+
     $("#zip_member").blur(function(e){
         var cep = $(this).val();
 

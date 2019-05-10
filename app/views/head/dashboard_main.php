@@ -25,7 +25,7 @@
         </script>
 
 
-    <title>Matsuridaiko Management</title>
+    <title>Matsuridaiko Management - Dashboard</title>
 
     
 </head>

@@ -12,7 +12,7 @@ class ConsultModel extends Model{
     public function selectAllMembers(){
         $sql  = "SELECT * FROM members_rkmd ";
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
-        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
+        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch";
 
         $select = $this->db->query($sql);
         return $select->fetchAll();
@@ -22,7 +22,7 @@ class ConsultModel extends Model{
         $sql = "SELECT * FROM members_rkmd ";
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
-        $sql .= "WHERE members_rkmd.id_member > 0 ";
+        $sql .= "WHERE status_member != 5 ";
         if($name!==""){
             $sql.= "AND members_rkmd.name_member LIKE '%{$name}%' ";
         }
@@ -38,6 +38,7 @@ class ConsultModel extends Model{
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
         $sql .= "WHERE members_rkmd.id_type = 3 ";
+        // $sql .= "AND status_member = 1 ";
         if($where!==""){
         $sql .= "AND id_member = {$where}";
         }
@@ -51,6 +52,7 @@ class ConsultModel extends Model{
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
         $sql .= "WHERE members_rkmd.id_type = 2 ";
+        $sql .= "AND status_member = 1 ";
         if($where!==""){
         $sql .= "AND id_member = {$where}";
         }
@@ -64,6 +66,7 @@ class ConsultModel extends Model{
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
         $sql .= "WHERE members_rkmd.id_type = 1 ";
+        $sql .= "AND status_member = 1 ";
         if($where!==""){
         $sql .= "AND id_member = {$where}";
         }

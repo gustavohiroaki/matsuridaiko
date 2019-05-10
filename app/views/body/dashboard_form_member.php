@@ -14,11 +14,11 @@ $data = $this->params;
         
         <div class="input-field col l12 m12 s12">
             <label for="name_member">Nome do Integrante</label>
-            <input type="text" id="name_member" name="name_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->name_member;} ?>">
+            <input required type="text" id="name_member" name="name_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->name_member;} ?>">
         </div>
         <div class="input-field col l8 m12 s12">
             <label for="username_member">Nome de usuário do Integrante</label>
-            <input type="text" id="username_member" name="username_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->username_member;} ?>">
+            <input required type="text" id="username_member" name="username_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->username_member;} ?>">
         </div>
         <div class="input-field col l4 m12 s12">
             
@@ -31,15 +31,11 @@ $data = $this->params;
             </select>
             <label>Tipo membro</label>
         </div>
-        <div class="input-field col l6 m6 s6">
+        <div class="input-field col l12 m12 s12">
             <label for="pass_member">Senha</label>
-            <input type="password" id="pass_member" name="pass_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->pass_member;} ?>">
+            <input required type="password" id="pass_member" name="pass_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->pass_member;} ?>">
         </div>
 
-        <div class="input-field col l6 m6 s6">
-            <label for="pass2_member">Confirmação de Senha</label>
-            <input type="password" id="pass2_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->pass_member;} ?>">
-        </div>
     </div>
     <h3 class="center">Dados Membros</h3>
     <div class="row">
@@ -67,23 +63,23 @@ $data = $this->params;
         </div>
 
         <div class="input-field col l3 m4 s6">
-            <input type="text" class="datepicker" id="entrydate_member" name="entrydate_member" value="<?php if(isset($data["member_info"])){echo formatDate($data["member_info"]->entrydate_member,"BR");}?>">
+            <input required type="text" class="datepicker date" id="entrydate_member" name="entrydate_member" value="<?php if(isset($data["member_info"])){echo formatDate($data["member_info"]->entrydate_member,"BR");}?>">
             <label for="entrydate_member">Data de Ingresso</label>
         </div>
 
         <div class="input-field col l3 m6 s6">
-            <input type="text" class="datepicker" id="birth_member" name="birth_member" value="<?php if(isset($data["member_info"])){echo formatDate($data["member_info"]->birth_member,"BR");}?>">
+            <input required type="text" class="datepicker date" id="birth_member" name="birth_member" value="<?php if(isset($data["member_info"])){echo formatDate($data["member_info"]->birth_member,"BR");}?>">
             <label for="birth_member">Data de Nascimento</label>
         </div>
 
         <div class="input-field col l6 m6 s12">
-            <label for="tel_member">Telefone do Integrante</label>
-            <input type="text" id="tel_member" name="tel_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->tel_member;} ?>">
+            <label  for="tel_member">Telefone do Integrante</label>
+            <input  class="tel" type="text" id="tel_member" name="tel_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->tel_member;} ?>">
         </div>
 
         <div class="input-field col l6 m12 s12">
             <label for="rg_member">RG do Integrante</label>
-            <input type="text" id="rg_member" name="rg_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->rg_member;} ?>">
+            <input class="rg" type="text" id="rg_member" name="rg_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->rg_member;} ?>">
         </div>
     </div>
     <h3 class="center">Endereço</h3>
@@ -91,37 +87,40 @@ $data = $this->params;
 
         <div class="input-field col l4 m12 s12">
             <label for="zip_member">CEP</label>
-            <input type="text" id="zip_member" name="zip_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->zip_member;} ?>">
+            <input required class="zip" type="text" id="zip_member" name="zip_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->zip_member;} ?>">
         </div>
 
         <div class="input-field col l4 m6 s12">
             <label for="state_member" class="active">Estado</label>
-            <input type="text" id="state_member" name="state_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->state_member;} ?>">
+            <input required type="text" id="state_member" name="state_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->state_member;} ?>">
         </div>
 
         <div class="input-field col l4 m6 s12">
             <label for="city_member" class="active">Cidade</label>
-            <input type="text" id="city_member" name="city_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->city_member;} ?>">
+            <input required type="text" id="city_member" name="city_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->city_member;} ?>">
         </div>
         
         <div class="input-field col l4 m6 s12">
             <label for="neighboorhood_member" class="active">Bairro</label>
-            <input type="text" id="neighboorhood_member" name="neighboorhood_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->neighboorhood_member;} ?>">
+            <input required type="text" id="neighboorhood_member" name="neighboorhood_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->neighboorhood_member;} ?>">
         </div>
 
         <div class="input-field col l8 m6 s12">
             <label for="street_member">Rua</label>
-            <input type="text" id="street_member" name="street_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->street_member;} ?>">
+            <input required type="text" id="street_member" name="street_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->street_member;} ?>">
         </div>
 
         <div class="input-field col l12 m12 s12">
             <label for="complement_member">Complemento</label>
-            <input type="text" id="complement_member" name="complement_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->complement_member;} ?>">
+            <input required type="text" id="complement_member" name="complement_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->complement_member;} ?>">
         </div>
 
         <div class="input-field col l1 m2 s4">
+            <select name="status_member" id="status_member">
+                    <option <?php if(isset($data["member_info"])){if($data["member_info"]->status_member==1){echo 'selected';} } ?> value="1">Ativo</option>
+                    <option <?php if(isset($data["member_info"])){if($data["member_info"]->status_member==0){echo 'selected';} } ?> value="0">Inativo</option>
+            </select>
             <label for="status_member">Status</label>
-            <input type="text" id="status_member" name="status_member" value="<?php if(isset($data["member_info"])){echo $data["member_info"]->status_member;} ?>">
         </div>
 
 

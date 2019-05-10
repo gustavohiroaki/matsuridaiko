@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/site.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
 
-    <title>Matsuridaiko Management</title>
+    <title>Matsuridaiko Management - Login</title>
 
     
 </head>

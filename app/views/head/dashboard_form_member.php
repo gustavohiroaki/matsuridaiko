@@ -25,6 +25,7 @@
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery-ui.min.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.simple-dtpicker.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.mask.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> 
 <script>
       $(document).ready(function(){
         //Materialize
@@ -47,7 +48,10 @@
         // } );
         
         // mask
-        $("#zip").mask('00000-000');
+        $(".zip").mask('00000-000');
+        $(".date").mask('00-00-0000');
+        $(".tel").mask('(00)00000-0000');
+        $(".rg").mask('00.000.000-0')
 
         // /mask
 
