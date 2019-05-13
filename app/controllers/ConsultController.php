@@ -115,6 +115,18 @@ class ConsultController extends Controller{
         $this->master_interface("dashboard");
     }
 
+    public function specificMessage(){
+        $this->security();
+        if(isset($_POST["id"])){
+            $query = new ConsultModel;
+            echo json_encode($query->selectSpecificMessage($_POST["id"]));
+        }
+        else{
+            
+        }
+
+    }
+
     public function training(){
         $this->security();
         $query = new ConsultModel;

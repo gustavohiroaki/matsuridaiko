@@ -175,12 +175,12 @@
         
         
         <ul class="right">
-            <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown-notification"><i class="material-icons left">notifications</i><span class="red lighten-2 new badge">2</span></a></li>
+            <!-- <li class="hide-on-med-and-down"><a class="dropdown-trigger" data-target="dropdown-notification"><i class="material-icons left">notifications</i><span class="red lighten-2 new badge">2</span></a></li>
 
                 <ul id="dropdown-notification" class="dropdown-content">
                     <li><a href="#">Notificacao 1</a></li>
                     <li><a href="#"> Notificacao 2</a></li>
-                </ul>
+                </ul> -->
 
 
             <li class="hide-on-med-and-down"><a href="<?php echo BASE_URL.'login/logout'; ?>"><i class="material-icons left">vpn_key</i>Logout</a></li>

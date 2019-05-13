@@ -31,7 +31,7 @@
           title: '<?php echo $data["name_event"]; ?>',
           start: '<?php echo $data["dateinit_event"]; ?>',
           end:   '<?php echo $data["datefin_event"]; ?>',
-          url:   'http://www.google.com.br/'
+          url:   "http://localhost/matsuridaiko/details/event/<?php echo $data["id_event"]; ?>"
         },
         <?php } ?>
       ]

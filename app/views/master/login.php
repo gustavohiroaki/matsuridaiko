@@ -15,7 +15,7 @@
 
         <ul class="right hide-on-med-and-down">
             <li><a href="<?php echo BASE_URL ?>">Home</a></li>
-            <li><a href="<?php echo BASE_URL ?>about">Sobre</a></li>
+            <!-- <li><a href="<?php echo BASE_URL ?>about">Sobre</a></li> -->
             <li><a href="<?php echo BASE_URL ?>contact">Contato</a></li>
             <li><a href="<?php echo BASE_URL ?>login">Login</a></li>
         </ul>
@@ -23,7 +23,7 @@
 
     <ul id="nav-mobile" class="sidenav">
         <li><a href="<?php echo BASE_URL ?>">Home</a></li>
-        <li><a href="<?php echo BASE_URL ?>about">Sobre</a></li>
+        <!-- <li><a href="<?php echo BASE_URL ?>about">Sobre</a></li> -->
         <li><a href="<?php echo BASE_URL ?>contact">Contato</a></li>
         <li><a href="<?php echo BASE_URL ?>login">Login</a></li>
     </ul>

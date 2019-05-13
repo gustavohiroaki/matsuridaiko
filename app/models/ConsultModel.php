@@ -33,6 +33,17 @@ class ConsultModel extends Model{
         return json_encode($select->fetchAll());
     }
 
+    public function selectAllMembersType($where=""){
+        $sql  = "SELECT * FROM members_rkmd ";
+        $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
+        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
+        $sql .= "WHERE id_member = {$where}";
+
+
+        $select = $this->db->query($sql);
+        return $select->fetchAll();
+    }
+
     public function selectMembers($where=""){
         $sql  = "SELECT * FROM members_rkmd ";
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
@@ -166,6 +177,15 @@ class ConsultModel extends Model{
 
         $select = $this->db->query($sql);
         return $select->fetchAll();
+    }
+
+    public function selectSpecificMessage($where){
+        $sql = "SELECT message FROM messages WHERE id_message = :id_message";
+        $select = $this->db->prepare($sql);
+        $select->bindValue("id_message",$where);
+        $select->execute();
+
+        return $select->fetch();
     }
 
     public function selectIdMessageBranch($where){

@@ -11,22 +11,11 @@
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/_include/jquery.simple-dtpicker.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/global.css">
         <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/dashboard.css">
-
-        
 <style>
 .row{
     padding: 20px 10px 0 10px;
     border: 1px solid rgba(0,0,0,.45);
     border-radius: 3px;
-}
-#complete_message{
-    border: 1px solid rgba(0,0,0,.45);
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-tr td:nth-child(1){
-    cursor: pointer;
-    color: red;
 }
 </style>
         <!-- Scripts -->
@@ -36,6 +25,7 @@ tr td:nth-child(1){
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery-ui.min.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.simple-dtpicker.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.mask.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> 
 <script>
       $(document).ready(function(){
         //Materialize
@@ -52,9 +42,16 @@ tr td:nth-child(1){
         $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' });
         // Materialize
 
+
+        // $( function() {
+        //     $( ".datepicker" ).datepicker("option", "dateFormat", "dd-mm-yy");
+        // } );
         
         // mask
-        $("#zip").mask('00000-000');
+        $(".zip").mask('00000-000');
+        $(".date").mask('00-00-0000');
+        $(".tel").mask('(00)00000-0000');
+        $(".rg").mask('00.000.000-0')
 
         // /mask
 

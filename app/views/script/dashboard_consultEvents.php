@@ -15,22 +15,23 @@
 
         function success(data){
             console.log(data);
-            alert("");
             var obj = jQuery.parseJSON(data);
 
             // console.log(obj[0]["name_member"]);
             $("tbody").empty();
 
             obj.forEach(function(e){
-                $("tbody").append('<tr>');
-                $("tbody").append('<td>'+e["name_event"]+'</td>');
-                $("tbody").append('<td>'+e["date_init"]+'</td>');
-                $("tbody").append('<td>'+e["city_event"]+'</td>');
-                $("tbody").append('<td>'+e["responsible_event"]+'</td>');
-                $("tbody").append('<td>'+e["annotation_event"]+'</td>');
-                $("tbody").append('<td><a href="http://localhost/matsuridaiko/update/event/'+e["id_event"]+'"><i class="material-icons">create</i></a></td>');
-                $("tbody").append('</tr>');
+                $("tbody").append('<tr>'
+                +'<td>'+e["name_event"]+'</td>'
+                +'<td>'+e["date_init"]+'</td>'
+                +'<td>'+e["city_event"]+'</td>'
+                +'<td>'+e["responsible_event"]+'</td>'
+                +'<td>'+e["annotation_event"]+'</td>'
+                +'<td><a href="http://localhost/matsuridaiko/update/event/'+e["id_event"]+'"><i class="material-icons">create</i></a></td>'
+                +'<td><a href="#" title="'+e["id_event"]+'" class="delete"><i class="material-icons">delete</i></a></td>'
+                +'</tr>');
             })
+            deleteList();
         }
 
         function fail(data){
@@ -39,5 +40,25 @@
             alert("Falha na consulta");
         }
 
+    }
+$(document).ready(deleteList());
+
+    function deleteList(){
+        $(".delete").click(function(e){
+        e.preventDefault();
+
+        var id = $(this).attr("title");
+        var exclude = $(this).parent().parent();
+
+
+        $.ajax({
+            type:"POST",
+            data:"id="+id,
+            url:"http://localhost/matsuridaiko/delete/deleteEvent"
+        }).done(function(){
+            exclude.fadeOut();
+        })
+        
+        })
     }
 </script>
