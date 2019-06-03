@@ -125,8 +125,9 @@ $data = $this->params;
 
 
     
-        <input type="submit" class="btn" value="Enviar">
+        
 
     </div>
+    <input type="submit" class="btn" value="Enviar">
 </form>
 
