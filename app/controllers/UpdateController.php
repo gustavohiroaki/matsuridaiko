@@ -146,6 +146,7 @@ class UpdateController extends Controller{
     public function shinjin($memberID){
         $this->security();
         $member_info = new ConsultModel;
+
         $data["member_info"] = $member_info->selectShinjins($memberID)[0];
 
         $query = new Basics;

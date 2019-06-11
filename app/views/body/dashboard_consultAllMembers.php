@@ -25,7 +25,7 @@
             <select name="filter_branch" id="filter_branch">
                 <option value="">Nenhuma</option>
                 <?php foreach($data["filter_branch"] as $row){ ?>
-                <option value="<?php echo $row->id_branch; ?>"><?php echo $row->name_branch; ?></option>
+                <option value="<?php echo $row->id_branch; ?>" <?php if($row->id_branch == $_SESSION['branch_id']){echo "selected";} ?>><?php echo $row->name_branch; ?></option>
                 <?php } ?>
             </select>
             <label for="filter_branch">Filial</label>

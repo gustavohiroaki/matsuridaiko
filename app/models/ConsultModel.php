@@ -49,10 +49,13 @@ class ConsultModel extends Model{
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
         $sql .= "WHERE members_rkmd.id_type = 3 ";
-        // $sql .= "AND status_member = 1 ";
         if($where!==""){
-        $sql .= "AND id_member = {$where}";
-        }
+            $sql .= "AND id_member = {$where}";
+            }
+            else{
+                $sql .= "AND status_member = 1 ";
+                $sql .= "AND members_rkmd.id_branch = {$_SESSION['branch_id']}";
+            }
 
         $select = $this->db->query($sql);
         return $select->fetchAll();
@@ -63,10 +66,13 @@ class ConsultModel extends Model{
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
         $sql .= "WHERE members_rkmd.id_type = 2 ";
-        $sql .= "AND status_member = 1 ";
         if($where!==""){
-        $sql .= "AND id_member = {$where}";
-        }
+            $sql .= "AND id_member = {$where}";
+            }
+            else{//Used for consult members inside of the branch
+                $sql .= "AND status_member = 1 ";
+                $sql .= "AND members_rkmd.id_branch = {$_SESSION['branch_id']}";
+            }
 
         $select = $this->db->query($sql);
         return $select->fetchAll();
@@ -77,9 +83,12 @@ class ConsultModel extends Model{
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
         $sql .= "WHERE members_rkmd.id_type = 1 ";
-        $sql .= "AND status_member = 1 ";
         if($where!==""){
         $sql .= "AND id_member = {$where}";
+        }
+        else{//Used for consult members inside of the branch
+            $sql .= "AND status_member = 1 ";
+            $sql .= "AND members_rkmd.id_branch = {$_SESSION['branch_id']}";
         }
 
         $select = $this->db->query($sql);
@@ -214,7 +223,7 @@ class ConsultModel extends Model{
         WHERE
                 training_branch.id_branch = {$_SESSION["branch_id"]}
         AND
-                now() < date_training 
+                date(now()) <= date_training 
         ";
 
         if($where!==""){
