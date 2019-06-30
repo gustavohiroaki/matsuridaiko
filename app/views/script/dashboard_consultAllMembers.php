@@ -26,7 +26,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/consult/filterAllMembers",
+            url: "<?php echo BASE_URL ?>consult/filterAllMembers",
 
         }).then(success,fail)
 
@@ -71,7 +71,7 @@ function deleteList(){
     $.ajax({
         type:"POST",
         data:"id="+id,
-        url:"http://localhost/matsuridaiko/delete/deleteMember"
+        url:"<?php echo BASE_URL ?>delete/deleteMember"
     }).done(function(){
         exclude.fadeOut();
     })

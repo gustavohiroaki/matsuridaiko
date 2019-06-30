@@ -7,6 +7,11 @@
   <form id="input-message">
     <input type="hidden" name="id_message" value="<?php if(isset($data["message"])){echo $message->id_message;} ?>">
     <div class="input-field col s12 m12 l12">
+      <input id="message_title" name="message_title" type="text" value="">
+      <label>Título da Mensagem</label>
+    </div>
+    
+    <div class="input-field col s12 m12 l12">
       <input id="date_init" name="date_init" class="datepicker" type="text" value="<?php if(isset($data["message"])){echo formatDate($message->date_init,"BR");} ?>">
       <label for="date_init">Notificação a Partir de:</label>
     </div>

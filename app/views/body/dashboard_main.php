@@ -1,7 +1,7 @@
 <?php 
     $data = $this->params;
     // echo '<pre>';
-    // print_r($data);
+//     print_r($data["message"]);
 ?>
 
 <div class="row">
@@ -14,7 +14,7 @@
                 
                     <ul>
                         <?php foreach($data["events"] as $event){ ?>
-                            <li><a href="#" style="color: white;">
+                            <li class="under-line"><a href="#" style="color: white;">
                                 <?php echo $event->name_event; ?>
                             </a></li>
                         <?php } ?>
@@ -36,8 +36,8 @@
             <div class="center" style="overflow-y: scroll;height: 80px" >
                 <ul>
                     <?php foreach($data["message"] as $message){ ?>
-                        <li><a href="#" style="color: white;">
-                            <?php echo $message->message; ?>
+                        <li class="under-line"><a href="#" style="color: white;">
+                            <?php echo $message->message_title; ?>
                         </a></li>
                     <?php } ?>
                 </ul>
@@ -57,7 +57,7 @@
             <div class="center" style="overflow-y: scroll;height: 80px" >
                 <ul>
                     <?php foreach($data["training"] as $training){ ?>
-                        <li><a href="#" style="color: white;">
+                        <li class="under-line"><a href="#" style="color: white;">
                             <?php echo $training->place_training; ?>
                         </a></li>
                     <?php } ?>

@@ -57,7 +57,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/register/sendEvent",
+            url: "<?php echo BASE_URL ?>register/sendEvent",
 
         }).then(success,fail)
 
@@ -75,7 +75,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/update/updateEvent",
+            url: "<?php echo BASE_URL ?>update/updateEvent",
 
         }).then(success,fail)
 

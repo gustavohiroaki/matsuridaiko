@@ -8,7 +8,7 @@ $(".delete").click(function(e){
     $.ajax({
         type:"POST",
         data:"id="+id,
-        url:"http://localhost/matsuridaiko/delete/deleteMember"
+        url:"<?php echo BASE_URL ?>delete/deleteMember"
     }).done(function(){
         exclude.fadeOut();
     })

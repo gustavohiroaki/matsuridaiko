@@ -178,6 +178,7 @@ class RegisterController extends Controller{
 
         $date_init = isset($_POST["date_init"])? strip_tags(filter_input(INPUT_POST,"date_init")):NULL;
         $date_fin = isset($_POST["date_fin"])? strip_tags(filter_input(INPUT_POST,"date_fin")):NULL;
+        $message_title = isset($_POST["message_title"])? strip_tags(filter_input(INPUT_POST,"message_title")):NULL;
         $message = isset($_POST["message"])? strip_tags(filter_input(INPUT_POST,"message")):NULL;
         $message_branch = $_POST["message_branch"];
         $message_by = $_SESSION["name"];
@@ -188,6 +189,7 @@ class RegisterController extends Controller{
         $allDatas = array(
             'date_init'=>$date_init,
             'date_fin'=>$date_fin,
+            'message_title'=>$message_title,
             'message'=>$message,
             'message_by'=>$message_by
         );

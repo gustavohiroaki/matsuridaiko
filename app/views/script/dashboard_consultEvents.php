@@ -10,7 +10,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url:'http://localhost/matsuridaiko/consult/filterAllEvents',
+            url:'<?php echo BASE_URL ?>consult/filterAllEvents',
         }).then(success,fail)
 
         function success(data){
@@ -27,7 +27,7 @@
                 +'<td>'+e["city_event"]+'</td>'
                 +'<td>'+e["responsible_event"]+'</td>'
                 +'<td>'+e["annotation_event"]+'</td>'
-                +'<td><a href="http://localhost/matsuridaiko/update/event/'+e["id_event"]+'"><i class="material-icons">create</i></a></td>'
+                +'<td><a href="<?php echo BASE_URL ?>update/event/'+e["id_event"]+'"><i class="material-icons">create</i></a></td>'
                 +'<td><a href="#" title="'+e["id_event"]+'" class="delete"><i class="material-icons">delete</i></a></td>'
                 +'</tr>');
             })
@@ -54,7 +54,7 @@ $(document).ready(deleteList());
         $.ajax({
             type:"POST",
             data:"id="+id,
-            url:"http://localhost/matsuridaiko/delete/deleteEvent"
+            url:"<?php echo BASE_URL ?>delete/deleteEvent"
         }).done(function(){
             exclude.fadeOut();
         })

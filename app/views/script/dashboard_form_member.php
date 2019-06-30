@@ -73,7 +73,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/register/sendMember",
+            url: "<?php echo BASE_URL ?>register/sendMember",
 
         }).then(success,fail)
 
@@ -91,7 +91,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/update/updateMember"
+            url: "<?php echo BASE_URL ?>update/updateMember"
         }).then(success,fail)
 
         function success(data){

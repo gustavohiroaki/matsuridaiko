@@ -25,7 +25,6 @@
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery-ui.min.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.simple-dtpicker.js"></script>
 <script src="<?php echo BASE_URL_ASSETS ?>_js/_include/jquery.mask.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> 
 <script>
       $(document).ready(function(){
         //Materialize

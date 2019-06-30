@@ -11,7 +11,7 @@ function queryMessage(){
         console.log(id);
         $.ajax({
             type:"POST",
-            url:"http://localhost/matsuridaiko/consult/specificMessage",
+            url:"<?php echo BASE_URL ?>consult/specificMessage",
             data:"id="+id
         }).done(function(e){
             var message = JSON.parse(e);
@@ -31,7 +31,7 @@ function deleteList(){
     $.ajax({
         type:"POST",
         data:"id="+id,
-        url:"http://localhost/matsuridaiko/delete/deleteMessage"
+        url:"<?php echo BASE_URL ?>delete/deleteMessage"
     }).done(function(){
         exclude.fadeOut();
     })

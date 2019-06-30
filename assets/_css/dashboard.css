@@ -88,3 +88,6 @@ label .cancelLabel{
 	border: 2px solid #555555;
 }
 
+.under-line{
+	border-bottom: 1px white solid;
+}

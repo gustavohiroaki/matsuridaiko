@@ -25,7 +25,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/register/sendTraining",
+            url: "<?php echo BASE_URL ?>register/sendTraining",
 
         }).then(success,fail)
 
@@ -43,7 +43,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "http://localhost/matsuridaiko/update/updateTraining",
+            url: "<?php echo BASE_URL ?>update/updateTraining",
 
         }).then(success,fail)
 

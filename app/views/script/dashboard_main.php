@@ -5,7 +5,7 @@ $(document).ready(function(){
         $.ajax({
             type:'POST',
             dataType:'json',
-            url:'http://localhost/matsuridaiko/dashboard/tableEvents'
+            url:'<?php echo BASE_URL ?>dashboard/tableEvents'
         }).done(function(d){
             console.log(d);
             $("thead").empty();
@@ -23,7 +23,7 @@ $(document).ready(function(){
         $.ajax({
             type:'POST',
             dataType:'json',
-            url:'http://localhost/matsuridaiko/dashboard/tableMessages'
+            url:'<?php echo BASE_URL ?>dashboard/tableMessages'
         }).done(function(d){
             console.log(d);
             $("thead").empty();
@@ -40,7 +40,7 @@ $(document).ready(function(){
         $.ajax({
             type:'POST',
             dataType:'json',
-            url:'http://localhost/matsuridaiko/dashboard/tableTraining'
+            url:'<?php echo BASE_URL ?>dashboard/tableTraining'
         }).done(function(d){
             console.log(d);
             $("thead").empty();

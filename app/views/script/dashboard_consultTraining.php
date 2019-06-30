@@ -12,7 +12,7 @@ function deleteList(){
     $.ajax({
         type:"POST",
         data:"id="+id,
-        url:"http://localhost/matsuridaiko/delete/deleteTraining"
+        url:"<?php echo BASE_URL ?>delete/deleteTraining"
     }).done(function(){
         exclude.fadeOut();
     })

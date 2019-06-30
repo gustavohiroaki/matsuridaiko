@@ -43,7 +43,7 @@ class UpdateModel extends Model{
 	}
 
 	public function updateMessage($allData=array()){
-		$sql = "UPDATE messages SET date_init=:date_init,date_fin=:date_fin,message=:message,message_by=:message_by WHERE id_message=:id_message";
+		$sql = "UPDATE messages SET date_init=:date_init,date_fin=:date_fin,message_title=:message_title,message=:message,message_by=:message_by WHERE id_message=:id_message";
 
 		$update = $this->db->prepare($sql);
 

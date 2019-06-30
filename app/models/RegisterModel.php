@@ -41,10 +41,12 @@ class RegisterModel extends Model{
     }
 
     public function registerMessage($allDatas=array()){
-        $sql = "INSERT INTO messages (date_init,date_fin,message,message_by) ";
-        $sql.= "VALUES (:date_init,:date_fin,:message,:message_by) ";
+        $sql = "INSERT INTO messages (date_init,date_fin,message_title,message,message_by) ";
+        $sql.= "VALUES (:date_init,:date_fin,:message_title,:message,:message_by) ";
+
         
         $insert = $this->db->prepare($sql);
+
         if(!$insert->execute($allDatas)){
             echo "Falha no Cadastro da mensagem!";
         };

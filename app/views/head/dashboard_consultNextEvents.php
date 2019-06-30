@@ -44,7 +44,6 @@
                 });
                 $('.dropdown-trigger').dropdown();
             });
-            document.getElementById('calendar-frame').location.reload();
         </script>
 
 
