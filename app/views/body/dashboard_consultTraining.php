@@ -22,7 +22,7 @@
                 <td><?php echo formatDate($count->date_training,"BR"); ?></td>
                 <td><?php echo $count->annotation_training; ?></td>
                 <td><?php echo $count->organizer_training; ?></td>
-                <td><a href="<?php echo BASE_URL.'update/training/'.$count->id_training; ?>"><i class="material-icons">create</i></a></td>
+                <td><a href="<?php echo BASE_URL.'training/updateForm/'.$count->id_training; ?>"><i class="material-icons">create</i></a></td>
                 <td><a href="#" title="<?php echo $count->id_training; ?>" class="delete"><i class="material-icons">delete</i></a></td>
             </tr>
             <?php } ?>

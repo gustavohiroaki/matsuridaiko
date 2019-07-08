@@ -13,8 +13,8 @@
                 console.log("register");
                 insertForm(form);
             }
-            if(type=="update"){
-                console.log("update");
+            if(type=="updateForm"){
+                console.log("updateForm");
                 updateForm(form);
             }
             
@@ -26,7 +26,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "<?php echo BASE_URL ?>register/sendMessage",
+            url: "<?php echo BASE_URL ?>messages/filterAndInsert",
 
         }).then(success,fail)
 
@@ -44,7 +44,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "<?php echo BASE_URL ?>update/updateMessage",
+            url: "<?php echo BASE_URL ?>messages/filterAndUpdate",
 
         }).then(success,fail)
 

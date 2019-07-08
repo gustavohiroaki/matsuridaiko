@@ -10,7 +10,7 @@ class RegisterModel extends Model{
     }
 
     public function registerMember($allDatas=array()){
-        $sql = "INSERT INTO members_rkmd (id_member,name_member,username_member,id_type,pass_member,permission_member,id_branch,entrydate_member,birth_member,tel_member,rg_member,zip_member,state_member,city_member,neighboorhood_member,street_member,complement_member,status_member) VALUES (:id_member,:name_member,:username_member,:id_type,:pass_member,:permission_member,:id_branch,:entrydate_member,:birth_member,:tel_member,:rg_member,:zip_member,:state_member,:city_member,:neighboorhood_member,:street_member,:complement_member,:status_member)";
+        $sql = "INSERT INTO members_rkmd (name_member,username_member,id_type,pass_member,permission_member,id_branch,entrydate_member,birth_member,tel_member,rg_member,zip_member,state_member,city_member,neighboorhood_member,street_member,complement_member,status_member) VALUES (:name_member,:username_member,:id_type,:pass_member,:permission_member,:id_branch,:entrydate_member,:birth_member,:tel_member,:rg_member,:zip_member,:state_member,:city_member,:neighboorhood_member,:street_member,:complement_member,:status_member)";
 
         $insert = $this->db->prepare($sql);
 

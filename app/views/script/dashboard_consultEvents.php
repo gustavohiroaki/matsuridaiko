@@ -10,7 +10,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url:'<?php echo BASE_URL ?>consult/filterAllEvents',
+            url:'<?php echo BASE_URL ?>events/filter/'
         }).then(success,fail)
 
         function success(data){
@@ -27,7 +27,7 @@
                 +'<td>'+e["city_event"]+'</td>'
                 +'<td>'+e["responsible_event"]+'</td>'
                 +'<td>'+e["annotation_event"]+'</td>'
-                +'<td><a href="<?php echo BASE_URL ?>update/event/'+e["id_event"]+'"><i class="material-icons">create</i></a></td>'
+                +'<td><a href="<?php echo BASE_URL ?>events/update/'+e["id_event"]+'"><i class="material-icons">create</i></a></td>'
                 +'<td><a href="#" title="'+e["id_event"]+'" class="delete"><i class="material-icons">delete</i></a></td>'
                 +'</tr>');
             })
@@ -49,13 +49,14 @@ $(document).ready(deleteList());
 
         var id = $(this).attr("title");
         var exclude = $(this).parent().parent();
-
+        
 
         $.ajax({
             type:"POST",
             data:"id="+id,
-            url:"<?php echo BASE_URL ?>delete/deleteEvent"
+            url:"<?php echo BASE_URL ?>events/delete/"
         }).done(function(){
+          
             exclude.fadeOut();
         })
         

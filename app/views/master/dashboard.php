@@ -17,11 +17,8 @@
     <li><a class="waves-effect collapsible-header">Integrantes</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="<?php echo BASE_URL ?>register/member" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
-                <li><a href="<?php echo BASE_URL ?>consult/allMembers">Todos os Integrantes</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/member">Membros</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/junior">Juniors</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/shinjin">Shinjins</a></li>
+                    <li><a href="<?php echo BASE_URL ?>users/register" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>users/consult">Todos os Integrantes</a></li>
             </ul>
         </div>
     </li>
@@ -29,10 +26,10 @@
     <li><a class="waves-effect collapsible-header">Informações</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="<?php echo BASE_URL ?>register/message" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
-                    <li><a href="<?php echo BASE_URL ?>register/training" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
-                <li><a href="<?php echo BASE_URL ?>consult/message">Consultar Recados</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/training">Consultar Próximos Treinos</a></li>
+                    <li><a href="<?php echo BASE_URL ?>messages/register" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>training/register" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>messages/consult">Consultar Recados</a></li>
+                <li><a href="<?php echo BASE_URL ?>training/consult">Consultar Próximos Treinos</a></li>
             </ul>
         </div>
     </li>
@@ -40,10 +37,10 @@
     <li><a class="waves-effect collapsible-header">Eventos</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
-                    <li><a href="<?php echo BASE_URL ?>consult/allEvents" class="red lighten-5">Consultar Todos os Eventos</a></li><!-- Only for admin -->
-                <li><a href="<?php echo BASE_URL ?>consult/pastEvents">Eventos Anteriores</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/nextEvents">Próximos Eventos</a></li>
+                    <li><a href="<?php echo BASE_URL ?>events/register" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>events/consultAll">Consultar Todos os Eventos</a></li>
+                <li><a href="<?php echo BASE_URL ?>events/consultPast">Eventos Anteriores</a></li>
+                <li><a href="<?php echo BASE_URL ?>events/consultNext">Próximos Eventos</a></li>
             </ul>
         </div>
     </li>
@@ -96,11 +93,8 @@
     <li><a class="waves-effect collapsible-header">Integrantes</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="<?php echo BASE_URL ?>register/member" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
-                <li><a href="<?php echo BASE_URL ?>consult/allMembers">Todos os Integrantes</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/member">Membros</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/junior">Juniors</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/shinjin">Shinjins</a></li>
+                    <li><a href="<?php echo BASE_URL ?>users/register" class="red lighten-5">Cadastro de Integrantes</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>users/consult">Todos os Integrantes</a></li>
             </ul>
         </div>
     </li>
@@ -108,10 +102,10 @@
     <li><a class="waves-effect collapsible-header">Informações</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="<?php echo BASE_URL ?>register/message" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
-                    <li><a href="<?php echo BASE_URL ?>register/training" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
-                <li><a href="<?php echo BASE_URL ?>consult/message">Consultar Recados</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/training">Consultar Próximos Treinos</a></li>
+                    <li><a href="<?php echo BASE_URL ?>messages/register" class="red lighten-5">Cadastrar Recados</a></li><!-- Only for admin -->
+                    <li><a href="<?php echo BASE_URL ?>training/register" class="red lighten-5">Cadastrar Treinos</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>messages/consult">Consultar Recados</a></li>
+                <li><a href="<?php echo BASE_URL ?>training/consult">Consultar Próximos Treinos</a></li>
             </ul>
         </div>
     </li>
@@ -119,10 +113,10 @@
     <li><a class="waves-effect collapsible-header">Eventos</a>
         <div class="collapsible-body">
             <ul>
-                    <li><a href="<?php echo BASE_URL ?>register/event" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
-                    <li><a href="<?php echo BASE_URL ?>consult/allEvents" class="red lighten-5">Consultar Todos os Eventos</a></li><!-- Only for admin -->
-                <li><a href="<?php echo BASE_URL ?>consult/pastEvents">Eventos Anteriores</a></li>
-                <li><a href="<?php echo BASE_URL ?>consult/nextEvents">Próximos Eventos</a></li>
+                    <li><a href="<?php echo BASE_URL ?>events/register" class="red lighten-5">Cadastro de Eventos</a></li><!-- Only for admin -->
+                <li><a href="<?php echo BASE_URL ?>events/consultAll">Consultar Todos os Eventos</a></li>
+                <li><a href="<?php echo BASE_URL ?>events/consultPast">Eventos Anteriores</a></li>
+                <li><a href="<?php echo BASE_URL ?>events/consultNext">Próximos Eventos</a></li>
             </ul>
         </div>
     </li>
@@ -145,7 +139,7 @@
         <div class="collapsible-body">
             <ul>
                     <li><a href="#" class="red lighten-5">Consulta de Requisições</a></li><!-- Only for admin -->
-                <li><a href="#">Uniformes</a></li>
+                <li><a href="#">Uniforme</a></li>
             </ul>
         </div>
     </li>
@@ -157,7 +151,7 @@
             </ul>
         </div>
     </li>
-
+    
     
     <li id="sidenav-logout"><a href="<?php echo BASE_URL.'login/logout'; ?>" class="waves-effect"><i class="material-icons left">vpn_key</i>Logout</a></li>
 </ul>

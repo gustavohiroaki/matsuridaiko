@@ -9,10 +9,14 @@ class ConsultModel extends Model{
         parent::__construct();
     }
 
-    public function selectAllMembers(){
+      public function selectAllMembers($where=""){
         $sql  = "SELECT * FROM members_rkmd ";
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
-        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch";
+        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
+        
+        if($where !== ""){
+          $sql .= "WHERE id_member = {$where}";          
+        }
 
         $select = $this->db->query($sql);
         return $select->fetchAll();
@@ -33,22 +37,11 @@ class ConsultModel extends Model{
         return json_encode($select->fetchAll());
     }
 
-    public function selectAllMembersType($where=""){
-        $sql  = "SELECT * FROM members_rkmd ";
-        $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
-        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
-        $sql .= "WHERE id_member = {$where}";
-
-
-        $select = $this->db->query($sql);
-        return $select->fetchAll();
-    }
-
     public function selectMembers($where=""){
         $sql  = "SELECT * FROM members_rkmd ";
         $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
         $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
-        $sql .= "WHERE members_rkmd.id_type = 3 ";
+
         if($where!==""){
             $sql .= "AND id_member = {$where}";
             }
@@ -56,40 +49,6 @@ class ConsultModel extends Model{
                 $sql .= "AND status_member = 1 ";
                 $sql .= "AND members_rkmd.id_branch = {$_SESSION['branch_id']}";
             }
-
-        $select = $this->db->query($sql);
-        return $select->fetchAll();
-    }
-
-    public function selectJuniors($where=""){
-        $sql  = "SELECT * FROM members_rkmd ";
-        $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
-        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
-        $sql .= "WHERE members_rkmd.id_type = 2 ";
-        if($where!==""){
-            $sql .= "AND id_member = {$where}";
-            }
-            else{//Used for consult members inside of the branch
-                $sql .= "AND status_member = 1 ";
-                $sql .= "AND members_rkmd.id_branch = {$_SESSION['branch_id']}";
-            }
-
-        $select = $this->db->query($sql);
-        return $select->fetchAll();
-    }
-
-    public function selectShinjins($where=""){
-        $sql  = "SELECT * FROM members_rkmd ";
-        $sql .= "INNER JOIN member_type ON members_rkmd.id_type = member_type.id_type ";
-        $sql .= "INNER JOIN branch ON members_rkmd.id_branch = branch.id_branch ";
-        $sql .= "WHERE members_rkmd.id_type = 1 ";
-        if($where!==""){
-        $sql .= "AND id_member = {$where}";
-        }
-        else{//Used for consult members inside of the branch
-            $sql .= "AND status_member = 1 ";
-            $sql .= "AND members_rkmd.id_branch = {$_SESSION['branch_id']}";
-        }
 
         $select = $this->db->query($sql);
         return $select->fetchAll();
@@ -137,7 +96,7 @@ class ConsultModel extends Model{
     }
 
     public function pastEvents($where=""){
-        $sql = "SELECT * FROM events WHERE date_fin < now() ";
+        $sql = "SELECT * FROM events WHERE date_fin < CURDATE() ";
         if($where!==""){
             $sql .= "WHERE id_event = $where ";
         }
@@ -163,7 +122,7 @@ class ConsultModel extends Model{
 
         $sql = 
         "SELECT 
-                messages.id_message,message as completeMessage,left(message,15) as message,message_by,date_init,date_fin,name_branch,message_branch.id_branch
+                message_title,messages.id_message,message as completeMessage,left(message,15) as message,message_by,date_init,date_fin,name_branch,message_branch.id_branch
         FROM 
                 messages 
         JOIN 
@@ -175,7 +134,7 @@ class ConsultModel extends Model{
         ON
                 branch.id_branch = message_branch.id_branch
         WHERE
-                (now() BETWEEN date_init AND date_fin)
+                (CURDATE() BETWEEN date_init AND date_fin)
         AND
                 message_branch.id_branch = {$_SESSION["branch_id"]}
          ";

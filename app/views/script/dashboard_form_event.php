@@ -45,8 +45,8 @@
                 console.log("register");
                 insertForm(form);
             }
-            if(type=="update"){
-                console.log("update");
+            if(type=="updateForm"){
+                console.log("updateForm");
                 updateForm(form);
             }
             
@@ -57,7 +57,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "<?php echo BASE_URL ?>register/sendEvent",
+            url: "<?php echo BASE_URL ?>events/filterAndInsert",
 
         }).then(success,fail)
 
@@ -75,7 +75,7 @@
         $.ajax({
             type:"POST",
             data:d.serialize(),
-            url: "<?php echo BASE_URL ?>update/updateEvent",
+            url: "<?php echo BASE_URL ?>events/filterAndUpdate",
 
         }).then(success,fail)
 

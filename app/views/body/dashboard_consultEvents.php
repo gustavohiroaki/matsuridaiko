@@ -57,9 +57,9 @@
                 <td><?php echo $count->city_event; ?></td>
                 <td><?php echo $count->responsible_event; ?></td>
                 <td><?php echo $count->annotation_event; ?></td>
-                <td><a href="<?php echo BASE_URL.'details/event/'.$count->id_event; ?>"><i class="material-icons">details</i></a></td>
+                <td><a href="<?php echo BASE_URL.'events/details/'.$count->id_event; ?>"><i class="material-icons">details</i></a></td>
                 <?php if((int)$_SESSION["permission"]>=500){ ?>
-                <td><a href="<?php echo BASE_URL.'update/event/'.$count->id_event; ?>"><i class="material-icons">create</i></a></td>
+                <td><a href="<?php echo BASE_URL.'events/updateForm/'.$count->id_event; ?>"><i class="material-icons">create</i></a></td>
                 <td><a href="#" title="<?php echo $count->id_event; ?>" class="delete"><i class="material-icons">delete</i></a></td>
                 <?php } ?>
             </tr>

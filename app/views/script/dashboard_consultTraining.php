@@ -12,7 +12,7 @@ function deleteList(){
     $.ajax({
         type:"POST",
         data:"id="+id,
-        url:"<?php echo BASE_URL ?>delete/deleteTraining"
+        url:"<?php echo BASE_URL ?>training/delete"
     }).done(function(){
         exclude.fadeOut();
     })

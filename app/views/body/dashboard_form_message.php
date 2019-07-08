@@ -7,7 +7,7 @@
   <form id="input-message">
     <input type="hidden" name="id_message" value="<?php if(isset($data["message"])){echo $message->id_message;} ?>">
     <div class="input-field col s12 m12 l12">
-      <input id="message_title" name="message_title" type="text" value="">
+      <input id="message_title" name="message_title" type="text" value="<?php if(isset($data["message"])){echo $message->message_title;} ?>">
       <label>Título da Mensagem</label>
     </div>
     

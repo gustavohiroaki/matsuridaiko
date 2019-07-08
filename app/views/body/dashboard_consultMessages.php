@@ -29,7 +29,7 @@
                 <td><?php echo formatDate($count->date_init,"BR"); ?></td>
                 <td><?php echo formatDate($count->date_fin,"BR"); ?></td>
                 <?php if((int)$_SESSION["permission"]>=500){ ?>
-                <td><a href="<?php echo BASE_URL.'update/message/'.$count->id_message; ?>"><i class="material-icons">create</i></a></td>
+                <td><a href="<?php echo BASE_URL.'messages/updateForm/'.$count->id_message; ?>"><i class="material-icons">create</i></a></td>
                 <td><a href="#" title="<?php echo $count->id_message; ?>" class="delete"><i class="material-icons">delete</i></a></td>
                 <?php } ?>
             </tr>

@@ -11,7 +11,7 @@ function queryMessage(){
         console.log(id);
         $.ajax({
             type:"POST",
-            url:"<?php echo BASE_URL ?>consult/specificMessage",
+            url:"<?php echo BASE_URL ?>messages/selectSpecificMessage",
             data:"id="+id
         }).done(function(e){
             var message = JSON.parse(e);
@@ -31,7 +31,7 @@ function deleteList(){
     $.ajax({
         type:"POST",
         data:"id="+id,
-        url:"<?php echo BASE_URL ?>delete/deleteMessage"
+        url:"<?php echo BASE_URL ?>messages/delete"
     }).done(function(){
         exclude.fadeOut();
     })
