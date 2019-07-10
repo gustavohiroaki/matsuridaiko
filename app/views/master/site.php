@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php $this->load_head(); ?>
-<body>
+  
+<head>
+  <?php $this->load_head(); ?>
+  
+   <link rel="stylesheet" href="<?php echo BASE_URL_ASSETS ?>_css/animate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
 
+        $(window).on('load',function(){
+
+            $('.preloader').addClass('complete');
+            $('.loader').fadeOut(1350).delay(1350,function(){
+                $('.preloader').remove();
+                $('.loader').remove();
+            })
+
+        })
+
+    </script>
+</head>
+  
+  
+<body>
+    <div class="preloader">
+
+        <div class="loader"></div>
+
+    </div>
 
 <!-- nav -->
 <nav id="home">
