@@ -61,8 +61,8 @@ class UsersController extends Controller {
     }
 	
 		public function filterAndInsert(){
-			$this->security();
-			$this->securityAccessPage(500);
+// 			$this->security();
+// 			$this->securityAccessPage(500);
 
 // 			$id_member              = isset($_POST["id_member"])? strip_tags(filter_input(INPUT_POST,"id_member")):NULL;
 			$name_member            = isset($_POST["name_member"])? strip_tags(filter_input(INPUT_POST,"name_member")):NULL;
@@ -105,7 +105,7 @@ class UsersController extends Controller {
 					"status_member"         =>      $status_member
 			);
 
-
+dd($allDatas);
 			$insert = new RegisterModel;
 			$insert->registerMember($allDatas);
 	}
