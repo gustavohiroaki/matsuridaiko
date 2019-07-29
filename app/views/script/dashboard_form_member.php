@@ -1,11 +1,11 @@
-<script src="../assets/_js/class/Helpers.js"></script>
-<script src="../assets/_js/class/Post.js"></script>
-<script src="../assets/_js/class/Get.js"></script>
+<script src="<?php echo BASE_URL ?>assets/_js/class/Helpers.js"></script>
+<script src="<?php echo BASE_URL ?>assets/_js/class/Post.js"></script>
+<script src="<?php echo BASE_URL ?>assets/_js/class/Get.js"></script>
 <!-- <script src="../assets/_js/class/Check.js"></script> -->
 
 <script>
-    let help = new Helpers;
-
+        let help = new Helpers;
+        let post = new Post;
 
     // Zip
     $("#zip_member").blur(function(e){
@@ -32,8 +32,6 @@
     })
 
 
-
-
     //POST to insert/
 
     $("#input-member").submit(function(e){
@@ -42,6 +40,7 @@
 
         var form = $(this);
         var uri = (window.location.pathname).split("/");
+
 
         uri.find(checkType);
 
@@ -60,49 +59,31 @@
             
 
     })
-
+    
 
 
     function insertForm(d){
-           console.log('insert');
-      
-           let post = new Post;
-           let urlSend = help.getUrlOrigin()+'/users/filterAndInsert';
-           console.log(d.serialize());
-           post.postForm(urlSend,d.serialize());
 
-//         $.ajax({
-//             type:"POST",
-//             data:d.serialize(),
-//             url: urlSend
+           let urlSend = help.getUrlOrigin('/users/filterAndInsert');
 
-//         }).then(success,fail)
+           post.postForm(urlSend,d.serialize()).then(info=>{
+             
+             alert(info);
+             
+           });
 
-//         function success(data){
-//             console.log(data);
-//             alert("Dados Inseridos com Sucesso");
-//         }
-//         function fail(data){
-//             console.log(data);
-//             alert("Houve uma falha de inserção de dados, contate o administrador do sistema.");
-//         }
     }
 
     function updateForm(d){
-        $.ajax({
-            type:"POST",
-            data:d.serialize(),
-            url: urlSend
-        }).then(success,fail)
+      
+       let urlSend = help.getUrlOrigin('/users/filterAndUpdate');
 
-        function success(data){
-            console.log(data);
-            alert("Dados Atualizados com Sucesso");
-        }
-        function fail(data){
-            console.log(data);
-            alert("Houve uma falha de atualização de dados, contate o administrador do sistema.");
-        }
+       post.postForm(urlSend,d.serialize()).then(info=>{
+
+         alert(info);
+
+       });
+      
     }
 
     

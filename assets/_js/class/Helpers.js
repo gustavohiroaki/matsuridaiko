@@ -1,7 +1,15 @@
 class Helpers {
+
 	
-	getUrlOrigin(){
-		return window.location.origin+'/matsuridaiko';
+	getUrlOrigin(pageLocation=""){
+
+		if(pageLocation!==""){
+			
+			return window.location.origin+`/matsuridaiko${pageLocation}`;
+			
+		}
+		
+// 		return window.location.origin+'/matsuridaiko';
 	}
 	
 }

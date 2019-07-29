@@ -14,7 +14,12 @@ class RegisterModel extends Model{
 
         $insert = $this->db->prepare($sql);
 
-        $insert->execute($allDatas);
+        if($insert->execute($allDatas)){
+          return true;
+        }
+        else{
+          return false;
+        }
 
     }
 

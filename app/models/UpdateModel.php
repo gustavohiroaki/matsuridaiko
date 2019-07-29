@@ -15,24 +15,30 @@ class UpdateModel extends Model{
 
 		$update = $this->db->prepare($sql);
 
-		$update->execute($allData);
+		if($update->execute($allData)){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
 	}
 
-	public function updateJunior($allData=array()){
-		$sql = "UPDATE members_rkmd SET name_member=:name_member, username_member=:username_member, id_type=:id_type, pass_member=:pass_member, permission_member=:permission_member, id_branch=:id_branch, entrydate_member=:entrydate_member, birth_member=:birth_member, tel_member=:tel_member, rg_member=:rg_member, zip_member=:zip_member, state_member=:state_member, city_member=:city_member, neighboorhood_member=:neighboorhood_member, street_member=:street_member, complement_member=:complement_member, status_member=:status_member WHERE id_member=:id_member";
+// 	public function updateJunior($allData=array()){
+// 		$sql = "UPDATE members_rkmd SET name_member=:name_member, username_member=:username_member, id_type=:id_type, pass_member=:pass_member, permission_member=:permission_member, id_branch=:id_branch, entrydate_member=:entrydate_member, birth_member=:birth_member, tel_member=:tel_member, rg_member=:rg_member, zip_member=:zip_member, state_member=:state_member, city_member=:city_member, neighboorhood_member=:neighboorhood_member, street_member=:street_member, complement_member=:complement_member, status_member=:status_member WHERE id_member=:id_member";
 
-		$update = $this->db->prepare($sql);
+// 		$update = $this->db->prepare($sql);
 
-		$update->execute($allData);
-	}
+// 		$update->execute($allData);
+// 	}
 
-	public function updateShinjin($allData=array()){
-		$sql = "UPDATE members_rkmd SET name_member=:name_member, username_member=:username_member, id_type=:id_type, pass_member=:pass_member, permission_member=:permission_member, id_branch=:id_branch, entrydate_member=:entrydate_member, birth_member=:birth_member, tel_member=:tel_member, rg_member=:rg_member, zip_member=:zip_member, state_member=:state_member, city_member=:city_member, neighboorhood_member=:neighboorhood_member, street_member=:street_member, complement_member=:complement_member, status_member=:status_member WHERE id_member=:id_member";
+// 	public function updateShinjin($allData=array()){
+// 		$sql = "UPDATE members_rkmd SET name_member=:name_member, username_member=:username_member, id_type=:id_type, pass_member=:pass_member, permission_member=:permission_member, id_branch=:id_branch, entrydate_member=:entrydate_member, birth_member=:birth_member, tel_member=:tel_member, rg_member=:rg_member, zip_member=:zip_member, state_member=:state_member, city_member=:city_member, neighboorhood_member=:neighboorhood_member, street_member=:street_member, complement_member=:complement_member, status_member=:status_member WHERE id_member=:id_member";
 
-		$update = $this->db->prepare($sql);
+// 		$update = $this->db->prepare($sql);
 
-		$update->execute($allData);
-	}
+// 		$update->execute($allData);
+// 	}
 
 	public function updateEvent($allData=array()){
 		$sql = "UPDATE events SET name_event=:name_event,date_init=:date_init,hour_init=:hour_init,date_fin=:date_fin,hour_fin=:hour_fin,dateinit_event=:dateinit_event,datefin_event=:datefin_event,numbermember_event=:numbermember_event,zip_event=:zip_event,state_event=:state_event,city_event=:city_event,neighboorhood_event=:neighboorhood_event,street_event=:street_event,complement_event=:complement_event,annotation_event=:annotation_event,responsible_event=:responsible_event,status_event=:status_event WHERE id_event=:id_event";
