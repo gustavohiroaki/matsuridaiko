@@ -1,8 +1,5 @@
 class Get {
-	
-	constructor(){
-		
-	}
+
 	
 
 	getZip(zip){

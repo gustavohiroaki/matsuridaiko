@@ -52,9 +52,12 @@ class RegisterModel extends Model{
         
         $insert = $this->db->prepare($sql);
 
-        if(!$insert->execute($allDatas)){
-            echo "Falha no Cadastro da mensagem!";
-        };
+        if($insert->execute($allDatas)){
+            return true;
+        }
+        else{
+            return false; 
+        }
     }
 
     public function registerBranchMessage($id_message,$id_branch){

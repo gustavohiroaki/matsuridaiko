@@ -68,13 +68,7 @@
         </div>
     </li>
 
-    <li><a class="waves-effect collapsible-header">Pagamentos</a>
-        <div class="collapsible-body">
-            <ul>
-                <li><a href="#">Pagamentos Efetuados</a></li>
-            </ul>
-        </div>
-    </li>
+    <li><a class="waves-effect collapsible-header" href="<?php echo BASE_URL ?>payment">Pagamentos</a></li>
     
     
 </ul>
@@ -144,13 +138,9 @@
         </div>
     </li>
 
-    <li><a class="waves-effect collapsible-header">Pagamentos</a>
-        <div class="collapsible-body">
-            <ul>
-                <li><a href="#">Pagamentos Efetuados</a></li>
-            </ul>
-        </div>
-    </li>
+
+    <li><a class="waves-effect collapsible-header" href="<?php echo BASE_URL ?>payment">Pagamentos</a></li>
+    
     
     
     <li id="sidenav-logout"><a href="<?php echo BASE_URL.'login/logout'; ?>" class="waves-effect"><i class="material-icons left">vpn_key</i>Logout</a></li>

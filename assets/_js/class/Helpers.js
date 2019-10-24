@@ -1,6 +1,5 @@
 class Helpers {
 
-	
 	getUrlOrigin(pageLocation=""){
 
 		if(pageLocation!==""){
@@ -9,7 +8,7 @@ class Helpers {
 			
 		}
 		
-// 		return window.location.origin+'/matsuridaiko';
+		return window.location.origin+'/matsuridaiko';
 	}
 	
 }

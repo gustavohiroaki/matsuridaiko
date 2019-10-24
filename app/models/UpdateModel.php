@@ -53,7 +53,12 @@ class UpdateModel extends Model{
 
 		$update = $this->db->prepare($sql);
 
-		$update->execute($allData);
+		if($update->execute($allData)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	public function updateTraining($allDatas=array()){

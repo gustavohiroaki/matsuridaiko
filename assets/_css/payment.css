@@ -1,0 +1,16 @@
+.row {
+	
+	border-top: 1px solid rgba(0, 0, 0, 0.20);
+	
+}
+
+#payment-right-box, #payment-left-box {
+	padding: 10px;
+
+}
+
+#payment-left-box {
+	
+	border-right: 1px solid rgba(0, 0, 0, 0.20);
+	
+}

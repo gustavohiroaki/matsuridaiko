@@ -1,9 +1,6 @@
 class Post {
 	
-	constructor(){
-		
-	}
-	
+
 
 	postForm(url, data){
 
@@ -48,5 +45,6 @@ class Post {
 		
 	}
 
+	
 	
 }

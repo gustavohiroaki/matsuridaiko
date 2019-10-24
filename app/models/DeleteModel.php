@@ -58,7 +58,12 @@ class DeleteModel extends Model{
         $delete = $this->db->prepare($sql);
         $delete->bindValue(":id_message",$where);
 
-        $delete->execute();
+        if($delete->execute()){
+          return true;
+        }
+        else{
+          return false;
+        }
     }
 
     public function deleteTraining_branch($where){

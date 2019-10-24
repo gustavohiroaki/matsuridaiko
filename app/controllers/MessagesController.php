@@ -68,18 +68,34 @@ class MessagesController extends Controller {
 		);
 
 		$query = new RegisterModel;
-		$query->registerMessage($allDatas);
+		if($query->registerMessage($allDatas)){
+			
+			try{
+				$query = new ConsultModel;
+				$lastID = $query->selectLastMessage();
 
-		$query = new ConsultModel;
-		$lastID = $query->selectLastMessage();
+				if($message_branch!==""){
+					foreach($message_branch as $count){
 
-		if($message_branch!==""){
-				foreach($message_branch as $count){
-
-						$query = new RegisterModel;
-						$query->registerBranchMessage((int)$lastID->id_message,(int)$count);
+							$query = new RegisterModel;
+							$query->registerBranchMessage((int)$lastID->id_message,(int)$count);
+					}
+					echo "Recado inserido com sucesso!";
 				}
+			}
+			catch (Exception $e) {
+				echo 'Caught exception: ',  $e->getMessage(), "\n";
+				return false;
+			}
+			
 		}
+		else{
+			
+			echo "Falha na inserção do Recado!";
+			
+		}
+		
+		
 }
 	
 	public function selectSpecificMessage(){
@@ -138,25 +154,32 @@ class MessagesController extends Controller {
         );
 		
 		
-    	try{  
+
         $delete = new DeleteModel;
-        $delete->deleteMessage_branch($id_message);
+        if($delete->deleteMessage_branch($id_message)){
+					
+					$query = new UpdateModel;
+        	if($query->updateMessage($allDatas)){
+						
+						if($message_branch){
+							
+							foreach($message_branch as $count){
 
-        $query = new UpdateModel;
-        $query->updateMessage($allDatas);
+									$query = new RegisterModel;
+									$query->registerBranchMessage((int)$id_message,(int)$count);
+							}
+							echo "Mensagem atualizada com sucesso!";
+        		}
+						
+					}
+					
 				}
-				catch (Exception $e) {
-					echo 'Caught exception: ',  $e->getMessage(), "\n";
-					return false;
+				else{
+					echo "Falha na atualização da mensagem!";
 				}
 
-        if($message_branch){
-            foreach($message_branch as $count){
 
-                $query = new RegisterModel;
-                $query->registerBranchMessage((int)$id_message,(int)$count);
-            }
-        }
+
     }
 		
 }

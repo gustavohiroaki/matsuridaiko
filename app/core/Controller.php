@@ -31,7 +31,6 @@ abstract class Controller{
         }
     }
 
-
     public function add_view($viewName){
         $this->viewName = $viewName;
     }
@@ -44,11 +43,6 @@ abstract class Controller{
     public function add_viewTitle($viewTitle){
         $this->viewTitle = $viewTitle;
     }
-
-
-
-
-
 
     public function load_head(){
         require 'app/views/head/'.$this->viewName.'.php';
@@ -66,11 +60,6 @@ abstract class Controller{
             include 'app/views/script/'.$this->viewName.'.php';
         }
     }
-
-
-
-
-
 
     public function master_interface($interfaceName,$interfaceParam=array()){
         extract($interfaceParam);
